@@ -13,6 +13,7 @@
 @property NSUInteger timesPerMonth;
 @property NSUInteger percentWithCondomUsage;
 
+-(NSString *)getSummaryString;
 
 
 @end

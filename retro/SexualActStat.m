@@ -7,15 +7,28 @@
 //
 
 #import "SexualActStat.h"
+#import "AppManager.h"
 
 @implementation SexualActStat
+
+AppManager *appMgr;
 
 -(id)init
 {
     self = [super init];
+    appMgr = [AppManager singletonAppManager];
     self.timesPerMonth = 0;
     self.percentWithCondomUsage = 0;
     return self;
 }
+
+-(NSString *)getSummaryString
+{
+    NSString *summary = [NSString stringWithFormat:@"%d acts per month, %d%% condom usage",
+                         self.timesPerMonth, self.percentWithCondomUsage];
+    return summary;
+    
+}
+
 
 @end

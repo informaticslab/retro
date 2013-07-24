@@ -7,15 +7,20 @@
 //
 
 #import "OralSexFromPosVC.h"
+#import "AppManager.h"
 
 
 @implementation OralSexFromPosVC
+
+AppManager *appMgr;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"OralSexFromPosVC viewDidLoad().");
+    appMgr = [AppManager singletonAppManager];
 
 }
 
@@ -24,5 +29,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)sliderActsPerMonthValueChange:(id)sender {
+    self.stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+}
+- (IBAction)sliderCondomUsageValueChange:(id)sender {
+    self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
+}
+
 
 @end

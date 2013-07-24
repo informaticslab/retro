@@ -7,12 +7,13 @@
 //
 
 #import "InsertiveAnalVC.h"
+#import "AppManager.h"
 
-@interface InsertiveAnalVC ()
-
-@end
 
 @implementation InsertiveAnalVC
+
+AppManager *appMgr;
+
 
 
 - (void)viewDidLoad
@@ -20,6 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"InsertiveAnalVC viewDidLoad().");
+    appMgr = [AppManager singletonAppManager];
 
 }
 
@@ -28,5 +30,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)sliderActsPerMonthValueChange:(id)sender {
+    self.stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+}
+- (IBAction)sliderCondomUsageValueChange:(id)sender {
+    self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
+}
+
 
 @end

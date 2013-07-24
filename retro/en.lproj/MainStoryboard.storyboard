@@ -392,6 +392,12 @@
                     <connections>
                         <outlet property="lblHivNegPartner" destination="aGF-AW-3Ih" id="BJH-Tp-Z1z"/>
                         <outlet property="lblHivPosPartner" destination="pxv-fh-jvp" id="aoP-6r-dY7"/>
+                        <outlet property="lblInsertiveAnal" destination="gaQ-yh-kWd" id="9wp-zz-4ei"/>
+                        <outlet property="lblInsertiveVagSex" destination="xPQ-tb-gpY" id="GDg-hp-CPh"/>
+                        <outlet property="lblOralSexFrom" destination="AfA-bO-qvL" id="UHe-nd-v31"/>
+                        <outlet property="lblOralSexTo" destination="NAN-UK-Wlv" id="RLt-Ll-nka"/>
+                        <outlet property="lblReceptiveAnal" destination="ypk-DL-Smi" id="qzH-Bc-oNa"/>
+                        <outlet property="lblReceptiveVagSex" destination="cTF-qs-n1T" id="h8S-lK-N4z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAf-tq-lbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -733,7 +739,7 @@
                                     <navigationItem title="Oral Sex To HIV Positive Partner" id="Nby-1z-79a">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="4UJ-sC-Gka">
                                             <connections>
-                                                <segue destination="2nf-bR-MKu" kind="unwind" unwindAction="returnActionForSegue:" id="pNU-FR-oRV"/>
+                                                <segue destination="2nf-bR-MKu" kind="unwind" unwindAction="doneOralToPos:" id="ioV-7o-dfv"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -741,9 +747,15 @@
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="op7-X2-Uiq">
                                 <rect key="frame" x="68" y="221" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderCondomUsageValueChange:" destination="YK5-Rz-9HX" eventType="valueChanged" id="nej-gF-LzQ"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="tC9-eR-Ux2">
                                 <rect key="frame" x="68" y="108" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderActsPerMonthValueChange:" destination="YK5-Rz-9HX" eventType="valueChanged" id="gfZ-4d-1vp"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PHB-fs-d50">
                                 <rect key="frame" x="115" y="76" width="270" height="21"/>
@@ -789,6 +801,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderActsPerMonth" destination="tC9-eR-Ux2" id="ke0-Og-c4R"/>
+                        <outlet property="sliderCondomUsage" destination="op7-X2-Uiq" id="q6U-pO-NdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpN-Ic-62W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2nf-bR-MKu" userLabel="Exit" sceneMemberID="exit"/>
@@ -811,10 +827,10 @@
             </objects>
             <point key="canvasLocation" x="2937" y="1089"/>
         </scene>
-        <!--Receptive Anal SexVC-->
+        <!--Receptive AnalVC-->
         <scene sceneID="0NU-hd-8gm">
             <objects>
-                <viewController id="XBg-nF-gKj" customClass="ReceptiveAnalSexVC" sceneMemberID="viewController">
+                <viewController id="XBg-nF-gKj" customClass="ReceptiveAnalVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rlE-NG-qlg">
                         <rect key="frame" x="0.0" y="20" width="400" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -826,7 +842,7 @@
                                     <navigationItem title="Receptive Anal Sex" id="7EL-pH-44e">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="duJ-bb-iIn">
                                             <connections>
-                                                <segue destination="wgH-G7-66H" kind="unwind" unwindAction="returnActionForSegue:" id="W8T-Yb-Lhm"/>
+                                                <segue destination="wgH-G7-66H" kind="unwind" unwindAction="doneReceptiveAnal:" id="XRi-uW-Uxb"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -834,9 +850,15 @@
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="Svv-Ix-3ZU">
                                 <rect key="frame" x="18" y="221" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderCondomUsageValueChange:" destination="XBg-nF-gKj" eventType="valueChanged" id="Mdb-LC-Epv"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="QlP-NL-e9d">
                                 <rect key="frame" x="18" y="108" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderActsPerMonthValueChange:" destination="XBg-nF-gKj" eventType="valueChanged" id="XnM-bj-cdR"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="df1-wj-qW8">
                                 <rect key="frame" x="65" y="77" width="270" height="21"/>
@@ -882,6 +904,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderActsPerMonth" destination="QlP-NL-e9d" id="XoY-dG-F8u"/>
+                        <outlet property="sliderCondomUsage" destination="Svv-Ix-3ZU" id="DMs-vs-4Cq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ca-4p-19F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wgH-G7-66H" userLabel="Exit" sceneMemberID="exit"/>
@@ -898,9 +924,15 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="AHm-Gn-hE9">
                                 <rect key="frame" x="18" y="232" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderCondomUsageValueChange:" destination="EdE-dw-0Tw" eventType="valueChanged" id="quq-y0-T8n"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="6qg-ml-BW9">
                                 <rect key="frame" x="18" y="119" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderActsPerMonthValueChange:" destination="EdE-dw-0Tw" eventType="valueChanged" id="gkk-bg-8cD"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VdR-bd-2Qj">
                                 <rect key="frame" x="65" y="87" width="270" height="21"/>
@@ -949,7 +981,7 @@
                                     <navigationItem title="Insertive Anal Sex" id="gAh-rp-Wy7">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="e51-22-Kuw">
                                             <connections>
-                                                <segue destination="WXb-3c-5RA" kind="unwind" unwindAction="returnActionForSegue:" id="OL9-Ae-BtU"/>
+                                                <segue destination="WXb-3c-5RA" kind="unwind" unwindAction="doneInsertiveAnal:" id="62z-Eh-Bsb"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -959,6 +991,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderActsPerMonth" destination="6qg-ml-BW9" id="xUD-9T-xQx"/>
+                        <outlet property="sliderCondomUsage" destination="AHm-Gn-hE9" id="JbO-pg-CJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kb6-1m-u1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WXb-3c-5RA" userLabel="Exit" sceneMemberID="exit"/>
@@ -975,9 +1011,15 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="ZFJ-cR-nXA">
                                 <rect key="frame" x="18" y="231" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderCondomUsageValueChange:" destination="rk6-ZR-85j" eventType="valueChanged" id="UHs-xM-2XV"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="a4c-ag-Orb">
                                 <rect key="frame" x="18" y="118" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderActsPerMonthValueChange:" destination="rk6-ZR-85j" eventType="valueChanged" id="86A-h5-nAS"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eqC-ha-VDq">
                                 <rect key="frame" x="65" y="89" width="270" height="21"/>
@@ -998,7 +1040,7 @@
                                     <navigationItem title="Insertive Vaginal Sex" id="QGX-Nr-gIS">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="O9N-2Z-f0C">
                                             <connections>
-                                                <segue destination="kSO-kp-g3f" kind="unwind" unwindAction="returnActionForSegue:" id="4QZ-1O-Em0"/>
+                                                <segue destination="kSO-kp-g3f" kind="unwind" unwindAction="doneInsertiveVagSex:" id="Y4s-X0-QtZ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1036,6 +1078,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderActsPerMonth" destination="a4c-ag-Orb" id="LYW-8Z-OBo"/>
+                        <outlet property="sliderCondomUsage" destination="ZFJ-cR-nXA" id="3xl-Ob-gmd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGg-j3-Dji" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kSO-kp-g3f" userLabel="Exit" sceneMemberID="exit"/>
@@ -1057,7 +1103,7 @@
                                     <navigationItem title="Receptive Vaginal Sex" id="OD0-Rd-GsF">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="o8x-38-6pm">
                                             <connections>
-                                                <segue destination="gxx-oL-08n" kind="unwind" unwindAction="returnActionForSegue:" id="q7s-3y-oms"/>
+                                                <segue destination="gxx-oL-08n" kind="unwind" unwindAction="doneReceptiveVagSex:" id="ouJ-qC-gSP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1065,9 +1111,15 @@
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="kJg-q9-hZl">
                                 <rect key="frame" x="18" y="230" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderCondomUsageValueChange:" destination="8Ba-yl-7kb" eventType="valueChanged" id="D5V-hQ-u41"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="J23-pr-Iz3">
                                 <rect key="frame" x="18" y="117" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderActsPerMonthValueChange:" destination="8Ba-yl-7kb" eventType="valueChanged" id="wXX-nb-Ypz"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xkb-lX-sjc">
                                 <rect key="frame" x="65" y="87" width="270" height="21"/>
@@ -1113,6 +1165,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderActsPerMonth" destination="J23-pr-Iz3" id="kWd-B6-jSr"/>
+                        <outlet property="sliderCondomUsage" destination="kJg-q9-hZl" id="7Xr-4l-jXx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Roe-5a-40k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gxx-oL-08n" userLabel="Exit" sceneMemberID="exit"/>
@@ -1134,7 +1190,7 @@
                                     <navigationItem title="Oral Sex From HIV Positive Partner" id="wd6-x9-chy">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="4GC-hX-lUQ">
                                             <connections>
-                                                <segue destination="T8o-iC-voK" kind="unwind" unwindAction="returnActionForSegue:" id="hbg-Yu-4HK"/>
+                                                <segue destination="T8o-iC-voK" kind="unwind" unwindAction="doneOralFromPos:" id="6uG-MY-IPR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1142,9 +1198,15 @@
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="V6t-YM-WSH">
                                 <rect key="frame" x="68" y="218" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderCondomUsageValueChange:" destination="coM-NT-GhM" eventType="valueChanged" id="p6X-4Q-DXY"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="zPI-bk-dhv">
                                 <rect key="frame" x="68" y="105" width="364" height="23"/>
+                                <connections>
+                                    <action selector="sliderActsPerMonthValueChange:" destination="coM-NT-GhM" eventType="valueChanged" id="fsR-ts-HXs"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cgQ-r2-0Nq">
                                 <rect key="frame" x="115" y="74" width="270" height="21"/>
@@ -1190,6 +1252,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderActsPerMonth" destination="zPI-bk-dhv" id="oPm-1C-jr0"/>
+                        <outlet property="sliderCondomUsage" destination="V6t-YM-WSH" id="4M0-GC-gcZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoJ-6Z-DYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="T8o-iC-voK" userLabel="Exit" sceneMemberID="exit"/>
@@ -1261,26 +1327,77 @@
         </class>
         <class className="InsertiveAnalVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveAnalVC.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
+                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
+                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="InsertiveVagSexVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveVagSexVC.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
+                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
+                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="OralSexFromPosVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexFromPosVC.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
+                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
+                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="OralSexToPosVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexToPosVC.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
+                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
+                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="ReceptiveAnalVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveAnalVC.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
+                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
+                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="ReceptiveVagSexVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveVagSexVC.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
+                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
+                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="RiskInputVC" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskInputVC.h"/>
             <relationships>
                 <relationship kind="action" name="doneHivNegPartner:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="doneHivPosPartner:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneInsertiveAnal:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneInsertiveVagSex:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneOralFromPos:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneOralToPos:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneReceptiveAnal:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneReceptiveVagSex:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="lblHivNegPartner" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblHivPosPartner" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblInsertiveAnal" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblInsertiveVagSex" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblOralSexFrom" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblOralSexTo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblReceptiveAnal" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblReceptiveVagSex" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="RiskViewController" superclassName="UIViewController">

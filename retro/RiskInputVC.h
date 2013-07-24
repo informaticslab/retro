@@ -15,6 +15,14 @@
 @property(nonatomic, weak) SexualActStats *stats;
 @property (weak, nonatomic) IBOutlet UILabel *lblHivNegPartner;
 @property (weak, nonatomic) IBOutlet UILabel *lblHivPosPartner;
+@property (weak, nonatomic) IBOutlet UILabel *lblInsertiveVagSex;
+@property (weak, nonatomic) IBOutlet UILabel *lblReceptiveVagSex;
+@property (weak, nonatomic) IBOutlet UILabel *lblOralSexFrom;
+@property (weak, nonatomic) IBOutlet UILabel *lblOralSexTo;
+@property (weak, nonatomic) IBOutlet UILabel *lblInsertiveAnal;
+@property (weak, nonatomic) IBOutlet UILabel *lblReceptiveAnal;
+
+
 
 - (IBAction)doneHivNegPartner:(UIStoryboardSegue *)segue;
 - (IBAction)doneHivPosPartner:(UIStoryboardSegue *)segue;
