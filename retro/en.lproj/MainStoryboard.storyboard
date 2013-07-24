@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="O5K-AB-cDI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="O5K-AB-cDI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--First View Controller - Risk Assessment-->
+        <!--Risk View Controller - Risk Assessment-->
         <scene sceneID="4">
             <objects>
-                <viewController title="Risk Assessment" id="2" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController title="Risk Assessment" id="2" customClass="RiskViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGZ-Qm-WXD" userLabel="Table View Container">
+                            <containerView contentMode="scaleToFill" id="eGZ-Qm-WXD" userLabel="Table View Container">
+                                <rect key="frame" x="20" y="20" width="422" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="2F0-pd-L4U" kind="embed" id="2Rw-2l-qcJ"/>
+                                    <segue destination="2F0-pd-L4U" kind="embed" identifier="loadRiskInputSegue" id="2Rw-2l-qcJ"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6U-O3-jbk">
+                            <containerView contentMode="scaleToFill" id="P6U-O3-jbk">
+                                <rect key="frame" x="450" y="20" width="554" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="a18-Ye-6Tf" kind="embed" id="Auj-rK-c6z"/>
@@ -26,16 +28,6 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="eGZ-Qm-WXD" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7rj-W1-Fhi"/>
-                            <constraint firstAttribute="bottom" secondItem="eGZ-Qm-WXD" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="LKU-cI-AHU"/>
-                            <constraint firstItem="P6U-O3-jbk" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="450" id="Mgq-jp-gyH"/>
-                            <constraint firstItem="P6U-O3-jbk" firstAttribute="leading" secondItem="eGZ-Qm-WXD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Y49-zZ-3m0"/>
-                            <constraint firstAttribute="bottom" secondItem="P6U-O3-jbk" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Y6X-lp-Xah"/>
-                            <constraint firstAttribute="trailing" secondItem="P6U-O3-jbk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jg8-xG-6NV"/>
-                            <constraint firstItem="eGZ-Qm-WXD" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jxn-aM-RPa"/>
-                            <constraint firstItem="P6U-O3-jbk" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="pXS-ns-65j"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Risk Assessment" image="first.png" id="Wu3-HL-Kdp"/>
@@ -53,24 +45,21 @@
                         <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Help View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcV-jz-1Qf">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Help View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JcV-jz-1Qf">
+                                <rect key="frame" x="474" y="191" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JcV-jz-1Qf" firstAttribute="centerX" secondItem="2uK-4Y-Nvg" secondAttribute="centerX" type="default" id="Msm-1q-fKN"/>
-                            <constraint firstItem="JcV-jz-1Qf" firstAttribute="top" secondItem="2uK-4Y-Nvg" secondAttribute="top" constant="191" id="tO3-F0-0yh"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Help" image="second.png" id="Fjf-mc-Cur"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLw-uq-amT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="1221"/>
+            <point key="canvasLocation" x="723" y="749"/>
         </scene>
         <!--View Controller - About-->
         <scene sceneID="50W-O1-clo">
@@ -86,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zui-dp-PO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="2517"/>
+            <point key="canvasLocation" x="723" y="1669"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gDD-Fm-gos">
@@ -96,48 +85,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="554" height="659"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shc-xN-5tK">
+                            <containerView contentMode="scaleToFill" id="shc-xN-5tK">
+                                <rect key="frame" x="20" y="20" width="514" height="136"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="1MQ-Rd-vr5" kind="embed" id="4wf-3H-gbb"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J34-Kc-7hb">
+                            <containerView contentMode="scaleToFill" id="J34-Kc-7hb">
+                                <rect key="frame" x="20" y="164" width="514" height="258"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="OSc-t1-hQy" kind="embed" id="KWV-Vu-hDJ"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7V-Zo-Lfn">
+                            <containerView contentMode="scaleToFill" id="I7V-Zo-Lfn">
+                                <rect key="frame" x="20" y="430" width="514" height="209"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="I7V-Zo-Lfn" firstAttribute="top" secondItem="J34-Kc-7hb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3dn-tC-Ou8"/>
-                            <constraint firstItem="J34-Kc-7hb" firstAttribute="leading" secondItem="uPk-UH-UEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AGG-bk-cS9"/>
-                            <constraint firstAttribute="trailing" secondItem="I7V-Zo-Lfn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AY6-Gh-up1"/>
-                            <constraint firstAttribute="trailing" secondItem="J34-Kc-7hb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UNO-w9-Wxd"/>
-                            <constraint firstItem="I7V-Zo-Lfn" firstAttribute="top" secondItem="uPk-UH-UEv" secondAttribute="top" constant="430" id="WgD-KK-5zC"/>
-                            <constraint firstItem="J34-Kc-7hb" firstAttribute="top" secondItem="shc-xN-5tK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aVz-rP-QzE"/>
-                            <constraint firstItem="shc-xN-5tK" firstAttribute="top" secondItem="uPk-UH-UEv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="gJz-vj-Aho"/>
-                            <constraint firstAttribute="bottom" secondItem="I7V-Zo-Lfn" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="oJm-Jj-zEz"/>
-                            <constraint firstItem="J34-Kc-7hb" firstAttribute="top" secondItem="uPk-UH-UEv" secondAttribute="top" constant="164" id="taP-UJ-PWA"/>
-                            <constraint firstItem="shc-xN-5tK" firstAttribute="leading" secondItem="uPk-UH-UEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tlh-bz-ssV"/>
-                            <constraint firstAttribute="trailing" secondItem="shc-xN-5tK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vra-8f-XVf"/>
-                            <constraint firstItem="I7V-Zo-Lfn" firstAttribute="leading" secondItem="uPk-UH-UEv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yjR-xn-u9n"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPS-Pz-ULW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027" y="197"/>
+            <point key="canvasLocation" x="2139" y="1069"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Risk InputVC-->
         <scene sceneID="NIV-3C-M4P">
             <objects>
-                <tableViewController id="2F0-pd-L4U" sceneMemberID="viewController">
+                <tableViewController id="2F0-pd-L4U" customClass="RiskInputVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rvI-u9-OTV">
                         <rect key="frame" x="0.0" y="0.0" width="422" height="659"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,12 +131,14 @@
                                             <rect key="frame" x="31" y="1" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HIV Negative Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlM-ta-neQ">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HIV Negative Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlM-ta-neQ">
+                                                    <rect key="frame" x="10" y="2" width="179" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGF-AW-3Ih">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aGF-AW-3Ih">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,7 +147,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="nGY-wt-M3D" kind="popover" popoverAnchorView="Nju-pR-0VS" id="fd0-Zs-ic0">
+                                            <segue destination="nGY-wt-M3D" kind="popover" identifier="hivNegPartnerSegue" popoverAnchorView="Nju-pR-0VS" id="YF3-6r-Nas">
                                                 <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                                             </segue>
                                         </connections>
@@ -179,12 +159,14 @@
                                             <rect key="frame" x="31" y="0.0" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8s-mP-TWB">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G8s-mP-TWB">
+                                                    <rect key="frame" x="10" y="2" width="173" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxv-fh-jvp">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pxv-fh-jvp">
+                                                    <rect key="frame" x="10" y="24" width="36" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,7 +175,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Ep8-ha-4om" kind="popover" popoverAnchorView="Nkc-3b-oZQ" id="Dxu-Z7-fFk">
+                                            <segue destination="Ep8-ha-4om" kind="popover" identifier="hivPosPartnerSegue" popoverAnchorView="Nkc-3b-oZQ" id="Dxu-Z7-fFk">
                                                 <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                                             </segue>
                                         </connections>
@@ -209,12 +191,14 @@
                                             <rect key="frame" x="31" y="1" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Insertive Vaginal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbx-Vq-95R">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Insertive Vaginal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mbx-Vq-95R">
+                                                    <rect key="frame" x="10" y="2" width="181" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPQ-tb-gpY">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xPQ-tb-gpY">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,8 +207,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="rk6-ZR-85j" kind="popover" popoverAnchorView="wnm-hS-wRH" id="3yU-72-uqL">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            <segue destination="rk6-ZR-85j" kind="popover" identifier="insertiveVaginalSexSegue" popoverAnchorView="wnm-hS-wRH" id="3yU-72-uqL">
+                                                <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                                             </segue>
                                         </connections>
                                     </tableViewCell>
@@ -235,12 +219,14 @@
                                             <rect key="frame" x="31" y="0.0" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receptive Vaginal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc2-XA-OCC">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receptive Vaginal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yc2-XA-OCC">
+                                                    <rect key="frame" x="10" y="2" width="192" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-qs-n1T">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cTF-qs-n1T">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,6 +234,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="8Ba-yl-7kb" kind="popover" identifier="receptiveVaginalSexSegue" popoverAnchorView="Zp4-8A-kGj" id="7tA-5X-Wtd">
+                                                <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="CA8-O5-Na9" detailTextLabel="AfA-bO-qvL" style="IBUITableViewCellStyleSubtitle" id="dcH-mk-4y6">
                                         <rect key="frame" x="0.0" y="277" width="422" height="44"/>
@@ -256,12 +247,14 @@
                                             <rect key="frame" x="31" y="0.0" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex from HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA8-O5-Na9">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex from HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CA8-O5-Na9">
+                                                    <rect key="frame" x="10" y="2" width="296" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfA-bO-qvL">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AfA-bO-qvL">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -269,6 +262,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="coM-NT-GhM" kind="popover" identifier="oralFromPosSegue" popoverAnchorView="dcH-mk-4y6" id="FIf-jQ-cpM">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yXp-9s-ySg" detailTextLabel="NAN-UK-Wlv" style="IBUITableViewCellStyleSubtitle" id="8zz-KS-t4C">
                                         <rect key="frame" x="0.0" y="321" width="422" height="44"/>
@@ -277,12 +275,14 @@
                                             <rect key="frame" x="31" y="0.0" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex to HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXp-9s-ySg">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex to HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yXp-9s-ySg">
+                                                    <rect key="frame" x="10" y="2" width="273" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAN-UK-Wlv">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NAN-UK-Wlv">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -290,6 +290,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="YK5-Rz-9HX" kind="popover" identifier="oralToPosSegue" popoverAnchorView="8zz-KS-t4C" id="XRP-06-enG">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="v3u-O4-qB9" detailTextLabel="gaQ-yh-kWd" style="IBUITableViewCellStyleSubtitle" id="ocl-d5-HgD">
                                         <rect key="frame" x="0.0" y="365" width="422" height="44"/>
@@ -298,12 +303,14 @@
                                             <rect key="frame" x="31" y="0.0" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Insertive Anal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3u-O4-qB9">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Insertive Anal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v3u-O4-qB9">
+                                                    <rect key="frame" x="10" y="2" width="156" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaQ-yh-kWd">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gaQ-yh-kWd">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,6 +318,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="EdE-dw-0Tw" kind="popover" identifier="insertiveAnalSegue" popoverAnchorView="ocl-d5-HgD" id="F0F-ZL-vdf">
+                                                <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="61f-mB-INr" detailTextLabel="ypk-DL-Smi" style="IBUITableViewCellStyleSubtitle" id="sot-pv-aJn">
                                         <rect key="frame" x="0.0" y="409" width="422" height="45"/>
@@ -319,12 +331,14 @@
                                             <rect key="frame" x="31" y="0.0" width="327" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receptive Anal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61f-mB-INr">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receptive Anal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="61f-mB-INr">
+                                                    <rect key="frame" x="10" y="2" width="167" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-DL-Smi">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ypk-DL-Smi">
+                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,6 +346,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="XBg-nF-gKj" kind="popover" identifier="receptiveAnalSegue" popoverAnchorView="sot-pv-aJn" id="I0b-Xd-n5A">
+                                                <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -370,67 +389,63 @@
                             <outlet property="delegate" destination="2F0-pd-L4U" id="b4k-ey-ah3"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="lblHivNegPartner" destination="aGF-AW-3Ih" id="BJH-Tp-Z1z"/>
+                        <outlet property="lblHivPosPartner" destination="pxv-fh-jvp" id="aoP-6r-dY7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAf-tq-lbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2091" y="-869"/>
         </scene>
-        <!--View Controller - HivNegativePartner-->
+        <!--Hiv Neg PartnerVC - HivNegativePartner-->
         <scene sceneID="pdM-eX-W1H">
             <objects>
-                <viewController title="HivNegativePartner" modalPresentationStyle="pageSheet" id="nGY-wt-M3D" sceneMemberID="viewController">
+                <viewController title="HivNegativePartner" modalPresentationStyle="currentContext" id="nGY-wt-M3D" customClass="HivNegPartnerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpy-JP-Wfp">
-                        <rect key="frame" x="0.0" y="74" width="540" height="546"/>
+                        <rect key="frame" x="0.0" y="20" width="455" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What is the gender of the HIV negative partner?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="HjH-V4-thM">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="1pr-KA-KND"/>
-                                    <constraint firstAttribute="width" constant="370" id="kVb-zj-qNJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What is the gender of the HIV negative partner?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HjH-V4-thM">
+                                <rect key="frame" x="20" y="99" width="370" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="If male, is the HIV negative partner circumcised?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="GJ1-z7-BDG">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mrR-0r-9g4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="If male, is the HIV negative partner circumcised?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GJ1-z7-BDG">
+                                <rect key="frame" x="20" y="309" width="370" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Is the HIV negative  partner currently on PrEP?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-zc-yHA">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Mcm-YZ-o45"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Is the HIV negative  partner currently on PrEP?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j1w-zc-yHA">
+                                <rect key="frame" x="20" y="204" width="370" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Describe the HIV Negative Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-Nl-HPr">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="302" id="dNY-cg-R5E"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Describe the HIV Negative Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AXi-Nl-HPr">
+                                <rect key="frame" x="20" y="70" width="302" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQo-aD-pcE">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jwd-gK-tZy"/>
-                                    <constraint firstAttribute="width" constant="76" id="wNQ-b1-BbA"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TQo-aD-pcE">
+                                <rect key="frame" x="20" y="152" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Male">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnMaleTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="h0Z-oe-qcY"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8h-rl-1dZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G8h-rl-1dZ">
+                                <rect key="frame" x="155" y="152" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Female">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -439,11 +454,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnFemaleTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="NIf-mU-CKp"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbE-AU-1uC">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="XLC-I9-n1a"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tbE-AU-1uC">
+                                <rect key="frame" x="20" y="361" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Yes">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -452,11 +468,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnYesCircumcisedTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="Dh7-dW-t5Y"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbk-mx-MSa">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6s4-3k-2Gw"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wbk-mx-MSa">
+                                <rect key="frame" x="155" y="361" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="No">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -465,11 +482,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnNoCircumcisedTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="Cps-lF-MtK"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gaf-Ia-oYm">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jZ3-UU-XdW"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gaf-Ia-oYm">
+                                <rect key="frame" x="20" y="257" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Yes">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -478,8 +496,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnYesOnPrepTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="cNn-Q1-W15"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ1-3K-0tx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eQ1-3K-0tx">
+                                <rect key="frame" x="155" y="257" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="No">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -488,71 +510,85 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnNoOnPrepTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="htd-Z9-VA0"/>
+                                </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="1N4-3b-32u">
+                                <rect key="frame" x="0.0" y="0.0" width="455" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="HIV Negative Partner" id="qcp-00-mC3">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="cQ6-81-zta">
+                                            <connections>
+                                                <segue destination="ITn-Mq-Wgg" kind="unwind" identifier="doneHivNegPartner" unwindAction="doneHivNegPartner:" id="sJg-4y-bJU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5it-EW-0zf">
+                                <rect key="frame" x="378" y="111" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bti-ba-31k">
+                                <rect key="frame" x="378" y="320" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tMD-ag-Boq">
+                                <rect key="frame" x="378" y="216" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="TQo-aD-pcE" firstAttribute="top" secondItem="dpy-JP-Wfp" secondAttribute="top" constant="110" id="1Tp-ga-uxU"/>
-                            <constraint firstItem="tbE-AU-1uC" firstAttribute="top" secondItem="GJ1-z7-BDG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7Yj-Yg-qaW"/>
-                            <constraint firstItem="tbE-AU-1uC" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7gp-ig-beE"/>
-                            <constraint firstItem="GJ1-z7-BDG" firstAttribute="trailing" secondItem="HjH-V4-thM" secondAttribute="trailing" type="default" id="8Py-gt-zo9"/>
-                            <constraint firstItem="eQ1-3K-0tx" firstAttribute="top" secondItem="j1w-zc-yHA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9eF-e5-ikW"/>
-                            <constraint firstItem="eQ1-3K-0tx" firstAttribute="trailing" secondItem="wbk-mx-MSa" secondAttribute="trailing" type="default" id="A5S-6w-OPu"/>
-                            <constraint firstItem="j1w-zc-yHA" firstAttribute="trailing" secondItem="GJ1-z7-BDG" secondAttribute="trailing" type="default" id="Eq8-rS-UiZ"/>
-                            <constraint firstItem="TQo-aD-pcE" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IhW-lV-416"/>
-                            <constraint firstItem="eQ1-3K-0tx" firstAttribute="leading" secondItem="wbk-mx-MSa" secondAttribute="leading" type="default" id="K6r-3S-vlJ"/>
-                            <constraint firstItem="HjH-V4-thM" firstAttribute="top" secondItem="dpy-JP-Wfp" secondAttribute="top" constant="63" id="OXi-hi-G7b"/>
-                            <constraint firstItem="j1w-zc-yHA" firstAttribute="top" secondItem="dpy-JP-Wfp" secondAttribute="top" constant="277" id="Olj-bz-Sbg"/>
-                            <constraint firstItem="G8h-rl-1dZ" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="155" id="XkG-XH-EW5"/>
-                            <constraint firstItem="j1w-zc-yHA" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Yiw-03-HNI"/>
-                            <constraint firstItem="Gaf-Ia-oYm" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZYj-BK-Pav"/>
-                            <constraint firstItem="TQo-aD-pcE" firstAttribute="bottom" secondItem="G8h-rl-1dZ" secondAttribute="bottom" type="default" id="ejb-Kw-jYF"/>
-                            <constraint firstItem="AXi-Nl-HPr" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fpy-xd-ZGp"/>
-                            <constraint firstItem="Gaf-Ia-oYm" firstAttribute="trailing" secondItem="tbE-AU-1uC" secondAttribute="trailing" type="default" id="jGZ-XS-NXp"/>
-                            <constraint firstItem="wbk-mx-MSa" firstAttribute="leading" secondItem="G8h-rl-1dZ" secondAttribute="leading" type="default" id="k1G-NR-kPd"/>
-                            <constraint firstItem="GJ1-z7-BDG" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kMO-UE-aBz"/>
-                            <constraint firstItem="eQ1-3K-0tx" firstAttribute="bottom" secondItem="Gaf-Ia-oYm" secondAttribute="bottom" type="default" id="lES-Id-N2J"/>
-                            <constraint firstItem="wbk-mx-MSa" firstAttribute="trailing" secondItem="G8h-rl-1dZ" secondAttribute="trailing" type="default" id="oGE-EN-3cH"/>
-                            <constraint firstItem="GJ1-z7-BDG" firstAttribute="top" secondItem="dpy-JP-Wfp" secondAttribute="top" constant="172" id="oQj-1z-gO8"/>
-                            <constraint firstItem="HjH-V4-thM" firstAttribute="leading" secondItem="dpy-JP-Wfp" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rJl-qQ-l5r"/>
-                            <constraint firstItem="G8h-rl-1dZ" firstAttribute="top" secondItem="TQo-aD-pcE" secondAttribute="top" type="default" id="umZ-59-Rqb"/>
-                            <constraint firstItem="tbE-AU-1uC" firstAttribute="trailing" secondItem="TQo-aD-pcE" secondAttribute="trailing" type="default" id="vvY-fH-8Kj"/>
-                            <constraint firstItem="AXi-Nl-HPr" firstAttribute="top" secondItem="dpy-JP-Wfp" secondAttribute="top" constant="20" symbolic="YES" type="default" id="xTl-po-cyT"/>
-                            <constraint firstItem="Gaf-Ia-oYm" firstAttribute="top" secondItem="j1w-zc-yHA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="y3n-JS-Jjp"/>
-                            <constraint firstItem="wbk-mx-MSa" firstAttribute="top" secondItem="dpy-JP-Wfp" secondAttribute="top" constant="226" id="zgh-PK-u58"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="380" height="400"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationItem key="navigationItem" title="HIV Negative Partner" id="GIn-T0-nsP">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="ywb-Ri-Y0B"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnFemale" destination="G8h-rl-1dZ" id="E6c-AZ-A5g"/>
+                        <outlet property="btnMale" destination="TQo-aD-pcE" id="5Bm-I8-kgE"/>
+                        <outlet property="btnNoCircumcised" destination="wbk-mx-MSa" id="V1w-Mv-D00"/>
+                        <outlet property="btnNoOnPrep" destination="eQ1-3K-0tx" id="PoC-0K-cae"/>
+                        <outlet property="btnYesCircumcised" destination="tbE-AU-1uC" id="dKq-6i-NDB"/>
+                        <outlet property="btnYesOnPrep" destination="Gaf-Ia-oYm" id="cTw-fH-eSE"/>
+                        <outlet property="lblCircumcised" destination="Bti-ba-31k" id="DLU-Eu-3hJ"/>
+                        <outlet property="lblCircumcisedQuestion" destination="GJ1-z7-BDG" id="8Ya-5r-Em6"/>
+                        <outlet property="lblGender" destination="5it-EW-0zf" id="rhg-0J-EBa"/>
+                        <outlet property="lblOnPrep" destination="tMD-ag-Boq" id="3S4-1S-lhP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yz-MA-She" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ITn-Mq-Wgg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3080" y="-1988"/>
+            <point key="canvasLocation" x="2825" y="-2540"/>
         </scene>
-        <!--View Controller - HivPositivePartner-->
+        <!--Hiv Pos PartnerVC - HivPositivePartner-->
         <scene sceneID="VUa-aG-Cmr">
             <objects>
-                <viewController title="HivPositivePartner" id="Ep8-ha-4om" sceneMemberID="viewController">
+                <viewController title="HivPositivePartner" id="Ep8-ha-4om" customClass="HivPosPartnerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yMe-6E-huO">
-                        <rect key="frame" x="0.0" y="20" width="540" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Describe the HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-Xl-xqP">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="302" id="jmm-OH-g77"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Describe the HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vdk-Xl-xqP">
+                                <rect key="frame" x="20" y="66" width="302" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-71-KYL">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="FS0-qE-lMa"/>
-                                    <constraint firstAttribute="width" constant="76" id="ssA-wM-eXg"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dF7-71-KYL">
+                                <rect key="frame" x="20" y="147" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Male">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -561,8 +597,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnMaleTouchUp:" destination="Ep8-ha-4om" eventType="touchUpInside" id="TsK-X0-lbh"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUA-yb-9kf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zUA-yb-9kf">
+                                <rect key="frame" x="155" y="147" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Female">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -571,11 +611,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnFemaleTouchUp:" destination="Ep8-ha-4om" eventType="touchUpInside" id="p3K-Sq-BgP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-gc-FLb">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="sVS-Qc-Wsq"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jho-gc-FLb">
+                                <rect key="frame" x="20" y="252" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Yes">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -584,11 +625,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnYesOnArtTouchUp:" destination="Ep8-ha-4om" eventType="touchUpInside" id="gBu-rB-vKz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtY-Rn-w5n">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DD3-LS-Olf"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PtY-Rn-w5n">
+                                <rect key="frame" x="155" y="252" width="76" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="No">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -597,54 +639,68 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnNoOnArtTouchUp:" destination="Ep8-ha-4om" eventType="touchUpInside" id="DTV-8J-TAe"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What is the gender of the HIV positive partner?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="5Lt-us-Imh">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="OnR-8e-0cA"/>
-                                    <constraint firstAttribute="width" constant="370" id="Vp2-a9-el0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What is the gender of the HIV positive partner?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Lt-us-Imh">
+                                <rect key="frame" x="20" y="95" width="343" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Is the HIV positive partner current on ART?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="lGM-NG-0cQ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="kco-6r-xye"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Is the HIV positive partner current on ART?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lGM-NG-0cQ">
+                                <rect key="frame" x="20" y="199" width="321" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="nPI-yF-XKw">
+                                <rect key="frame" x="0.0" y="0.0" width="460" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="HIV Positive Partner" id="cVd-LK-otQ">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="kCr-YL-BY9">
+                                            <connections>
+                                                <segue destination="J8a-Je-GAx" kind="unwind" unwindAction="doneHivPosPartner:" id="5Uj-if-04z"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="srP-EA-R61">
+                                <rect key="frame" x="371" y="106" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M6P-lg-fQo">
+                                <rect key="frame" x="371" y="211" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PtY-Rn-w5n" firstAttribute="leading" secondItem="zUA-yb-9kf" secondAttribute="leading" type="default" id="0c2-AG-uSY"/>
-                            <constraint firstItem="Jho-gc-FLb" firstAttribute="leading" secondItem="yMe-6E-huO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3vq-II-zTN"/>
-                            <constraint firstItem="lGM-NG-0cQ" firstAttribute="top" secondItem="yMe-6E-huO" secondAttribute="top" constant="173" id="4IZ-6M-61K"/>
-                            <constraint firstItem="lGM-NG-0cQ" firstAttribute="trailing" secondItem="5Lt-us-Imh" secondAttribute="trailing" type="default" id="CfY-ww-i5P"/>
-                            <constraint firstItem="vdk-Xl-xqP" firstAttribute="leading" secondItem="yMe-6E-huO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="HSp-As-dMY"/>
-                            <constraint firstItem="PtY-Rn-w5n" firstAttribute="trailing" secondItem="zUA-yb-9kf" secondAttribute="trailing" type="default" id="O1c-4W-Q2B"/>
-                            <constraint firstItem="zUA-yb-9kf" firstAttribute="leading" secondItem="yMe-6E-huO" secondAttribute="leading" constant="155" id="PsQ-4L-J3D"/>
-                            <constraint firstItem="Jho-gc-FLb" firstAttribute="top" secondItem="yMe-6E-huO" secondAttribute="top" constant="224" id="Rlb-Gj-REu"/>
-                            <constraint firstItem="5Lt-us-Imh" firstAttribute="leading" secondItem="yMe-6E-huO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Stx-PK-z5p"/>
-                            <constraint firstItem="zUA-yb-9kf" firstAttribute="top" secondItem="5Lt-us-Imh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VGU-GA-dBr"/>
-                            <constraint firstItem="5Lt-us-Imh" firstAttribute="top" secondItem="yMe-6E-huO" secondAttribute="top" constant="58" id="XyG-cX-217"/>
-                            <constraint firstItem="dF7-71-KYL" firstAttribute="top" secondItem="5Lt-us-Imh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="b8f-Vv-Byb"/>
-                            <constraint firstItem="vdk-Xl-xqP" firstAttribute="top" secondItem="yMe-6E-huO" secondAttribute="top" constant="20" symbolic="YES" type="default" id="bJi-f2-kaf"/>
-                            <constraint firstItem="lGM-NG-0cQ" firstAttribute="leading" secondItem="yMe-6E-huO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fPh-4t-O4Y"/>
-                            <constraint firstItem="Jho-gc-FLb" firstAttribute="trailing" secondItem="dF7-71-KYL" secondAttribute="trailing" type="default" id="tu3-at-aAL"/>
-                            <constraint firstItem="PtY-Rn-w5n" firstAttribute="top" secondItem="lGM-NG-0cQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="w7P-hp-vqw"/>
-                            <constraint firstItem="dF7-71-KYL" firstAttribute="bottom" secondItem="zUA-yb-9kf" secondAttribute="bottom" type="default" id="yx8-Pp-LGN"/>
-                            <constraint firstItem="dF7-71-KYL" firstAttribute="leading" secondItem="yMe-6E-huO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zkL-Dx-yBy"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="380" height="320"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="btnFemale" destination="zUA-yb-9kf" id="Pk6-6s-XRM"/>
+                        <outlet property="btnMale" destination="dF7-71-KYL" id="GmJ-Yr-kWf"/>
+                        <outlet property="btnNoOnArt" destination="PtY-Rn-w5n" id="Ms6-fK-MYt"/>
+                        <outlet property="btnYesOnArt" destination="Jho-gc-FLb" id="y6Z-nh-4jY"/>
+                        <outlet property="lblGender" destination="srP-EA-R61" id="lzw-92-M3I"/>
+                        <outlet property="lblOnArt" destination="M6P-lg-fQo" id="a90-AX-mRi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elv-Ng-zAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="J8a-Je-GAx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3056" y="-1228"/>
+            <point key="canvasLocation" x="2832" y="-1940"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZQy-h6-mQE">
@@ -660,7 +716,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhk-U1-rrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3009" y="693"/>
+            <point key="canvasLocation" x="2937" y="1592"/>
+        </scene>
+        <!--Oral Sex To PosVC-->
+        <scene sceneID="E7l-u0-jfR">
+            <objects>
+                <viewController id="YK5-Rz-9HX" customClass="OralSexToPosVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hMD-bP-6Hs">
+                        <rect key="frame" x="0.0" y="20" width="500" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="AvM-Jz-Tnx">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Oral Sex To HIV Positive Partner" id="Nby-1z-79a">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="4UJ-sC-Gka">
+                                            <connections>
+                                                <segue destination="2nf-bR-MKu" kind="unwind" unwindAction="returnActionForSegue:" id="pNU-FR-oRV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="op7-X2-Uiq">
+                                <rect key="frame" x="68" y="221" width="364" height="23"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="tC9-eR-Ux2">
+                                <rect key="frame" x="68" y="108" width="364" height="23"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PHB-fs-d50">
+                                <rect key="frame" x="115" y="76" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tQT-ef-Apb">
+                                <rect key="frame" x="115" y="189" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qii-zT-Puc">
+                                <rect key="frame" x="70" y="135" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2iG-g6-EFY">
+                                <rect key="frame" x="388" y="135" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iiV-QM-fee">
+                                <rect key="frame" x="70" y="248" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T1J-DG-jor">
+                                <rect key="frame" x="379" y="248" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GpN-Ic-62W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2nf-bR-MKu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2738" y="-135"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wtw-UU-4Vc">
@@ -676,56 +809,392 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cu-TP-Fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="157"/>
+            <point key="canvasLocation" x="2937" y="1089"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ll1-bJ-NWE">
+        <!--Receptive Anal SexVC-->
+        <scene sceneID="0NU-hd-8gm">
             <objects>
-                <viewController id="rk6-ZR-85j" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aWS-Z7-jHg">
+                <viewController id="XBg-nF-gKj" customClass="ReceptiveAnalSexVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rlE-NG-qlg">
                         <rect key="frame" x="0.0" y="20" width="400" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZFJ-cR-nXA"/>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-ag-Orb"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqC-ha-VDq">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Coi-2h-VIY"/>
-                                    <constraint firstAttribute="width" constant="270" id="zSI-H7-die"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="q0W-C2-66j">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Receptive Anal Sex" id="7EL-pH-44e">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="duJ-bb-iIn">
+                                            <connections>
+                                                <segue destination="wgH-G7-66H" kind="unwind" unwindAction="returnActionForSegue:" id="W8T-Yb-Lhm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="Svv-Ix-3ZU">
+                                <rect key="frame" x="18" y="221" width="364" height="23"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="QlP-NL-e9d">
+                                <rect key="frame" x="18" y="108" width="364" height="23"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="df1-wj-qW8">
+                                <rect key="frame" x="65" y="77" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg6-Df-Opb">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="uK3-RW-dfA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VDz-KP-45y">
+                                <rect key="frame" x="65" y="190" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Gh-2b-bna">
+                                <rect key="frame" x="20" y="136" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tU2-hX-Gaa">
+                                <rect key="frame" x="338" y="136" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2wT-m6-VNl">
+                                <rect key="frame" x="20" y="249" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cB0-gG-NsH">
+                                <rect key="frame" x="329" y="249" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="a4c-ag-Orb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9NJ-j1-DNw"/>
-                            <constraint firstItem="a4c-ag-Orb" firstAttribute="top" secondItem="aWS-Z7-jHg" secondAttribute="top" constant="86" id="EX4-lN-8J7"/>
-                            <constraint firstAttribute="bottom" secondItem="ZFJ-cR-nXA" secondAttribute="bottom" constant="81" id="L4V-Ce-wnY"/>
-                            <constraint firstItem="Fg6-Df-Opb" firstAttribute="top" secondItem="aWS-Z7-jHg" secondAttribute="top" constant="148" id="ZLK-0c-ZfX"/>
-                            <constraint firstItem="ZFJ-cR-nXA" firstAttribute="leading" secondItem="aWS-Z7-jHg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="c2d-Rz-6Xo"/>
-                            <constraint firstItem="Fg6-Df-Opb" firstAttribute="trailing" secondItem="eqC-ha-VDq" secondAttribute="trailing" type="default" id="kt2-D4-Yj1"/>
-                            <constraint firstItem="a4c-ag-Orb" firstAttribute="leading" secondItem="aWS-Z7-jHg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nk5-vR-Qmb"/>
-                            <constraint firstItem="eqC-ha-VDq" firstAttribute="top" secondItem="aWS-Z7-jHg" secondAttribute="top" constant="47" id="qje-JK-jMa"/>
-                            <constraint firstAttribute="trailing" secondItem="ZFJ-cR-nXA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rac-fw-Wgo"/>
-                            <constraint firstItem="a4c-ag-Orb" firstAttribute="centerX" secondItem="eqC-ha-VDq" secondAttribute="centerX" type="default" id="su7-31-MnZ"/>
-                            <constraint firstItem="Fg6-Df-Opb" firstAttribute="leading" secondItem="eqC-ha-VDq" secondAttribute="leading" type="default" id="xPx-PO-xLS"/>
-                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ca-4p-19F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wgH-G7-66H" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3323" y="-1007"/>
+        </scene>
+        <!--Insertive AnalVC-->
+        <scene sceneID="eiN-Tr-9o9">
+            <objects>
+                <viewController id="EdE-dw-0Tw" customClass="InsertiveAnalVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDS-xI-Sup">
+                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="AHm-Gn-hE9">
+                                <rect key="frame" x="18" y="232" width="364" height="23"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="6qg-ml-BW9">
+                                <rect key="frame" x="18" y="119" width="364" height="23"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VdR-bd-2Qj">
+                                <rect key="frame" x="65" y="87" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mwf-Ch-04W">
+                                <rect key="frame" x="65" y="200" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dVg-2v-3sm">
+                                <rect key="frame" x="20" y="146" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ip5-HK-oai">
+                                <rect key="frame" x="338" y="146" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SoL-5u-Zar">
+                                <rect key="frame" x="20" y="259" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hj-AE-I0y">
+                                <rect key="frame" x="329" y="259" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="h9V-Us-d6o">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Insertive Anal Sex" id="gAh-rp-Wy7">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="e51-22-Kuw">
+                                            <connections>
+                                                <segue destination="WXb-3c-5RA" kind="unwind" unwindAction="returnActionForSegue:" id="OL9-Ae-BtU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kb6-1m-u1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WXb-3c-5RA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3323" y="-578"/>
+        </scene>
+        <!--Insertive Vag SexVC-->
+        <scene sceneID="Ll1-bJ-NWE">
+            <objects>
+                <viewController id="rk6-ZR-85j" customClass="InsertiveVagSexVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWS-Z7-jHg">
+                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="ZFJ-cR-nXA">
+                                <rect key="frame" x="18" y="231" width="364" height="23"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="a4c-ag-Orb">
+                                <rect key="frame" x="18" y="118" width="364" height="23"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eqC-ha-VDq">
+                                <rect key="frame" x="65" y="89" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fg6-Df-Opb">
+                                <rect key="frame" x="65" y="202" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="SGo-5P-d1q">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Insertive Vaginal Sex" id="QGX-Nr-gIS">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="O9N-2Z-f0C">
+                                            <connections>
+                                                <segue destination="kSO-kp-g3f" kind="unwind" unwindAction="returnActionForSegue:" id="4QZ-1O-Em0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sKf-zf-Vud">
+                                <rect key="frame" x="20" y="148" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5aw-on-swT">
+                                <rect key="frame" x="338" y="148" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kSq-fc-OYM">
+                                <rect key="frame" x="20" y="261" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Qj-9x-CgO">
+                                <rect key="frame" x="329" y="261" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGg-j3-Dji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kSO-kp-g3f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2918" y="-411"/>
+            <point key="canvasLocation" x="2838" y="-1435"/>
+        </scene>
+        <!--Receptive Vag SexVC-->
+        <scene sceneID="gfW-b4-uMS">
+            <objects>
+                <viewController id="8Ba-yl-7kb" customClass="ReceptiveVagSexVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qIm-1d-YmG">
+                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="8P5-v4-UG7">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Receptive Vaginal Sex" id="OD0-Rd-GsF">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="o8x-38-6pm">
+                                            <connections>
+                                                <segue destination="gxx-oL-08n" kind="unwind" unwindAction="returnActionForSegue:" id="q7s-3y-oms"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="kJg-q9-hZl">
+                                <rect key="frame" x="18" y="230" width="364" height="23"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="J23-pr-Iz3">
+                                <rect key="frame" x="18" y="117" width="364" height="23"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xkb-lX-sjc">
+                                <rect key="frame" x="65" y="87" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X9k-fn-hEt">
+                                <rect key="frame" x="65" y="200" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ipq-2D-wb0">
+                                <rect key="frame" x="20" y="146" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GfO-Le-EZx">
+                                <rect key="frame" x="338" y="146" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n0b-a6-0Q6">
+                                <rect key="frame" x="20" y="259" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tjv-YJ-hdQ">
+                                <rect key="frame" x="329" y="259" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Roe-5a-40k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gxx-oL-08n" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="-1007"/>
+        </scene>
+        <!--Oral Sex From PosVC-->
+        <scene sceneID="g3E-FS-AU2">
+            <objects>
+                <viewController id="coM-NT-GhM" customClass="OralSexFromPosVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kNo-Ds-qsT">
+                        <rect key="frame" x="0.0" y="20" width="500" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="ILK-ft-oK6">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Oral Sex From HIV Positive Partner" id="wd6-x9-chy">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="4GC-hX-lUQ">
+                                            <connections>
+                                                <segue destination="T8o-iC-voK" kind="unwind" unwindAction="returnActionForSegue:" id="hbg-Yu-4HK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="V6t-YM-WSH">
+                                <rect key="frame" x="68" y="218" width="364" height="23"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="zPI-bk-dhv">
+                                <rect key="frame" x="68" y="105" width="364" height="23"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cgQ-r2-0Nq">
+                                <rect key="frame" x="115" y="74" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cYz-k0-1eG">
+                                <rect key="frame" x="115" y="187" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bdw-RI-vUu">
+                                <rect key="frame" x="70" y="133" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oVC-lA-VRw">
+                                <rect key="frame" x="388" y="133" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a1J-b0-II4">
+                                <rect key="frame" x="70" y="246" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nYG-gM-iN8">
+                                <rect key="frame" x="379" y="246" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoJ-6Z-DYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T8o-iC-voK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2750" y="-578"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y4D-Ep-pDr">
@@ -754,11 +1223,74 @@
         <image name="second.png" width="30" height="30"/>
     </resources>
     <classes>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+        <class className="HivNegPartnerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HivNegPartnerVC.h"/>
+            <relationships>
+                <relationship kind="action" name="btnFemaleTouchUp:"/>
+                <relationship kind="action" name="btnMaleTouchUp:"/>
+                <relationship kind="action" name="btnNoCircumcisedTouchUp:"/>
+                <relationship kind="action" name="btnNoOnPrepTouchUp:"/>
+                <relationship kind="action" name="btnYesCircumcisedTouchUp:"/>
+                <relationship kind="action" name="btnYesOnPrepTouchUp:"/>
+                <relationship kind="outlet" name="btnFemale" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMale" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNoCircumcised" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNoOnPrep" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnYesCircumcised" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnYesOnPrep" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lblCircumcised" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCircumcisedQuestion" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblGender" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblOnPrep" candidateClass="UILabel"/>
+            </relationships>
         </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        <class className="HivPosPartnerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HivPosPartnerVC.h"/>
+            <relationships>
+                <relationship kind="action" name="btnFemaleTouchUp:"/>
+                <relationship kind="action" name="btnMaleTouchUp:"/>
+                <relationship kind="action" name="btnNoOnArtTouchUp:"/>
+                <relationship kind="action" name="btnYesOnArtTouchUp:"/>
+                <relationship kind="outlet" name="btnFemale" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMale" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNoOnArt" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnYesOnArt" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lblGender" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblOnArt" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="InsertiveAnalVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveAnalVC.h"/>
+        </class>
+        <class className="InsertiveVagSexVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveVagSexVC.h"/>
+        </class>
+        <class className="OralSexFromPosVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexFromPosVC.h"/>
+        </class>
+        <class className="OralSexToPosVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexToPosVC.h"/>
+        </class>
+        <class className="ReceptiveVagSexVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveVagSexVC.h"/>
+        </class>
+        <class className="RiskInputVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskInputVC.h"/>
+            <relationships>
+                <relationship kind="action" name="doneHivNegPartner:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneHivPosPartner:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="lblHivNegPartner" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblHivPosPartner" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RiskViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnActionForSegue:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

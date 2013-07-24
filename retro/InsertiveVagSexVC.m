@@ -1,23 +1,25 @@
 //
-//  FirstViewController.m
+//  InsertiveVagSexVC.m
 //  retro
 //
-//  Created by jtq6 on 7/2/13.
+//  Created by jtq6 on 7/22/13.
 //  Copyright (c) 2013 jtq6. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "InsertiveVagSexVC.h"
 
-@interface FirstViewController ()
+@interface InsertiveVagSexVC ()
 
 @end
 
-@implementation FirstViewController
+@implementation InsertiveVagSexVC
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view.
+    NSLog(@"InsertiveVagSexVC viewDidLoad().");
 }
 
 - (void)didReceiveMemoryWarning

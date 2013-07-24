@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A63CB43A17A02554007438C7 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A63CB43817A02554007438C7 /* AppManager.m */; };
+		A640FC84179D7F390040540B /* HivPosPartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A640FC83179D7F390040540B /* HivPosPartnerVC.m */; };
+		A6953CA41799975A009C503E /* HivNegPartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6953CA31799975A009C503E /* HivNegPartnerVC.m */; };
+		A6A37456178B8A3100622BE8 /* PaperFetch2_x72.png in Resources */ = {isa = PBXBuildFile; fileRef = A6A37455178B8A3100622BE8 /* PaperFetch2_x72.png */; };
+		A6A37458178B8A3900622BE8 /* PaperFetch2_x144.png in Resources */ = {isa = PBXBuildFile; fileRef = A6A37457178B8A3900622BE8 /* PaperFetch2_x144.png */; };
+		A6C88E7D179F1BA3005C7DDA /* HivNegCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C88E7C179F1BA3005C7DDA /* HivNegCell.m */; };
 		A6D2FD4C178358DA00C246D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D2FD4B178358DA00C246D8 /* UIKit.framework */; };
 		A6D2FD4E178358DA00C246D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D2FD4D178358DA00C246D8 /* Foundation.framework */; };
 		A6D2FD50178358DA00C246D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D2FD4F178358DA00C246D8 /* CoreGraphics.framework */; };
@@ -17,15 +23,38 @@
 		A6D2FD60178358DA00C246D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD5F178358DA00C246D8 /* Default@2x.png */; };
 		A6D2FD62178358DA00C246D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD61178358DA00C246D8 /* Default-568h@2x.png */; };
 		A6D2FD65178358DA00C246D8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD63178358DA00C246D8 /* MainStoryboard.storyboard */; };
-		A6D2FD68178358DA00C246D8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2FD67178358DA00C246D8 /* FirstViewController.m */; };
+		A6D2FD68178358DA00C246D8 /* RiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2FD67178358DA00C246D8 /* RiskViewController.m */; };
 		A6D2FD6A178358DA00C246D8 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD69178358DA00C246D8 /* first.png */; };
 		A6D2FD6C178358DA00C246D8 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD6B178358DA00C246D8 /* first@2x.png */; };
 		A6D2FD6F178358DA00C246D8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2FD6E178358DA00C246D8 /* SecondViewController.m */; };
 		A6D2FD71178358DA00C246D8 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD70178358DA00C246D8 /* second.png */; };
 		A6D2FD73178358DA00C246D8 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2FD72178358DA00C246D8 /* second@2x.png */; };
+		A6D86BBA17846FC200A13E8F /* HivPositivePartner.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D86BB917846FC200A13E8F /* HivPositivePartner.m */; };
+		A6D86BBD1784706600A13E8F /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D86BBC1784706600A13E8F /* Partner.m */; };
+		A6D86BC01784737700A13E8F /* HivNegativePartner.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D86BBF1784737700A13E8F /* HivNegativePartner.m */; };
+		A6D86BC3178482E800A13E8F /* SexualActStats.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D86BC2178482E800A13E8F /* SexualActStats.m */; };
+		A6D86BC91784840D00A13E8F /* SexualActStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D86BC81784840D00A13E8F /* SexualActStat.m */; };
+		A6FAF61E179E23A600656339 /* RiskInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF61D179E23A600656339 /* RiskInputVC.m */; };
+		A6FAF621179E364200656339 /* InsertiveVagSexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF620179E364200656339 /* InsertiveVagSexVC.m */; };
+		A6FAF624179E409700656339 /* ReceptiveVagSexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF623179E409700656339 /* ReceptiveVagSexVC.m */; };
+		A6FAF627179E425700656339 /* OralSexFromPosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF626179E425600656339 /* OralSexFromPosVC.m */; };
+		A6FAF62A179E458D00656339 /* OralSexToPosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF629179E458D00656339 /* OralSexToPosVC.m */; };
+		A6FAF62D179E494100656339 /* InsertiveAnalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF62C179E494100656339 /* InsertiveAnalVC.m */; };
+		A6FAF630179E497F00656339 /* ReceptiveAnalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FAF62F179E497F00656339 /* ReceptiveAnalVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A63CB43817A02554007438C7 /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		A63CB43917A02554007438C7 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		A63CB43B17A025EC007438C7 /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
+		A640FC82179D7F390040540B /* HivPosPartnerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HivPosPartnerVC.h; sourceTree = "<group>"; };
+		A640FC83179D7F390040540B /* HivPosPartnerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HivPosPartnerVC.m; sourceTree = "<group>"; };
+		A6953CA21799975A009C503E /* HivNegPartnerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HivNegPartnerVC.h; sourceTree = "<group>"; };
+		A6953CA31799975A009C503E /* HivNegPartnerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HivNegPartnerVC.m; sourceTree = "<group>"; };
+		A6A37455178B8A3100622BE8 /* PaperFetch2_x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperFetch2_x72.png; sourceTree = "<group>"; };
+		A6A37457178B8A3900622BE8 /* PaperFetch2_x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperFetch2_x144.png; sourceTree = "<group>"; };
+		A6C88E7B179F1BA3005C7DDA /* HivNegCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HivNegCell.h; sourceTree = "<group>"; };
+		A6C88E7C179F1BA3005C7DDA /* HivNegCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HivNegCell.m; sourceTree = "<group>"; };
 		A6D2FD48178358DA00C246D8 /* retro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = retro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D2FD4B178358DA00C246D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A6D2FD4D178358DA00C246D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -40,14 +69,38 @@
 		A6D2FD5F178358DA00C246D8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A6D2FD61178358DA00C246D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A6D2FD64178358DA00C246D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		A6D2FD66178358DA00C246D8 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A6D2FD67178358DA00C246D8 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A6D2FD66178358DA00C246D8 /* RiskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RiskViewController.h; sourceTree = "<group>"; };
+		A6D2FD67178358DA00C246D8 /* RiskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RiskViewController.m; sourceTree = "<group>"; };
 		A6D2FD69178358DA00C246D8 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		A6D2FD6B178358DA00C246D8 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		A6D2FD6D178358DA00C246D8 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		A6D2FD6E178358DA00C246D8 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		A6D2FD70178358DA00C246D8 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		A6D2FD72178358DA00C246D8 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		A6D86BB817846FC200A13E8F /* HivPositivePartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HivPositivePartner.h; sourceTree = "<group>"; };
+		A6D86BB917846FC200A13E8F /* HivPositivePartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HivPositivePartner.m; sourceTree = "<group>"; };
+		A6D86BBB1784706600A13E8F /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
+		A6D86BBC1784706600A13E8F /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
+		A6D86BBE1784737700A13E8F /* HivNegativePartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HivNegativePartner.h; sourceTree = "<group>"; };
+		A6D86BBF1784737700A13E8F /* HivNegativePartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HivNegativePartner.m; sourceTree = "<group>"; };
+		A6D86BC1178482E800A13E8F /* SexualActStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexualActStats.h; sourceTree = "<group>"; };
+		A6D86BC2178482E800A13E8F /* SexualActStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexualActStats.m; sourceTree = "<group>"; };
+		A6D86BC71784840D00A13E8F /* SexualActStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexualActStat.h; sourceTree = "<group>"; };
+		A6D86BC81784840D00A13E8F /* SexualActStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexualActStat.m; sourceTree = "<group>"; };
+		A6FAF61C179E23A600656339 /* RiskInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskInputVC.h; sourceTree = "<group>"; };
+		A6FAF61D179E23A600656339 /* RiskInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskInputVC.m; sourceTree = "<group>"; };
+		A6FAF61F179E364200656339 /* InsertiveVagSexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertiveVagSexVC.h; sourceTree = "<group>"; };
+		A6FAF620179E364200656339 /* InsertiveVagSexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertiveVagSexVC.m; sourceTree = "<group>"; };
+		A6FAF622179E409700656339 /* ReceptiveVagSexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceptiveVagSexVC.h; sourceTree = "<group>"; };
+		A6FAF623179E409700656339 /* ReceptiveVagSexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceptiveVagSexVC.m; sourceTree = "<group>"; };
+		A6FAF625179E425600656339 /* OralSexFromPosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OralSexFromPosVC.h; sourceTree = "<group>"; };
+		A6FAF626179E425600656339 /* OralSexFromPosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OralSexFromPosVC.m; sourceTree = "<group>"; };
+		A6FAF628179E458D00656339 /* OralSexToPosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OralSexToPosVC.h; sourceTree = "<group>"; };
+		A6FAF629179E458D00656339 /* OralSexToPosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OralSexToPosVC.m; sourceTree = "<group>"; };
+		A6FAF62B179E494100656339 /* InsertiveAnalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertiveAnalVC.h; sourceTree = "<group>"; };
+		A6FAF62C179E494100656339 /* InsertiveAnalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertiveAnalVC.m; sourceTree = "<group>"; };
+		A6FAF62E179E497F00656339 /* ReceptiveAnalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceptiveAnalVC.h; sourceTree = "<group>"; };
+		A6FAF62F179E497F00656339 /* ReceptiveAnalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceptiveAnalVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +120,8 @@
 		A6D2FD3F178358DA00C246D8 = {
 			isa = PBXGroup;
 			children = (
+				A6A37457178B8A3900622BE8 /* PaperFetch2_x144.png */,
+				A6A37455178B8A3100622BE8 /* PaperFetch2_x72.png */,
 				A6D2FD51178358DA00C246D8 /* retro */,
 				A6D2FD4A178358DA00C246D8 /* Frameworks */,
 				A6D2FD49178358DA00C246D8 /* Products */,
@@ -94,11 +149,14 @@
 		A6D2FD51178358DA00C246D8 /* retro */ = {
 			isa = PBXGroup;
 			children = (
+				A63CB43B17A025EC007438C7 /* Debug.h */,
+				A63CB43817A02554007438C7 /* AppManager.m */,
+				A63CB43917A02554007438C7 /* AppManager.h */,
 				A6D2FD5A178358DA00C246D8 /* AppDelegate.h */,
 				A6D2FD5B178358DA00C246D8 /* AppDelegate.m */,
 				A6D2FD63178358DA00C246D8 /* MainStoryboard.storyboard */,
-				A6D2FD66178358DA00C246D8 /* FirstViewController.h */,
-				A6D2FD67178358DA00C246D8 /* FirstViewController.m */,
+				A6D2FD66178358DA00C246D8 /* RiskViewController.h */,
+				A6D2FD67178358DA00C246D8 /* RiskViewController.m */,
 				A6D2FD69178358DA00C246D8 /* first.png */,
 				A6D2FD6B178358DA00C246D8 /* first@2x.png */,
 				A6D2FD6D178358DA00C246D8 /* SecondViewController.h */,
@@ -106,6 +164,36 @@
 				A6D2FD70178358DA00C246D8 /* second.png */,
 				A6D2FD72178358DA00C246D8 /* second@2x.png */,
 				A6D2FD52178358DA00C246D8 /* Supporting Files */,
+				A6D86BB817846FC200A13E8F /* HivPositivePartner.h */,
+				A6D86BB917846FC200A13E8F /* HivPositivePartner.m */,
+				A6D86BBB1784706600A13E8F /* Partner.h */,
+				A6D86BBC1784706600A13E8F /* Partner.m */,
+				A6D86BBE1784737700A13E8F /* HivNegativePartner.h */,
+				A6D86BBF1784737700A13E8F /* HivNegativePartner.m */,
+				A6D86BC1178482E800A13E8F /* SexualActStats.h */,
+				A6D86BC2178482E800A13E8F /* SexualActStats.m */,
+				A6D86BC71784840D00A13E8F /* SexualActStat.h */,
+				A6D86BC81784840D00A13E8F /* SexualActStat.m */,
+				A6953CA21799975A009C503E /* HivNegPartnerVC.h */,
+				A6953CA31799975A009C503E /* HivNegPartnerVC.m */,
+				A640FC82179D7F390040540B /* HivPosPartnerVC.h */,
+				A640FC83179D7F390040540B /* HivPosPartnerVC.m */,
+				A6FAF61C179E23A600656339 /* RiskInputVC.h */,
+				A6FAF61D179E23A600656339 /* RiskInputVC.m */,
+				A6FAF61F179E364200656339 /* InsertiveVagSexVC.h */,
+				A6FAF620179E364200656339 /* InsertiveVagSexVC.m */,
+				A6FAF622179E409700656339 /* ReceptiveVagSexVC.h */,
+				A6FAF623179E409700656339 /* ReceptiveVagSexVC.m */,
+				A6FAF625179E425600656339 /* OralSexFromPosVC.h */,
+				A6FAF626179E425600656339 /* OralSexFromPosVC.m */,
+				A6FAF628179E458D00656339 /* OralSexToPosVC.h */,
+				A6FAF629179E458D00656339 /* OralSexToPosVC.m */,
+				A6FAF62B179E494100656339 /* InsertiveAnalVC.h */,
+				A6FAF62C179E494100656339 /* InsertiveAnalVC.m */,
+				A6FAF62E179E497F00656339 /* ReceptiveAnalVC.h */,
+				A6FAF62F179E497F00656339 /* ReceptiveAnalVC.m */,
+				A6C88E7B179F1BA3005C7DDA /* HivNegCell.h */,
+				A6C88E7C179F1BA3005C7DDA /* HivNegCell.m */,
 			);
 			path = retro;
 			sourceTree = "<group>";
@@ -184,6 +272,8 @@
 				A6D2FD6C178358DA00C246D8 /* first@2x.png in Resources */,
 				A6D2FD71178358DA00C246D8 /* second.png in Resources */,
 				A6D2FD73178358DA00C246D8 /* second@2x.png in Resources */,
+				A6A37456178B8A3100622BE8 /* PaperFetch2_x72.png in Resources */,
+				A6A37458178B8A3900622BE8 /* PaperFetch2_x144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,8 +286,24 @@
 			files = (
 				A6D2FD58178358DA00C246D8 /* main.m in Sources */,
 				A6D2FD5C178358DA00C246D8 /* AppDelegate.m in Sources */,
-				A6D2FD68178358DA00C246D8 /* FirstViewController.m in Sources */,
+				A6D2FD68178358DA00C246D8 /* RiskViewController.m in Sources */,
 				A6D2FD6F178358DA00C246D8 /* SecondViewController.m in Sources */,
+				A6D86BBA17846FC200A13E8F /* HivPositivePartner.m in Sources */,
+				A6D86BBD1784706600A13E8F /* Partner.m in Sources */,
+				A6D86BC01784737700A13E8F /* HivNegativePartner.m in Sources */,
+				A6D86BC3178482E800A13E8F /* SexualActStats.m in Sources */,
+				A6D86BC91784840D00A13E8F /* SexualActStat.m in Sources */,
+				A6953CA41799975A009C503E /* HivNegPartnerVC.m in Sources */,
+				A640FC84179D7F390040540B /* HivPosPartnerVC.m in Sources */,
+				A6FAF61E179E23A600656339 /* RiskInputVC.m in Sources */,
+				A6FAF621179E364200656339 /* InsertiveVagSexVC.m in Sources */,
+				A6FAF624179E409700656339 /* ReceptiveVagSexVC.m in Sources */,
+				A6FAF627179E425700656339 /* OralSexFromPosVC.m in Sources */,
+				A6FAF62A179E458D00656339 /* OralSexToPosVC.m in Sources */,
+				A6FAF62D179E494100656339 /* InsertiveAnalVC.m in Sources */,
+				A6FAF630179E497F00656339 /* ReceptiveAnalVC.m in Sources */,
+				A6C88E7D179F1BA3005C7DDA /* HivNegCell.m in Sources */,
+				A63CB43A17A02554007438C7 /* AppManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
