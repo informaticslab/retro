@@ -24,6 +24,12 @@
 	// Do any additional setup after loading the view.
     self.lblHivNegPartner.text = @"Unspecified";
     self.lblHivPosPartner.text = @"Unspecified";
+    self.lblReceptiveAnal.text = @"Unspecified";
+    self.lblInsertiveAnal.text = @"Unspecified";
+    self.lblOralSexFrom.text = @"Unspecified";
+    self.lblOralSexTo.text = @"Unspecified";
+    self.lblInsertiveVagSex.text = @"Unspecified";
+    self.lblReceptiveVagSex.text = @"Unspecified";
 }
 
 - (void)didReceiveMemoryWarning
