@@ -29,7 +29,7 @@
     
 
     NSLog(@"prepareForSegue: %@", segue.identifier);
-    if([segue.identifier isEqualToString:@"loadRiskInputSegue"])
+    if([segue.identifier isEqualToString:@"embedRiskInputSegue"])
     {
         RiskInputVC *destVC = segue.destinationViewController;
         destVC.stats = self.stats;

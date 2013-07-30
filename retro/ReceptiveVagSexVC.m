@@ -18,6 +18,7 @@ AppManager *appMgr;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
     NSLog(@"ReceptiveVagSexVC viewDidLoad().");
     appMgr = [AppManager singletonAppManager];

@@ -23,4 +23,7 @@
 @property HivNegativePartner *hivNegPartner;
 @property HivPositivePartner *hivPosPartner;
 
+-(void)updateStats;
+
+
 @end

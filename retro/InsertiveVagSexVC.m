@@ -32,8 +32,13 @@ AppManager *appMgr;
 
 - (IBAction)sliderActsPerMonthValueChange:(id)sender {
     self.stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+    [self.stats updateStats];
+    NSLog(@"Insertive vaginal sex times per month set to %d", self.stat.timesPerMonth);
+    
 }
+     
 - (IBAction)sliderCondomUsageValueChange:(id)sender {
+    [self.stats updateStats];
     self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
 }
 

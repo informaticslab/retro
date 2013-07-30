@@ -56,6 +56,7 @@
     
         InsertiveVagSexVC *insertiveVagSexVC = segue.destinationViewController;
         insertiveVagSexVC.stat = self.stats.insertiveVaginal;
+        insertiveVagSexVC.stats = self.stats;
     
     } 
     else if([segue.identifier isEqualToString:@"receptiveVaginalSexSegue"]){
@@ -88,6 +89,8 @@
         oralSexFromPosVC.stat = self.stats.receiveOral;
         
     }
+    
+    [self.stats updateStats];
 }
 
 - (IBAction)doneHivNegPartner:(UIStoryboardSegue *)segue

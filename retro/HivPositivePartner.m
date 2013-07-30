@@ -31,9 +31,7 @@
     if (self.isOnArt)
         [summary appendString:@", on ART"];
     
-    
     return [NSString stringWithString:summary];
-    
     
 }
 
