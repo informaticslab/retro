@@ -14,7 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -27,7 +26,7 @@
     int view_size_x = 512;
     int view_size_y = 242;
     float startDeg = 0;
-    float endDeg = 45;
+    float endDeg = 0;
     
     // drawing point starts from middle of view
     int x = view_size_x / 2;
@@ -38,22 +37,53 @@
     CGContextSetRGBStrokeColor(ctx, 1.0, 1.0, 1.0, 1.0);
     CGContextSetLineWidth(ctx, 2.0);
     
-    startDeg = 0;
+    endDeg = _stats.ivPieSlice;
     
-    CGContextSetRGBFillColor(ctx, 1.0, 0.0, 0.0, 1.0);
+    CGContextSetRGBFillColor(ctx, 32.0/255.0, 64.0/255.0, 154/255.0, 1.0);
     CGContextMoveToPoint(ctx, x, y);
     CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
     CGContextClosePath(ctx);
     CGContextFillPath(ctx);
     
-    startDeg= 45;
-    endDeg = 360;
-    CGContextSetRGBFillColor(ctx, 0.0, 1.0, 0.0, 1.0);
+    startDeg= endDeg;
+    endDeg = startDeg + _stats.rvPieSlice;
+    CGContextSetRGBFillColor(ctx, 5/255.0, 104/255.0, 57/255.0, 1.0);
     CGContextMoveToPoint(ctx, x, y);
     CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
     CGContextClosePath(ctx);
     CGContextFillPath(ctx);
 
+    startDeg= endDeg;
+    endDeg = startDeg + _stats.roPieSlice;
+    CGContextSetRGBFillColor(ctx, 191/255.0, 30/255.0, 46/255.0, 1.0);
+    CGContextMoveToPoint(ctx, x, y);
+    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
+    CGContextClosePath(ctx);
+    CGContextFillPath(ctx);
+
+    startDeg= endDeg;
+    endDeg = startDeg + _stats.goPieSlice;
+    CGContextSetRGBFillColor(ctx, 242.0/255.0, 101/255.0, 34/255.0, 1.0);
+    CGContextMoveToPoint(ctx, x, y);
+    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
+    CGContextClosePath(ctx);
+    CGContextFillPath(ctx);
+
+    startDeg= endDeg;
+    endDeg = startDeg + _stats.iaPieSlice;
+    CGContextSetRGBFillColor(ctx, 217/255.0, 27/255.0, 92/255.0, 1.0);
+    CGContextMoveToPoint(ctx, x, y);
+    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
+    CGContextClosePath(ctx);
+    CGContextFillPath(ctx);
+
+    startDeg= endDeg;
+    endDeg = startDeg + _stats.raPieSlice;
+    CGContextSetRGBFillColor(ctx, 127/255.0, 63/255.0, 152/255.0, 1.0);
+    CGContextMoveToPoint(ctx, x, y);
+    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
+    CGContextClosePath(ctx);
+    CGContextFillPath(ctx);
 }
 
 

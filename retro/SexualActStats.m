@@ -60,7 +60,6 @@
 
     return riskFactor;
     
-    
 }
 
 - (double)calcInsertVagUnprotectedRiskFactor
@@ -132,8 +131,8 @@
 
 - (double)calcGiveOralProtectedRiskFactor
 {
-    NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    NSUInteger actsPerMonth = self.giveOral.timesPerMonth;
+    double percentCondomUsage = self.giveOral.percentWithCondomUsage/100;
     
     double riskFactor = pow(1-(pRO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
     
@@ -145,8 +144,8 @@
 
 - (double)calcGiveOralUnprotectedRiskFactor
 {
-    NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    NSUInteger actsPerMonth = self.giveOral.timesPerMonth;
+    double percentCondomUsage = self.giveOral.percentWithCondomUsage/100;
     
     double riskFactor = pow(1-(pRO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
@@ -158,8 +157,8 @@
 
 - (double)calcInsertAnalProtectedRiskFactor
 {
-    NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    NSUInteger actsPerMonth = self.insertiveAnal.timesPerMonth;
+    double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100;
     
     double riskFactor = pow(1-(pIA/(RR_CONDOM*RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*percentCondomUsage);
     
@@ -172,8 +171,8 @@
 
 - (double)calcInsertAnalUnprotectedRiskFactor
 {
-    NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    NSUInteger actsPerMonth = self.insertiveAnal.timesPerMonth;
+    double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100;
     
     double riskFactor = pow(1-(pIA/(RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*(1-percentCondomUsage));
     
@@ -186,8 +185,8 @@
 
 - (double)calcReceptiveAnalProtectedRiskFactor
 {
-    NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    NSUInteger actsPerMonth = self.receptiveAnal.timesPerMonth;
+    double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100;
     
     double riskFactor = pow(1-(pRA/(RR_CONDOM*RR_ART*RR_PREP_MSM)), actsPerMonth*percentCondomUsage);
     
@@ -200,8 +199,8 @@
 
 - (double)calcReceptiveAnalUnprotectedRiskFactor
 {
-    NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    NSUInteger actsPerMonth = self.receptiveAnal.timesPerMonth;
+    double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100;
     
     double riskFactor = pow(1-(pRA/(RR_ART*RR_PREP_MSM)), actsPerMonth*(1-percentCondomUsage));
     
@@ -216,26 +215,52 @@
 
 -(void)updateStats
 {
-    double chancesPerMonthPercent = 1 - ([self calcInsertVagUnprotectedRiskFactor] *[self  calcInsertVagProtectedRiskFactor] *
+    _chancesPerMonthPercent = 1 - ([self calcInsertVagUnprotectedRiskFactor] *[self  calcInsertVagProtectedRiskFactor] *
                           [self calcReceptiveVagProtectedRiskFactor] * [self calcReceptiveVagUnprotectedRiskFactor] *
                           [self calcReceiveOralProtectedRiskFactor] * [self calcReceiveOralUnprotectedRiskFactor] *
                           [self calcGiveOralProtectedRiskFactor] * [self calcGiveOralUnprotectedRiskFactor] *
                           [self calcInsertAnalProtectedRiskFactor] * [self calcInsertAnalUnprotectedRiskFactor] *
                           [self calcReceptiveAnalProtectedRiskFactor] * [self calcReceptiveAnalUnprotectedRiskFactor]);
-    double chancesPerMonthRatio = 1 / chancesPerMonthPercent;
-    NSLog(@"Chances per month percent = %f%% or 1 in %f",chancesPerMonthPercent*100, chancesPerMonthRatio);
+    _chancesPerMonthRatio = 1 / _chancesPerMonthPercent;
+    NSLog(@"Chances per month percent = %f%% or 1 in %f",_chancesPerMonthPercent*100, _chancesPerMonthRatio);
 
-    double chancesPerYearPercent = 1-pow(1-chancesPerMonthPercent,12);
-    double chancesPerYearRatio = 1 / chancesPerYearPercent;
-    NSLog(@"Chances per year percent = %f%% or 1 in %f",chancesPerYearPercent*100, chancesPerYearRatio);
+    _chancesPerYearPercent = 1-pow(1-_chancesPerMonthPercent,12);
+    _chancesPerYearRatio = 1 / _chancesPerYearPercent;
+    NSLog(@"Chances per year percent = %f%% or 1 in %f",_chancesPerYearPercent*100, _chancesPerYearRatio);
 
-    double chancesPerTenYearPercent = 1-pow(1-chancesPerYearPercent,10);
-    double chancesPerTenYearRatio = 1 / chancesPerTenYearPercent;
-    NSLog(@"Chances per ten years percent = %f%% or 1 in %f",chancesPerTenYearPercent*100, chancesPerTenYearRatio);
+    _chancesPerTenYearPercent = 1-pow(1-_chancesPerYearPercent,10);
+    _chancesPerTenYearRatio = 1 / _chancesPerTenYearPercent;
+    NSLog(@"Chances per ten years percent = %f%% or 1 in %f",_chancesPerTenYearPercent*100, _chancesPerTenYearRatio);
 
-    double chancesPerTwentyFiveYearPercent = 1-pow(1-chancesPerYearPercent,25);
-    double chancesPerTwentyFiveYearRatio = 1 / chancesPerTwentyFiveYearPercent;
-    NSLog(@"Chances per twenty-five years percent = %f%% or 1 in %f",chancesPerTwentyFiveYearPercent*100, chancesPerTwentyFiveYearRatio);
+    _chancesPerTwentyFiveYearPercent = 1-pow(1-_chancesPerYearPercent,25);
+    _chancesPerTwentyFiveYearRatio = 1 / _chancesPerTwentyFiveYearPercent;
+
+    
+    _riskByIV = 1 - ([self calcInsertVagUnprotectedRiskFactor] *[self  calcInsertVagProtectedRiskFactor]);
+    _riskByRV = 1 - ([self calcReceptiveVagProtectedRiskFactor] * [self calcReceptiveVagUnprotectedRiskFactor]);
+    _riskByRO = 1 - ([self calcReceiveOralProtectedRiskFactor] * [self calcReceiveOralUnprotectedRiskFactor]);
+    _riskByGO = 1 - ([self calcGiveOralProtectedRiskFactor] * [self calcGiveOralUnprotectedRiskFactor]);
+    _riskByIA = 1 - ([self calcInsertAnalProtectedRiskFactor] * [self calcInsertAnalUnprotectedRiskFactor]);
+    _riskByRA = 1 - ([self calcReceptiveAnalProtectedRiskFactor] * [self calcReceptiveAnalUnprotectedRiskFactor]);
+
+    double totalContribToRisk = _riskByIV + _riskByRV + _riskByRO + _riskByGO + _riskByIA + _riskByRA;
+    
+    _ivPieSlice = (_riskByIV / totalContribToRisk) * 360;
+    _rvPieSlice = (_riskByRV / totalContribToRisk) * 360;
+    _roPieSlice = (_riskByRO / totalContribToRisk) * 360;
+    _goPieSlice = (_riskByGO / totalContribToRisk) * 360;
+    _raPieSlice = (_riskByRA / totalContribToRisk) * 360;
+    _iaPieSlice = (_riskByIA / totalContribToRisk) * 360;
+    NSLog(@"ivPieSlice = %f,",_ivPieSlice);
+    NSLog(@"rvPieSlice = %f,",_rvPieSlice);
+    NSLog(@"roPieSlice = %f,",_roPieSlice);
+    NSLog(@"goPieSlice = %f,",_goPieSlice);
+    NSLog(@"raPieSlice = %f,",_raPieSlice);
+    NSLog(@"iaPieSlice = %f,",_iaPieSlice);
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"StatsUpdated"
+     object:self];
+
     
 }
 

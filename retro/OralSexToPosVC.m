@@ -22,6 +22,11 @@ AppManager *appMgr;
     NSLog(@"OralSexToPosVC viewDidLoad().");
     appMgr = [AppManager singletonAppManager];
 
+    // initialize sliders
+    self.sliderActsPerMonth.value = self.stat.timesPerMonth;
+    self.sliderCondomUsage.value = self.stat.percentWithCondomUsage;
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,9 +38,13 @@ AppManager *appMgr;
 
 - (IBAction)sliderActsPerMonthValueChange:(id)sender {
     self.stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+    [self.stats updateStats];
+
 }
 - (IBAction)sliderCondomUsageValueChange:(id)sender {
     self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
+    [self.stats updateStats];
+
 }
 
 @end

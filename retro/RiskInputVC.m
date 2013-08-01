@@ -63,34 +63,38 @@
         
         ReceptiveVagSexVC *receptiveVagSexVC = segue.destinationViewController;
         receptiveVagSexVC.stat = self.stats.receptiveVaginal;
-        
-    } 
+        receptiveVagSexVC.stats = self.stats;
+
+    }
     else if([segue.identifier isEqualToString:@"insertiveAnalSegue"]){
         
         InsertiveAnalVC *insertiveAnalVC = segue.destinationViewController;
         insertiveAnalVC.stat = self.stats.insertiveAnal;
+        insertiveAnalVC.stats = self.stats;
         
     }
     else if([segue.identifier isEqualToString:@"receptiveAnalSegue"]){
         
         ReceptiveAnalVC *receptiveAnalVC = segue.destinationViewController;
         receptiveAnalVC.stat = self.stats.receptiveAnal;
-        
+        receptiveAnalVC.stats = self.stats;
+
     }
     else if([segue.identifier isEqualToString:@"oralToPosSegue"]){
         
         OralSexToPosVC *oralSexToPosVC = segue.destinationViewController;
         oralSexToPosVC.stat = self.stats.giveOral;
-        
+        oralSexToPosVC.stats = self.stats;
+
     }
     else if([segue.identifier isEqualToString:@"oralFromPosSegue"]){
         
         OralSexFromPosVC *oralSexFromPosVC = segue.destinationViewController;
         oralSexFromPosVC.stat = self.stats.receiveOral;
-        
+        oralSexFromPosVC.stats = self.stats;
+
     }
     
-    [self.stats updateStats];
 }
 
 - (IBAction)doneHivNegPartner:(UIStoryboardSegue *)segue
@@ -110,7 +114,7 @@
 - (IBAction)doneInsertiveVagSex:(UIStoryboardSegue *)segue
 {
     self.lblInsertiveVagSex.text = [self.stats.insertiveVaginal getSummaryString];
-    
+
     NSLog(@"doneInsertiveVagSex in RiskInputVC");
 }
 

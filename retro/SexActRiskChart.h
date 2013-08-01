@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SexualActStats.h"
 
 @interface SexActRiskChart : UIView
 
+@property(nonatomic, weak) SexualActStats *stats;
 @end

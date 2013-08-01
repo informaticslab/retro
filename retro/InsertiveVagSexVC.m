@@ -21,6 +21,11 @@ AppManager *appMgr;
 	// Do any additional setup after loading the view.
     NSLog(@"InsertiveVagSexVC viewDidLoad().");
     appMgr = [AppManager singletonAppManager];
+    
+    // initialize sliders
+    self.sliderActsPerMonth.value = self.stat.timesPerMonth;
+    self.sliderCondomUsage.value = self.stat.percentWithCondomUsage;
+
 
 }
 
@@ -38,8 +43,8 @@ AppManager *appMgr;
 }
      
 - (IBAction)sliderCondomUsageValueChange:(id)sender {
-    [self.stats updateStats];
     self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
+    [self.stats updateStats];
 }
 
 

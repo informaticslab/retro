@@ -9,6 +9,8 @@
 #import "RiskViewController.h"
 #import "SexualActStats.h"
 #import "RiskInputVC.h"
+#import "RiskChartsContainerVC.h"
+
 @implementation RiskViewController
 
 - (void)viewDidLoad
@@ -32,6 +34,12 @@
     if([segue.identifier isEqualToString:@"embedRiskInputSegue"])
     {
         RiskInputVC *destVC = segue.destinationViewController;
+        destVC.stats = self.stats;
+        
+    }
+    if([segue.identifier isEqualToString:@"embedRiskChartsContainer"])
+    {
+        RiskChartsContainerVC *destVC = segue.destinationViewController;
         destVC.stats = self.stats;
         
     }

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SexualActStat.h"
+#import "SexualActStats.h"
 
 @interface ReceptiveAnalVC : UIViewController
 
@@ -15,6 +16,7 @@
 - (IBAction)sliderCondomUsageValueChange:(id)sender;
 
 @property SexualActStat *stat;
+@property SexualActStats *stats;
 @property (weak, nonatomic) IBOutlet UISlider *sliderActsPerMonth;
 @property (weak, nonatomic) IBOutlet UISlider *sliderCondomUsage;
 
