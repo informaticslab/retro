@@ -125,7 +125,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
-                            <tableViewSection headerTitle="Discordant Partners" id="rHb-lJ-BL3">
+                            <tableViewSection headerTitle="Information about you and your partner" id="rHb-lJ-BL3">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tlM-ta-neQ" detailTextLabel="aGF-AW-3Ih" style="IBUITableViewCellStyleSubtitle" id="Nju-pR-0VS">
                                         <rect key="frame" x="0.0" y="54" width="422" height="45"/>
@@ -185,7 +185,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Sexual Acts: Frequency &amp; Condom Usage" id="gwK-D3-IxY">
+                            <tableViewSection headerTitle="Sexual acts and condom use information" id="gwK-D3-IxY">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mbx-Vq-95R" detailTextLabel="xPQ-tb-gpY" style="IBUITableViewCellStyleSubtitle" id="wnm-hS-wRH">
                                         <rect key="frame" x="0.0" y="188" width="422" height="45"/>
@@ -250,8 +250,8 @@
                                             <rect key="frame" x="31" y="0.0" width="340" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex from HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CA8-O5-Na9">
-                                                    <rect key="frame" x="10" y="2" width="296" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex from HIV+ Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CA8-O5-Na9">
+                                                    <rect key="frame" x="10" y="2" width="232" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,8 +278,8 @@
                                             <rect key="frame" x="31" y="0.0" width="340" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex to HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yXp-9s-ySg">
-                                                    <rect key="frame" x="10" y="2" width="273" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Oral Sex to HIV+ Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yXp-9s-ySg">
+                                                    <rect key="frame" x="10" y="2" width="209" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1376,12 +1376,6 @@
             <relationships>
                 <relationship kind="action" name="doneHivNegPartner:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="doneHivPosPartner:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneInsertiveAnal:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneInsertiveVagSex:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneOralFromPos:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneOralToPos:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneReceptiveAnal:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneReceptiveVagSex:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="lblHivNegPartner" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblHivPosPartner" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblInsertiveAnal" candidateClass="UILabel"/>
@@ -1394,9 +1388,6 @@
         </class>
         <class className="RiskViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnActionForSegue:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
         </class>
         <class className="SexActRiskChart" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SexActRiskChart.h"/>

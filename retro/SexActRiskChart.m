@@ -8,6 +8,18 @@
 
 #import "SexActRiskChart.h"
 
+@interface SexActRiskChart ()
+
+@property float startDeg;
+@property float endDeg;
+@property int x;
+@property int y;
+@property int r;
+@property CGContextRef ctx;
+@property CGRect rectangle;
+
+@end
+
 @implementation SexActRiskChart
 
 #define VIEW_SIZE_X  512
@@ -19,6 +31,20 @@
 #define PIE_CHART_CENTER_X  (VIEW_SIZE_X / 2 - 120)
 #define PIE_CHART_CENTER_Y  (VIEW_SIZE_Y / 2 + 20)
 #define PIE_CHART_RADIUS  ((VIEW_SIZE_Y/2) - 40)
+
+#define IV_COLOR 32.0/255.0, 64.0/255.0, 154/255.0, 1.0
+#define RV_COLOR 5/255.0, 104/255.0, 57/255.0, 1.0
+#define RO_COLOR 191/255.0, 30/255.0, 46/255.0, 1.0
+#define GO_COLOR 242.0/255.0, 101/255.0, 34/255.0, 1.0
+#define IA_COLOR 217/255.0, 27/255.0, 92/255.0, 1.0
+#define RA_COLOR 127/255.0, 63/255.0, 152/255.0, 1.0
+#define BLACK_COLOR 0/255.0, 0/255.0, 0/255.0, 1.0
+
+#define LEGEND_FONT [UIFont fontWithName:@"Verdana" size:14 ]
+#define LEGEND_RECTANGLE_X 12
+#define LEGEND_RECTANGLE_Y 12
+
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,13 +59,13 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    float startDeg = 0;
-    float endDeg = 0;
+    _startDeg = 0;
+    _endDeg = 0;
     
     // drawing point starts from middle of view
-    int x = PIE_CHART_CENTER_X;
-    int y = PIE_CHART_CENTER_Y;
-    int r = PIE_CHART_RADIUS;
+    _x = PIE_CHART_CENTER_X;
+    _y = PIE_CHART_CENTER_Y;
+    _r = PIE_CHART_RADIUS;
     
     NSString *text = @"Contributions to Chances of Contracting HIV by Sexual Act";
     [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
@@ -47,136 +73,104 @@
     
     
     
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetRGBStrokeColor(ctx, 1.0, 1.0, 1.0, 1.0);
-    CGContextSetLineWidth(ctx, 2.0);
+    _ctx = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(_ctx, 1.0, 1.0, 1.0, 1.0);
+    CGContextSetLineWidth(_ctx, 2.0);
     
-    endDeg = _stats.ivPieSlice;
+    _endDeg = _stats.ivPieSlice;
     
-    CGContextSetRGBFillColor(ctx, 32.0/255.0, 64.0/255.0, 154/255.0, 1.0);
-    CGContextMoveToPoint(ctx, x, y);
-    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
+    CGContextSetRGBFillColor(_ctx, IV_COLOR);
+    [self drawArc];
     
-    startDeg= endDeg;
-    endDeg = startDeg + _stats.rvPieSlice;
-    CGContextSetRGBFillColor(ctx, 5/255.0, 104/255.0, 57/255.0, 1.0);
-    CGContextMoveToPoint(ctx, x, y);
-    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
+    _startDeg= _endDeg;
+    _endDeg = _startDeg + _stats.rvPieSlice;
+    CGContextSetRGBFillColor(_ctx, RV_COLOR);
+    [self drawArc];
 
-    startDeg= endDeg;
-    endDeg = startDeg + _stats.roPieSlice;
-    CGContextSetRGBFillColor(ctx, 191/255.0, 30/255.0, 46/255.0, 1.0);
-    CGContextMoveToPoint(ctx, x, y);
-    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
+    _startDeg= _endDeg;
+    _endDeg = _startDeg + _stats.roPieSlice;
+    CGContextSetRGBFillColor(_ctx, RO_COLOR);
+    [self drawArc];
 
-    startDeg= endDeg;
-    endDeg = startDeg + _stats.goPieSlice;
-    CGContextSetRGBFillColor(ctx, 242.0/255.0, 101/255.0, 34/255.0, 1.0);
-    CGContextMoveToPoint(ctx, x, y);
-    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
+    _startDeg= _endDeg;
+    _endDeg = _startDeg + _stats.goPieSlice;
+    CGContextSetRGBFillColor(_ctx, GO_COLOR);
+    [self drawArc];
 
-    startDeg= endDeg;
-    endDeg = startDeg + _stats.iaPieSlice;
-    CGContextSetRGBFillColor(ctx, 217/255.0, 27/255.0, 92/255.0, 1.0);
-    CGContextMoveToPoint(ctx, x, y);
-    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
+    _startDeg= _endDeg;
+    _endDeg = _startDeg + _stats.iaPieSlice;
+    CGContextSetRGBFillColor(_ctx, IA_COLOR);
+    [self drawArc];
 
-    startDeg= endDeg;
-    endDeg = startDeg + _stats.raPieSlice;
-    CGContextSetRGBFillColor(ctx, 127/255.0, 63/255.0, 152/255.0, 1.0);
-    CGContextMoveToPoint(ctx, x, y);
-    CGContextAddArc(ctx, x, y, r, (startDeg)*M_PI/180.0, (endDeg)*M_PI/180.0, 0);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
+    _startDeg= _endDeg;
+    _endDeg = _startDeg + _stats.raPieSlice;
+    CGContextSetRGBFillColor(_ctx, RA_COLOR);
+    [self drawArc];
     
     
     // draw legend
-    CGContextSetLineWidth(ctx, 1.2);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-    CGRect rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y,10,10);
-    CGContextAddRect(ctx, rectangle);
-    CGContextStrokePath(ctx);
-    CGContextSetRGBFillColor(ctx, 32.0/255.0, 64.0/255.0, 154/255.0, 1.0);
-    CGContextFillRect(ctx, rectangle);
+    CGContextSetRGBFillColor(_ctx, IV_COLOR);
+    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y, LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    [self drawLegendRectangle];
+    [self drawLegendText:@"Insertive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
 
-    text = @"Insertive Vaginal Sex";
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1.0);
-    [text drawAtPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y) withFont:[UIFont fontWithName:@"Verdana" size:12 ]];
-
-    CGContextSetLineWidth(ctx, 1.2);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-    rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+20,10,10);
-    CGContextAddRect(ctx, rectangle);
-    CGContextStrokePath(ctx);
-    CGContextSetRGBFillColor(ctx, 5/255.0, 104/255.0, 57/255.0, 1.0);
-    CGContextFillRect(ctx, rectangle);
-
-    text = @"Receptive Vaginal Sex";
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1.0);
-    [text drawAtPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+20) withFont:[UIFont fontWithName:@"Verdana" size:12 ]];
+    CGContextSetStrokeColorWithColor(_ctx, [UIColor blackColor].CGColor);
+    _rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+20,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    [self drawLegendRectangle];
+    [self drawLegendText:@"Receptive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+20)];
 
     
-    CGContextSetLineWidth(ctx, 1.2);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-    rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+40,10,10);
-    CGContextAddRect(ctx, rectangle);
-    CGContextStrokePath(ctx);
-    CGContextSetRGBFillColor(ctx, 191/255.0, 30/255.0, 46/255.0, 1.0);
-    CGContextFillRect(ctx, rectangle);
+    CGContextSetRGBFillColor(_ctx, RO_COLOR);
+    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+40,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    [self drawLegendRectangle];
+    [self drawLegendText:@"Receiving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+40)];
     
-    text = @"Receiving Oral Sex";
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1.0);
-    [text drawAtPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+40) withFont:[UIFont fontWithName:@"Verdana" size:12 ]];
+    CGContextSetRGBFillColor(_ctx, GO_COLOR);
+    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+60,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    [self drawLegendRectangle];
+    [self drawLegendText:@"Giving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+60)];
     
-    CGContextSetLineWidth(ctx, 1.2);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-    rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+60,10,10);
-    CGContextAddRect(ctx, rectangle);
-    CGContextStrokePath(ctx);
-    CGContextSetRGBFillColor(ctx, 242.0/255.0, 101/255.0, 34/255.0, 1.0);
-    CGContextFillRect(ctx, rectangle);
+    CGContextSetRGBFillColor(_ctx, IA_COLOR);
+    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+80,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    [self drawLegendRectangle];
+    [self drawLegendText:@"Insertive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+80)];
     
-    text = @"Giving Oral Sex";
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1.0);
-    [text drawAtPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+60) withFont:[UIFont fontWithName:@"Verdana" size:12 ]];
+    CGContextSetRGBFillColor(_ctx, RA_COLOR);
+    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+100,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    [self drawLegendRectangle];
+    [self drawLegendText:@"Receptive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+100)];
     
-    CGContextSetLineWidth(ctx, 1.2);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-    rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+80,10,10);
-    CGContextAddRect(ctx, rectangle);
-    CGContextStrokePath(ctx);
-    CGContextSetRGBFillColor(ctx, 217/255.0, 27/255.0, 92/255.0, 1.0);
-    CGContextFillRect(ctx, rectangle);
-    
-    text = @"Insertive Anal Sex";
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1.0);
-    [text drawAtPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+80) withFont:[UIFont fontWithName:@"Verdana" size:12 ]];
-    
-    CGContextSetLineWidth(ctx, 1.2);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
-    rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+100,10,10);
-    CGContextAddRect(ctx, rectangle);
-    CGContextStrokePath(ctx);
-    CGContextSetRGBFillColor(ctx, 127/255.0, 63/255.0, 152/255.0, 1.0);
-    CGContextFillRect(ctx, rectangle);
-    
-    text = @"Receptive Anal Sex";
-    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1.0);
-    [text drawAtPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+100) withFont:[UIFont fontWithName:@"Verdana" size:12 ]];
     
 }
 
+-(void)drawArc
+{
+    
+    CGContextMoveToPoint(_ctx, _x, _y);
+    CGContextAddArc(_ctx, _x, _y, _r, (_startDeg)*M_PI/180.0, (_endDeg)*M_PI/180.0, 0);
+    CGContextClosePath(_ctx);
+    CGContextFillPath(_ctx);
 
+}
 
+-(void)drawLegendText:(NSString *)text atPoint:(CGPoint)newPoint
+{
+
+    CGContextSetRGBFillColor(_ctx, BLACK_COLOR);
+    [text drawAtPoint:newPoint withFont:LEGEND_FONT];
+    
+}
+
+-(void)drawLegendRectangle
+{
+    
+    CGContextSetLineWidth(_ctx, 1.2);
+    CGContextSetStrokeColorWithColor(_ctx, [UIColor blackColor].CGColor);
+    CGContextAddRect(_ctx, _rectangle);
+    CGContextStrokePath(_ctx);
+    CGContextFillRect(_ctx, _rectangle);
+
+    
+}
 
 @end
