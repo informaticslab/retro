@@ -69,11 +69,20 @@
 @property double iaPieSlice;
 @property double raPieSlice;
 
+@property double ivContribPercent;
+@property double rvContribPercent;
+@property double roContribPercent;
+@property double goContribPercent;
+@property double raContribPercent;
+@property double iaContribPercent;
+
 @property double totalProtectedRiskFactor;
 @property double totalUnprotectedRiskFactor;
 
 @property double protectedPieSlice;
 @property double unprotectedPieSlice;
+@property double protectedPercent;
+@property double unprotectedPercent;
 
 
 -(void)updateStats;

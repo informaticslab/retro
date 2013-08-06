@@ -22,10 +22,12 @@
 
 #define VIEW_SIZE_X  512
 #define VIEW_SIZE_Y  242
-#define KEY_COLOR_BOX_X (VIEW_SIZE_X - 230)
-#define KEY_COLOR_BOX_Y (VIEW_SIZE_Y - 160)
+#define ACT_PERCENT_TEXT_X (VIEW_SIZE_X - 230)
+#define ACT_PERCENT_TEXT_Y (VIEW_SIZE_Y - 160)
+#define KEY_COLOR_BOX_X (ACT_PERCENT_TEXT_X + 70)
+#define KEY_COLOR_BOX_Y (ACT_PERCENT_TEXT_Y + 3)
 #define KEY_TEXT_X (KEY_COLOR_BOX_X + 20)
-#define KEY_TEXT_Y (KEY_COLOR_BOX_Y - 3)
+#define KEY_TEXT_Y (ACT_PERCENT_TEXT_Y)
 #define PIE_CHART_CENTER_X  (VIEW_SIZE_X / 2 - 120)
 #define PIE_CHART_CENTER_Y  (VIEW_SIZE_Y / 2 + 20)
 #define PIE_CHART_RADIUS  ((VIEW_SIZE_Y/2) - 40)
@@ -65,8 +67,6 @@
     [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
     //    [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18 ]];
     
-    
-    
     _ctx = UIGraphicsGetCurrentContext();
     CGContextSetRGBStrokeColor(_ctx, 1.0, 1.0, 1.0, 1.0);
     CGContextSetLineWidth(_ctx, 2.0);
@@ -82,11 +82,13 @@
     [self drawArc];
     
     // draw legend
+    [self drawActPercentage:_stats.protectedPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y)];
     CGContextSetRGBFillColor(_ctx, PROTECTED_COLOR);
     _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y, LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
     [self drawLegendRectangle];
     [self drawLegendText:@"Condoms Used" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
     
+    [self drawActPercentage:_stats.unprotectedPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+20)];
     CGContextSetRGBFillColor(_ctx, UNPROTECTED_COLOR);
     _rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+20,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
     [self drawLegendRectangle];
@@ -98,7 +100,7 @@
 {
     
     CGContextMoveToPoint(_ctx, _x, _y);
-    CGContextAddArc(_ctx, _x, _y, _r, (_startDeg)*M_PI/180.0, (_endDeg)*M_PI/180.0, 0);
+    CGContextAddArc(_ctx, _x, _y, _r, (_startDeg-90)*M_PI/180.0, (_endDeg-90)*M_PI/180.0, 0);
     CGContextClosePath(_ctx);
     CGContextFillPath(_ctx);
     
@@ -111,6 +113,15 @@
     [text drawAtPoint:newPoint withFont:LEGEND_FONT];
     
 }
+
+-(void)drawActPercentage:(double)percentage atPoint:(CGPoint)newPoint
+{
+    NSString *percentageText = [NSString stringWithFormat:@"%.1f%%",percentage];
+    CGContextSetRGBFillColor(_ctx, BLACK_COLOR);
+    [percentageText drawAtPoint:newPoint withFont:LEGEND_FONT];
+    
+}
+
 
 -(void)drawLegendRectangle
 {

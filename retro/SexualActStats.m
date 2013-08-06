@@ -259,7 +259,14 @@
     _riskByIA = 1 - _riskProductByIA;
     _riskByRA = 1 - _riskProductByRA;
 
+    
     double totalContribToRisk = _riskByIV + _riskByRV + _riskByRO + _riskByGO + _riskByIA + _riskByRA;
+    _ivContribPercent = (_riskByIV / totalContribToRisk) * 100;
+    _rvContribPercent = (_riskByRV / totalContribToRisk) * 100;
+    _roContribPercent = (_riskByRO / totalContribToRisk) * 100;
+    _goContribPercent = (_riskByGO / totalContribToRisk) * 100;
+    _raContribPercent = (_riskByRA / totalContribToRisk) * 100;
+    _iaContribPercent = (_riskByIA / totalContribToRisk) * 100;
     
     _ivPieSlice = (_riskByIV / totalContribToRisk) * 360;
     _rvPieSlice = (_riskByRV / totalContribToRisk) * 360;
@@ -267,6 +274,7 @@
     _goPieSlice = (_riskByGO / totalContribToRisk) * 360;
     _raPieSlice = (_riskByRA / totalContribToRisk) * 360;
     _iaPieSlice = (_riskByIA / totalContribToRisk) * 360;
+    
     
     NSLog(@"ivPieSlice = %f,",_ivPieSlice);
     NSLog(@"rvPieSlice = %f,",_rvPieSlice);
@@ -282,6 +290,8 @@
     
     _protectedPieSlice = (riskProtected/ totalCondomUsageContributions) * 360;
     _unprotectedPieSlice = (riskUnprotected/ totalCondomUsageContributions) * 360;
+    _protectedPercent = (riskProtected/ totalCondomUsageContributions) * 100;
+    _unprotectedPercent = (riskUnprotected/ totalCondomUsageContributions) * 100;
     
     NSLog(@"protectedPieSlice = %f,",_protectedPieSlice);
     NSLog(@"unprotectedPieSlice = %f,",_unprotectedPieSlice);

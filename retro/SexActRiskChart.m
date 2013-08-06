@@ -24,10 +24,12 @@
 
 #define VIEW_SIZE_X  512
 #define VIEW_SIZE_Y  242
-#define KEY_COLOR_BOX_X (VIEW_SIZE_X - 230)
-#define KEY_COLOR_BOX_Y (VIEW_SIZE_Y - 160)
+#define ACT_PERCENT_TEXT_X (VIEW_SIZE_X - 230)
+#define ACT_PERCENT_TEXT_Y (VIEW_SIZE_Y - 160)
+#define KEY_COLOR_BOX_X (ACT_PERCENT_TEXT_X + 70)
+#define KEY_COLOR_BOX_Y (ACT_PERCENT_TEXT_Y + 3)
 #define KEY_TEXT_X (KEY_COLOR_BOX_X + 20)
-#define KEY_TEXT_Y (KEY_COLOR_BOX_Y - 3)
+#define KEY_TEXT_Y (ACT_PERCENT_TEXT_Y)
 #define PIE_CHART_CENTER_X  (VIEW_SIZE_X / 2 - 120)
 #define PIE_CHART_CENTER_Y  (VIEW_SIZE_Y / 2 + 20)
 #define PIE_CHART_RADIUS  ((VIEW_SIZE_Y/2) - 40)
@@ -108,34 +110,40 @@
     
     
     // draw legend
+    [self drawActPercentage:_stats.ivContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y)];
+   _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y, LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
     CGContextSetRGBFillColor(_ctx, IV_COLOR);
-    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y, LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
     [self drawLegendRectangle];
     [self drawLegendText:@"Insertive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
 
-    CGContextSetRGBFillColor(_ctx, RV_COLOR);
+    [self drawActPercentage:_stats.rvContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+20)];
     _rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+20,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    CGContextSetRGBFillColor(_ctx, RV_COLOR);
     [self drawLegendRectangle];
     [self drawLegendText:@"Receptive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+20)];
 
     
-    CGContextSetRGBFillColor(_ctx, RO_COLOR);
+    [self drawActPercentage:_stats.roContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+40)];
     _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+40,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    CGContextSetRGBFillColor(_ctx, RO_COLOR);
     [self drawLegendRectangle];
     [self drawLegendText:@"Receiving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+40)];
     
-    CGContextSetRGBFillColor(_ctx, GO_COLOR);
+    [self drawActPercentage:_stats.goContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+60)];
     _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+60,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    CGContextSetRGBFillColor(_ctx, GO_COLOR);
     [self drawLegendRectangle];
     [self drawLegendText:@"Giving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+60)];
     
-    CGContextSetRGBFillColor(_ctx, IA_COLOR);
+    [self drawActPercentage:_stats.iaContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+80)];
     _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+80,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    CGContextSetRGBFillColor(_ctx, IA_COLOR);
     [self drawLegendRectangle];
     [self drawLegendText:@"Insertive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+80)];
     
-    CGContextSetRGBFillColor(_ctx, RA_COLOR);
+    [self drawActPercentage:_stats.raContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+100)];
     _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+100,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+    CGContextSetRGBFillColor(_ctx, RA_COLOR);
     [self drawLegendRectangle];
     [self drawLegendText:@"Receptive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+100)];
     
@@ -146,7 +154,7 @@
 {
     
     CGContextMoveToPoint(_ctx, _x, _y);
-    CGContextAddArc(_ctx, _x, _y, _r, (_startDeg)*M_PI/180.0, (_endDeg)*M_PI/180.0, 0);
+    CGContextAddArc(_ctx, _x, _y, _r, (_startDeg-90)*M_PI/180.0, (_endDeg-90)*M_PI/180.0, 0);
     CGContextClosePath(_ctx);
     CGContextFillPath(_ctx);
 
@@ -159,6 +167,15 @@
     [text drawAtPoint:newPoint withFont:LEGEND_FONT];
     
 }
+
+-(void)drawActPercentage:(double)percentage atPoint:(CGPoint)newPoint
+{
+    NSString *percentageText = [NSString stringWithFormat:@"%.1f%%",percentage];
+    CGContextSetRGBFillColor(_ctx, BLACK_COLOR);
+    [percentageText drawAtPoint:newPoint withFont:LEGEND_FONT];
+    
+}
+
 
 -(void)drawLegendRectangle
 {
