@@ -30,6 +30,13 @@
     self.lblOralSexTo.text = @"Unspecified";
     self.lblInsertiveVagSex.text = @"Unspecified";
     self.lblReceptiveVagSex.text = @"Unspecified";
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(handleNotification:)
+     name:@"StatsUpdated"
+     object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,6 +159,21 @@
     
     NSLog(@"doneOralToPos in RiskInputVC");
 }
+
+-(void)handleNotification:(NSNotification *)pNotification
+{
+    NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
+        self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
+        self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
+        self.lblInsertiveVagSex.text = [self.stats.insertiveVaginal getSummaryString];
+        self.lblReceptiveVagSex.text = [self.stats.receptiveVaginal getSummaryString];
+        self.lblInsertiveAnal.text = [self.stats.insertiveAnal getSummaryString];
+        self.lblReceptiveAnal.text = [self.stats.receptiveAnal getSummaryString];
+        self.lblOralSexFrom.text = [self.stats.receiveOral getSummaryString];
+        self.lblOralSexTo.text = [self.stats.giveOral getSummaryString];
+    
+}
+
 
 
 
