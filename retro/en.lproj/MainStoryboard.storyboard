@@ -89,14 +89,14 @@
                                 <rect key="frame" x="0.0" y="1" width="554" height="139"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="1MQ-Rd-vr5" kind="embed" id="4wf-3H-gbb"/>
+                                    <segue destination="1MQ-Rd-vr5" kind="embed" identifier="embedContractingHivRiskSegue" id="4wf-3H-gbb"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="J34-Kc-7hb">
                                 <rect key="frame" x="0.0" y="147" width="554" height="252"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="OSc-t1-hQy" kind="embed" id="KWV-Vu-hDJ"/>
+                                    <segue destination="OSc-t1-hQy" kind="embed" identifier="embedCondomUsageRiskSegue" id="KWV-Vu-hDJ"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="I7V-Zo-Lfn">
@@ -682,11 +682,11 @@
             </objects>
             <point key="canvasLocation" x="2832" y="-1940"/>
         </scene>
-        <!--View Controller-->
+        <!--Contracting Hiv RiskVC-->
         <scene sceneID="ZQy-h6-mQE">
             <objects>
-                <viewController id="1MQ-Rd-vr5" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aMZ-dQ-FZy">
+                <viewController id="1MQ-Rd-vr5" customClass="ContractingHivRiskVC" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aMZ-dQ-FZy" customClass="ContractingHivRisk">
                         <rect key="frame" x="0.0" y="0.0" width="554" height="139"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.24313725490196078" green="0.58431372549019611" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
@@ -711,7 +711,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avI-9P-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930" y="1297"/>
+            <point key="canvasLocation" x="2930" y="1737"/>
         </scene>
         <!--Oral Sex To PosVC-->
         <scene sceneID="E7l-u0-jfR">
@@ -800,11 +800,11 @@
             </objects>
             <point key="canvasLocation" x="2738" y="-135"/>
         </scene>
-        <!--View Controller-->
+        <!--Condom Usage Risk ChartVC-->
         <scene sceneID="wtw-UU-4Vc">
             <objects>
-                <viewController id="OSc-t1-hQy" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hTS-5N-3wJ">
+                <viewController id="OSc-t1-hQy" customClass="CondomUsageRiskChartVC" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hTS-5N-3wJ" customClass="CondomUsageRiskChart">
                         <rect key="frame" x="0.0" y="0.0" width="554" height="252"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.32549019607843138" green="0.77647058823529413" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -814,7 +814,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cu-TP-Fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2917" y="1739"/>
+            <point key="canvasLocation" x="2930" y="1341"/>
         </scene>
         <!--Receptive AnalVC-->
         <scene sceneID="0NU-hd-8gm">
@@ -1277,128 +1277,6 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="HivNegPartnerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HivNegPartnerVC.h"/>
-            <relationships>
-                <relationship kind="action" name="btnFemaleTouchUp:"/>
-                <relationship kind="action" name="btnMaleTouchUp:"/>
-                <relationship kind="action" name="btnNoCircumcisedTouchUp:"/>
-                <relationship kind="action" name="btnNoOnPrepTouchUp:"/>
-                <relationship kind="action" name="btnYesCircumcisedTouchUp:"/>
-                <relationship kind="action" name="btnYesOnPrepTouchUp:"/>
-                <relationship kind="outlet" name="btnFemale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnNoCircumcised" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnNoOnPrep" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnYesCircumcised" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnYesOnPrep" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lblCircumcised" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblCircumcisedQuestion" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblGender" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOnPrep" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HivPosPartnerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HivPosPartnerVC.h"/>
-            <relationships>
-                <relationship kind="action" name="btnFemaleTouchUp:"/>
-                <relationship kind="action" name="btnMaleTouchUp:"/>
-                <relationship kind="action" name="btnNoOnArtTouchUp:"/>
-                <relationship kind="action" name="btnYesOnArtTouchUp:"/>
-                <relationship kind="outlet" name="btnFemale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnNoOnArt" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnYesOnArt" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lblGender" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOnArt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InsertiveAnalVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveAnalVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="InsertiveVagSexVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveVagSexVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="OralSexFromPosVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexFromPosVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="OralSexToPosVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexToPosVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="ReceptiveAnalVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveAnalVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="ReceptiveVagSexVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveVagSexVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="RiskChartsContainerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskChartsContainerVC.h"/>
-        </class>
-        <class className="RiskInputVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskInputVC.h"/>
-            <relationships>
-                <relationship kind="action" name="doneHivNegPartner:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneHivPosPartner:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="lblHivNegPartner" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblHivPosPartner" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblInsertiveAnal" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblInsertiveVagSex" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOralSexFrom" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOralSexTo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblReceptiveAnal" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblReceptiveVagSex" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RiskViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskViewController.h"/>
-        </class>
-        <class className="SexActRiskChart" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SexActRiskChart.h"/>
-        </class>
-        <class className="SexActRiskChartVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SexActRiskChartVC.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

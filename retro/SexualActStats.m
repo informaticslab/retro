@@ -221,6 +221,7 @@
                           [self calcGiveOralProtectedRiskFactor] * [self calcGiveOralUnprotectedRiskFactor] *
                           [self calcInsertAnalProtectedRiskFactor] * [self calcInsertAnalUnprotectedRiskFactor] *
                           [self calcReceptiveAnalProtectedRiskFactor] * [self calcReceptiveAnalUnprotectedRiskFactor]);
+ 
     _chancesPerMonthRatio = 1 / _chancesPerMonthPercent;
     NSLog(@"Chances per month percent = %f%% or 1 in %f",_chancesPerMonthPercent*100, _chancesPerMonthRatio);
 
@@ -234,14 +235,29 @@
 
     _chancesPerTwentyFiveYearPercent = 1-pow(1-_chancesPerYearPercent,25);
     _chancesPerTwentyFiveYearRatio = 1 / _chancesPerTwentyFiveYearPercent;
-
     
-    _riskByIV = 1 - ([self calcInsertVagUnprotectedRiskFactor] *[self  calcInsertVagProtectedRiskFactor]);
-    _riskByRV = 1 - ([self calcReceptiveVagProtectedRiskFactor] * [self calcReceptiveVagUnprotectedRiskFactor]);
-    _riskByRO = 1 - ([self calcReceiveOralProtectedRiskFactor] * [self calcReceiveOralUnprotectedRiskFactor]);
-    _riskByGO = 1 - ([self calcGiveOralProtectedRiskFactor] * [self calcGiveOralUnprotectedRiskFactor]);
-    _riskByIA = 1 - ([self calcInsertAnalProtectedRiskFactor] * [self calcInsertAnalUnprotectedRiskFactor]);
-    _riskByRA = 1 - ([self calcReceptiveAnalProtectedRiskFactor] * [self calcReceptiveAnalUnprotectedRiskFactor]);
+    
+    _riskProductByIV = [self calcInsertVagUnprotectedRiskFactor] *[self  calcInsertVagProtectedRiskFactor];
+    _riskProductByRV = [self calcReceptiveVagProtectedRiskFactor] * [self calcReceptiveVagUnprotectedRiskFactor];
+    _riskProductByRO = [self calcReceiveOralProtectedRiskFactor] * [self calcReceiveOralUnprotectedRiskFactor];
+    _riskProductByGO = [self calcGiveOralProtectedRiskFactor] * [self calcGiveOralUnprotectedRiskFactor];
+    _riskProductByIA = [self calcInsertAnalProtectedRiskFactor] * [self calcInsertAnalUnprotectedRiskFactor];
+    _riskProductByRA = [self calcReceptiveAnalProtectedRiskFactor] * [self calcReceptiveAnalUnprotectedRiskFactor];
+    
+    _totalProtectedRiskFactor = [self calcInsertVagProtectedRiskFactor] * [self calcReceptiveVagProtectedRiskFactor] *[self calcReceiveOralProtectedRiskFactor] * [self calcGiveOralProtectedRiskFactor] *
+        [self calcInsertAnalProtectedRiskFactor] * [self calcReceptiveAnalProtectedRiskFactor];
+    
+    _totalUnprotectedRiskFactor = _totalProtectedRiskFactor * [self calcInsertVagUnprotectedRiskFactor]
+    * [self calcReceptiveVagUnprotectedRiskFactor] * [self calcReceiveOralUnprotectedRiskFactor]
+    * [self calcGiveOralUnprotectedRiskFactor] * [self calcInsertAnalUnprotectedRiskFactor]
+    * [self calcReceptiveAnalUnprotectedRiskFactor];
+
+    _riskByIV = 1 - _riskProductByIV;
+    _riskByRV = 1 - _riskProductByRV;
+    _riskByRO = 1 - _riskProductByRO;
+    _riskByGO = 1 - _riskProductByGO;
+    _riskByIA = 1 - _riskProductByIA;
+    _riskByRA = 1 - _riskProductByRA;
 
     double totalContribToRisk = _riskByIV + _riskByRV + _riskByRO + _riskByGO + _riskByIA + _riskByRA;
     
@@ -251,12 +267,26 @@
     _goPieSlice = (_riskByGO / totalContribToRisk) * 360;
     _raPieSlice = (_riskByRA / totalContribToRisk) * 360;
     _iaPieSlice = (_riskByIA / totalContribToRisk) * 360;
+    
     NSLog(@"ivPieSlice = %f,",_ivPieSlice);
     NSLog(@"rvPieSlice = %f,",_rvPieSlice);
     NSLog(@"roPieSlice = %f,",_roPieSlice);
     NSLog(@"goPieSlice = %f,",_goPieSlice);
     NSLog(@"raPieSlice = %f,",_raPieSlice);
     NSLog(@"iaPieSlice = %f,",_iaPieSlice);
+    
+    double riskUnprotected = 1 - _totalUnprotectedRiskFactor;
+    double riskProtected = 1- _totalProtectedRiskFactor;
+    
+    double totalCondomUsageContributions = riskProtected + riskUnprotected;
+    
+    _protectedPieSlice = (riskProtected/ totalCondomUsageContributions) * 360;
+    _unprotectedPieSlice = (riskUnprotected/ totalCondomUsageContributions) * 360;
+    
+    NSLog(@"protectedPieSlice = %f,",_protectedPieSlice);
+    NSLog(@"unprotectedPieSlice = %f,",_unprotectedPieSlice);
+
+    
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"StatsUpdated"
      object:self];

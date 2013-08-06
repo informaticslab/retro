@@ -55,12 +55,26 @@
 @property double riskByIA;
 @property double riskByRA;
 
+@property double riskProductByIV;
+@property double riskProductByRV;
+@property double riskProductByRO;
+@property double riskProductByGO;
+@property double riskProductByIA;
+@property double riskProductByRA;
+
 @property double ivPieSlice;
 @property double rvPieSlice;
 @property double roPieSlice;
 @property double goPieSlice;
 @property double iaPieSlice;
 @property double raPieSlice;
+
+@property double totalProtectedRiskFactor;
+@property double totalUnprotectedRiskFactor;
+
+@property double protectedPieSlice;
+@property double unprotectedPieSlice;
+
 
 -(void)updateStats;
 

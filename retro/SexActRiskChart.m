@@ -59,7 +59,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    _startDeg = 0;
     _endDeg = 0;
     
     // drawing point starts from middle of view
@@ -77,8 +76,8 @@
     CGContextSetRGBStrokeColor(_ctx, 1.0, 1.0, 1.0, 1.0);
     CGContextSetLineWidth(_ctx, 2.0);
     
+    _startDeg = 0;
     _endDeg = _stats.ivPieSlice;
-    
     CGContextSetRGBFillColor(_ctx, IV_COLOR);
     [self drawArc];
     
@@ -114,7 +113,7 @@
     [self drawLegendRectangle];
     [self drawLegendText:@"Insertive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
 
-    CGContextSetStrokeColorWithColor(_ctx, [UIColor blackColor].CGColor);
+    CGContextSetRGBFillColor(_ctx, RV_COLOR);
     _rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+20,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
     [self drawLegendRectangle];
     [self drawLegendText:@"Receptive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+20)];

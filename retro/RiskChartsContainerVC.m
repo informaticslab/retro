@@ -8,7 +8,9 @@
 
 #import "RiskChartsContainerVC.h"
 #import "SexActRiskChartVC.h"
+#import "CondomUsageRiskChartVC.h"
 #import "SexualActStats.h"
+#import "ContractingHivRiskVC.h"
 
 @interface RiskChartsContainerVC ()
 
@@ -39,6 +41,22 @@
         destVC.stats = self.stats;
         
     }
+    else if([segue.identifier isEqualToString:@"embedCondomUsageRiskSegue"])
+    {
+        CondomUsageRiskChartVC *destVC = segue.destinationViewController;
+        destVC.stats = self.stats;
+        
+    }
+    else if([segue.identifier isEqualToString:@"embedContractingHivRiskSegue"])
+    {
+        ContractingHivRiskVC *destVC = segue.destinationViewController;
+        destVC.stats = self.stats;
+        
+    }
+    
+    
+    
+    
 }
 
 
