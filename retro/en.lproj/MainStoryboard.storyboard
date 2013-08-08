@@ -239,8 +239,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="8Ba-yl-7kb" kind="popover" identifier="receptiveVaginalSexSegue" popoverAnchorView="Zp4-8A-kGj" id="7tA-5X-Wtd">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                            <segue destination="8Ba-yl-7kb" kind="popover" popoverAnchorView="Zp4-8A-kGj" id="clj-te-pha">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </tableViewCell>
@@ -365,6 +365,12 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="cellGiveOral" destination="8zz-KS-t4C" id="cHn-FS-oL0"/>
+                        <outlet property="cellInsertiveAnal" destination="ocl-d5-HgD" id="xa6-ab-q7n"/>
+                        <outlet property="cellInsertiveVag" destination="wnm-hS-wRH" id="XJY-vg-tGQ"/>
+                        <outlet property="cellReceiveOral" destination="dcH-mk-4y6" id="A73-Bm-Ihr"/>
+                        <outlet property="cellReceptiveAnal" destination="sot-pv-aJn" id="Ih9-iA-sGA"/>
+                        <outlet property="cellReceptiveVag" destination="Zp4-8A-kGj" id="wQd-E0-279"/>
                         <outlet property="lblHivNegPartner" destination="aGF-AW-3Ih" id="BJH-Tp-Z1z"/>
                         <outlet property="lblHivPosPartner" destination="pxv-fh-jvp" id="aoP-6r-dY7"/>
                         <outlet property="lblInsertiveAnal" destination="gaQ-yh-kWd" id="9wp-zz-4ei"/>
@@ -1503,6 +1509,12 @@
                 <relationship kind="action" name="doneOralToPos:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="doneReceptiveAnal:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="doneReceptiveVagSex:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="cellGiveOral" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellInsertiveAnal" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellInsertiveVag" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellReceiveOral" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellReceptiveAnal" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellReceptiveVag" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="lblHivNegPartner" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblHivPosPartner" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblInsertiveAnal" candidateClass="UILabel"/>

@@ -14,5 +14,6 @@
 @property(nonatomic) BOOL isOnArt;
 
 -(NSString *)getSummaryString;
+-(BOOL)isDefined;
 
 @end

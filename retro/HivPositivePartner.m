@@ -35,5 +35,15 @@
     
 }
 
+-(BOOL)isDefined
+{
+    if ([self isFemale] || [self isMale])
+        return TRUE;
+    return FALSE;
+    
+}
+
+
+
 
 @end

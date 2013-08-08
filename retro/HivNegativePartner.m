@@ -38,6 +38,14 @@
     self.isCircumcised = FALSE;
 }
 
+-(BOOL)isDefined
+{
+    if ([self isFemale] || [self isMale])
+        return TRUE;
+    return FALSE;
+    
+}
+
 -(NSString *)getSummaryString
 {
     NSMutableString *summary = [[NSMutableString alloc] initWithString:@""];

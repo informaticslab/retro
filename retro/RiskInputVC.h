@@ -23,6 +23,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblReceptiveAnal;
 
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *cellInsertiveVag;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cellReceptiveVag;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cellReceiveOral;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cellGiveOral;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cellInsertiveAnal;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cellReceptiveAnal;
+
+
+@property bool showActsSection;
 
 - (IBAction)doneHivNegPartner:(UIStoryboardSegue *)segue;
 - (IBAction)doneHivPosPartner:(UIStoryboardSegue *)segue;

@@ -14,5 +14,6 @@
 @property BOOL isCircumcised;
 
 -(NSString *)getSummaryString;
+-(BOOL)isDefined;
 
 @end
