@@ -30,7 +30,7 @@
 #define KEY_TEXT_Y (ACT_PERCENT_TEXT_Y)
 #define PIE_CHART_CENTER_X  (VIEW_SIZE_X / 2 - 120)
 #define PIE_CHART_CENTER_Y  (VIEW_SIZE_Y / 2 + 20)
-#define PIE_CHART_RADIUS  ((VIEW_SIZE_Y/2) - 40)
+#define PIE_CHART_RADIUS  ((VIEW_SIZE_Y/2) - 30)
 
 #define PROTECTED_COLOR 32.0/255.0, 64.0/255.0, 154/255.0, 1.0
 #define UNPROTECTED_COLOR 5/255.0, 104/255.0, 57/255.0, 1.0
@@ -63,8 +63,10 @@
     _r = PIE_CHART_RADIUS;
 
     
-    NSString *text = @"Contributions to Chances of Contracting HIV by Condom Use";
-    [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
+    NSString *text = @"How does my condom use contribute to my chances";
+    [text drawAtPoint:CGPointMake(10, 5) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
+    text = @"of contracting HIV?";
+    [text drawAtPoint:CGPointMake(10, 25) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
     //    [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18 ]];
     
     _ctx = UIGraphicsGetCurrentContext();

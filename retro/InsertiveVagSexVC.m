@@ -25,7 +25,10 @@ AppManager *appMgr;
     // initialize sliders
     self.sliderActsPerMonth.value = self.stat.timesPerMonth;
     self.sliderCondomUsage.value = self.stat.percentWithCondomUsage;
-
+    
+    _actsPerMonthLabel.text = [NSString stringWithFormat:@"%d", _stat.timesPerMonth ];
+    _condomUsageLabel.text = [NSString stringWithFormat:@"%d%%", _stat.percentWithCondomUsage ];
+    
 
 }
 
@@ -36,14 +39,15 @@ AppManager *appMgr;
 }
 
 - (IBAction)sliderActsPerMonthValueChange:(id)sender {
-    self.stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+    _stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+    _actsPerMonthLabel.text = [NSString stringWithFormat:@"%d", _stat.timesPerMonth];
     [self.stats updateStats];
-    NSLog(@"Insertive vaginal sex times per month set to %d", self.stat.timesPerMonth);
     
 }
      
 - (IBAction)sliderCondomUsageValueChange:(id)sender {
-    self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
+    _stat.percentWithCondomUsage = (NSUInteger)roundf(_sliderCondomUsage.value);
+    _condomUsageLabel.text = [NSString stringWithFormat:@"%d%%", _stat.percentWithCondomUsage];
     [self.stats updateStats];
 }
 

@@ -162,7 +162,7 @@
 
 -(void)handleNotification:(NSNotification *)pNotification
 {
-    NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
+        // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
         self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
         self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
         self.lblInsertiveVagSex.text = [self.stats.insertiveVaginal getSummaryString];

@@ -15,7 +15,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#undef DEBUG
 #ifndef DEBUG
 //#define DEBUG
 #else

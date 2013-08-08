@@ -9,6 +9,7 @@
 #import "SexualActStats.h"
 #import "SexualActStat.h"
 #import "Partner.h"
+#import "Debug.h"
 
 @implementation SexualActStats
 
@@ -56,7 +57,7 @@
         
     double riskFactor = pow(1-(pIV/(RR_CONDOM*RR_ART*RR_PREP_HET*RR_CIRC_VAG)), actsPerMonth*percentCondomUsage);
     
-    NSLog(@"Insertive vaginal protected risk factor = %f", riskFactor);
+    DebugLog(@"Insertive vaginal protected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -70,7 +71,7 @@
 
     double riskFactor = pow(1-(pIV/(RR_ART*RR_PREP_HET*RR_CIRC_VAG)), actsPerMonth*(1-percentCondomUsage));
     
-    NSLog(@"Insertive vaginal unprotected risk factor = %f", riskFactor);
+    DebugLog(@"Insertive vaginal unprotected risk factor = %f", riskFactor);
     
     return riskFactor;
     
@@ -83,7 +84,7 @@
 
     double riskFactor = powf(1-(pRV/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
     
-    NSLog(@"Receptive vaginal protected risk factor = %f", riskFactor);
+    DebugLog(@"Receptive vaginal protected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -95,7 +96,7 @@
     
     double riskFactor = powf(1-(pRV/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
-    NSLog(@"Receptive vaginal unprotected risk factor = %f", riskFactor);
+    DebugLog(@"Receptive vaginal unprotected risk factor = %f", riskFactor);
 
     return riskFactor;
 
@@ -108,7 +109,7 @@
     
     double riskFactor = pow(1-(pIO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
 
-    NSLog(@"Receive oral protected risk factor = %f", riskFactor);
+    DebugLog(@"Receive oral protected risk factor = %f", riskFactor);
 
     
     return riskFactor;
@@ -122,7 +123,7 @@
     
     double riskFactor = pow(1-(pIO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
-    NSLog(@"Receive oral unprotected risk factor = %f", riskFactor);
+    DebugLog(@"Receive oral unprotected risk factor = %f", riskFactor);
 
     
     return riskFactor;
@@ -136,7 +137,7 @@
     
     double riskFactor = pow(1-(pRO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
     
-    NSLog(@"Give oral protected risk factor = %f", riskFactor);
+    DebugLog(@"Give oral protected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -149,7 +150,7 @@
     
     double riskFactor = pow(1-(pRO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
-    NSLog(@"Give oral unprotected risk factor = %f", riskFactor);
+    DebugLog(@"Give oral unprotected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -162,7 +163,7 @@
     
     double riskFactor = pow(1-(pIA/(RR_CONDOM*RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*percentCondomUsage);
     
-    NSLog(@"Insertive anal protected risk factor = %f", riskFactor);
+    DebugLog(@"Insertive anal protected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -176,7 +177,7 @@
     
     double riskFactor = pow(1-(pIA/(RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*(1-percentCondomUsage));
     
-    NSLog(@"Insertive anal unprotected risk factor = %f", riskFactor);
+    DebugLog(@"Insertive anal unprotected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -190,7 +191,7 @@
     
     double riskFactor = pow(1-(pRA/(RR_CONDOM*RR_ART*RR_PREP_MSM)), actsPerMonth*percentCondomUsage);
     
-    NSLog(@"Receptive anal protected risk factor = %f", riskFactor);
+    DebugLog(@"Receptive anal protected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -204,7 +205,7 @@
     
     double riskFactor = pow(1-(pRA/(RR_ART*RR_PREP_MSM)), actsPerMonth*(1-percentCondomUsage));
     
-    NSLog(@"Receptive anal unprotected risk factor = %f", riskFactor);
+    DebugLog(@"Receptive anal unprotected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -223,15 +224,15 @@
                           [self calcReceptiveAnalProtectedRiskFactor] * [self calcReceptiveAnalUnprotectedRiskFactor]);
  
     _chancesPerMonthRatio = 1 / _chancesPerMonthPercent;
-    NSLog(@"Chances per month percent = %f%% or 1 in %f",_chancesPerMonthPercent*100, _chancesPerMonthRatio);
+    DebugLog(@"Chances per month percent = %f%% or 1 in %f",_chancesPerMonthPercent*100, _chancesPerMonthRatio);
 
     _chancesPerYearPercent = 1-pow(1-_chancesPerMonthPercent,12);
     _chancesPerYearRatio = 1 / _chancesPerYearPercent;
-    NSLog(@"Chances per year percent = %f%% or 1 in %f",_chancesPerYearPercent*100, _chancesPerYearRatio);
+    DebugLog(@"Chances per year percent = %f%% or 1 in %f",_chancesPerYearPercent*100, _chancesPerYearRatio);
 
     _chancesPerTenYearPercent = 1-pow(1-_chancesPerYearPercent,10);
     _chancesPerTenYearRatio = 1 / _chancesPerTenYearPercent;
-    NSLog(@"Chances per ten years percent = %f%% or 1 in %f",_chancesPerTenYearPercent*100, _chancesPerTenYearRatio);
+    DebugLog(@"Chances per ten years percent = %f%% or 1 in %f",_chancesPerTenYearPercent*100, _chancesPerTenYearRatio);
 
     _chancesPerTwentyFiveYearPercent = 1-pow(1-_chancesPerYearPercent,25);
     _chancesPerTwentyFiveYearRatio = 1 / _chancesPerTwentyFiveYearPercent;
@@ -276,12 +277,12 @@
     _iaPieSlice = (_riskByIA / totalContribToRisk) * 360;
     
     
-    NSLog(@"ivPieSlice = %f,",_ivPieSlice);
-    NSLog(@"rvPieSlice = %f,",_rvPieSlice);
-    NSLog(@"roPieSlice = %f,",_roPieSlice);
-    NSLog(@"goPieSlice = %f,",_goPieSlice);
-    NSLog(@"raPieSlice = %f,",_raPieSlice);
-    NSLog(@"iaPieSlice = %f,",_iaPieSlice);
+    DebugLog(@"ivPieSlice = %f,",_ivPieSlice);
+    DebugLog(@"rvPieSlice = %f,",_rvPieSlice);
+    DebugLog(@"roPieSlice = %f,",_roPieSlice);
+    DebugLog(@"goPieSlice = %f,",_goPieSlice);
+    DebugLog(@"raPieSlice = %f,",_raPieSlice);
+    DebugLog(@"iaPieSlice = %f,",_iaPieSlice);
     
     double riskUnprotected = 1 - _totalUnprotectedRiskFactor;
     double riskProtected = 1- _totalProtectedRiskFactor;
@@ -293,8 +294,8 @@
     _protectedPercent = (riskProtected/ totalCondomUsageContributions) * 100;
     _unprotectedPercent = (riskUnprotected/ totalCondomUsageContributions) * 100;
     
-    NSLog(@"protectedPieSlice = %f,",_protectedPieSlice);
-    NSLog(@"unprotectedPieSlice = %f,",_unprotectedPieSlice);
+    DebugLog(@"protectedPieSlice = %f,",_protectedPieSlice);
+    DebugLog(@"unprotectedPieSlice = %f,",_unprotectedPieSlice);
 
     
     [[NSNotificationCenter defaultCenter]

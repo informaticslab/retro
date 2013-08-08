@@ -33,7 +33,7 @@
 
 -(void)handleNotification:(NSNotification *)pNotification
 {
-    NSLog(@"Received notification in ContractingHivRiskVC = %@",(NSString*)[pNotification object]);
+//    NSLog(@"Received notification in ContractingHivRiskVC = %@",(NSString*)[pNotification object]);
     [self.view setNeedsDisplay];
 }
 

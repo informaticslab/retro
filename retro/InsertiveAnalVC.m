@@ -27,6 +27,9 @@ AppManager *appMgr;
     self.sliderActsPerMonth.value = self.stat.timesPerMonth;
     self.sliderCondomUsage.value = self.stat.percentWithCondomUsage;
     
+    _actsPerMonthLabel.text = [NSString stringWithFormat:@"%d", _stat.timesPerMonth ];
+    _condomUsageLabel.text = [NSString stringWithFormat:@"%d%%", _stat.percentWithCondomUsage ];
+    
 
 }
 
@@ -38,11 +41,13 @@ AppManager *appMgr;
 
 - (IBAction)sliderActsPerMonthValueChange:(id)sender {
     self.stat.timesPerMonth = (NSUInteger)roundf(self.sliderActsPerMonth.value);
+    _actsPerMonthLabel.text = [NSString stringWithFormat:@"%d", _stat.timesPerMonth];
     [self.stats updateStats];
 
 }
 - (IBAction)sliderCondomUsageValueChange:(id)sender {
     self.stat.percentWithCondomUsage = (NSUInteger)roundf(self.sliderCondomUsage.value);
+    _condomUsageLabel.text = [NSString stringWithFormat:@"%d%%", _stat.percentWithCondomUsage];
     [self.stats updateStats];
 
 }

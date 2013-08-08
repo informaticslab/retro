@@ -26,7 +26,7 @@
 }
 -(void)handleNotification:(NSNotification *)pNotification
 {
-    NSLog(@"Received notification in SexActRiskChart = %@",(NSString*)[pNotification object]);
+//    NSLog(@"Received notification in SexActRiskChart = %@",(NSString*)[pNotification object]);
     [self.view setNeedsDisplay];
 }
 
