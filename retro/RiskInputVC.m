@@ -21,9 +21,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    
-    NSLog(@"Got here!");
-    
+        
     return self;
 }
 

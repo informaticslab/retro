@@ -60,6 +60,7 @@ AppManager *appMgr;
     self.lblCircumcised.text = appMgr.unspecifiedText;
     self.btnNoCircumcised.hidden = TRUE;
     self.btnYesCircumcised.hidden = TRUE;
+    self.negPartner.isCircumcised = FALSE;
     self.lblCircumcisedQuestion.hidden = TRUE;
 
     [self.negPartner genderIsFemale];
@@ -97,7 +98,6 @@ AppManager *appMgr;
     self.lblOnPrep.text = @"No";
     self.negPartner.isOnPrep = NO;
     
-
 }
 
 @end
