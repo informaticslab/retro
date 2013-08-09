@@ -207,6 +207,9 @@
         self.cellReceptiveAnal.hidden = FALSE;
         self.cellReceiveOral.hidden = FALSE;
         self.cellGiveOral.hidden = FALSE;
+        self.showActsSection = TRUE;
+        [self.tableView reloadData];
+        
         
     } else if ([_stats.hivNegPartner isMale] && [_stats.hivPosPartner isFemale]) {
         self.cellInsertiveVag.hidden = FALSE;
@@ -215,6 +218,9 @@
         self.cellReceptiveAnal.hidden = TRUE;
         self.cellReceiveOral.hidden = FALSE;
         self.cellGiveOral.hidden = FALSE;
+        self.showActsSection = TRUE;
+        [self.tableView reloadData];
+        
         
     } else if ([_stats.hivNegPartner isMale] && [_stats.hivPosPartner isMale]) {
         self.cellInsertiveVag.hidden = TRUE;
@@ -223,21 +229,27 @@
         self.cellReceptiveAnal.hidden = FALSE;
         self.cellReceiveOral.hidden = FALSE;
         self.cellGiveOral.hidden = FALSE;
+        self.showActsSection = TRUE;
+        [self.tableView reloadData];
+        
         
     } else if ([_stats.hivNegPartner isFemale] && [_stats.hivPosPartner isFemale]) {
-        self.cellInsertiveVag.hidden = FALSE;
-        self.cellReceptiveVag.hidden = FALSE;
-        self.cellInsertiveAnal.hidden = FALSE;
-        self.cellReceptiveAnal.hidden = FALSE;
-        self.cellReceiveOral.hidden = FALSE;
-        self.cellGiveOral.hidden = FALSE;
+        self.cellInsertiveVag.hidden = TRUE;
+        self.cellReceptiveVag.hidden = TRUE;
+        self.cellInsertiveAnal.hidden = TRUE;
+        self.cellReceptiveAnal.hidden = TRUE;
+        self.cellReceiveOral.hidden = TRUE;
+        self.cellGiveOral.hidden = TRUE;
+        self.showActsSection = FALSE;
+        [self.tableView reloadData];
         
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"No data available."
+                                                          message:@"Data is not available for female-female discordant couples."
+                                                         delegate:nil
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+        [message show];
     }
-
-    
-    
-    self.showActsSection = TRUE;
-    [self.tableView reloadData];
 
 }
 
