@@ -200,16 +200,47 @@
 
 -(void)showSexActsSection
 {
-    self.cellInsertiveVag.hidden = FALSE;
-    self.cellReceptiveVag.hidden = FALSE;
-    self.cellInsertiveAnal.hidden = FALSE;
-    self.cellReceptiveAnal.hidden = FALSE;
-    self.cellReceiveOral.hidden = FALSE;
-    self.cellGiveOral.hidden = FALSE;
+    if ([_stats.hivNegPartner isFemale] && [_stats.hivPosPartner isMale]) {
+        self.cellInsertiveVag.hidden = TRUE;
+        self.cellReceptiveVag.hidden = FALSE;
+        self.cellInsertiveAnal.hidden = TRUE;
+        self.cellReceptiveAnal.hidden = FALSE;
+        self.cellReceiveOral.hidden = FALSE;
+        self.cellGiveOral.hidden = FALSE;
+        
+    } else if ([_stats.hivNegPartner isMale] && [_stats.hivPosPartner isFemale]) {
+        self.cellInsertiveVag.hidden = FALSE;
+        self.cellReceptiveVag.hidden = TRUE;
+        self.cellInsertiveAnal.hidden = FALSE;
+        self.cellReceptiveAnal.hidden = TRUE;
+        self.cellReceiveOral.hidden = FALSE;
+        self.cellGiveOral.hidden = FALSE;
+        
+    } else if ([_stats.hivNegPartner isMale] && [_stats.hivPosPartner isMale]) {
+        self.cellInsertiveVag.hidden = TRUE;
+        self.cellReceptiveVag.hidden = TRUE;
+        self.cellInsertiveAnal.hidden = FALSE;
+        self.cellReceptiveAnal.hidden = FALSE;
+        self.cellReceiveOral.hidden = FALSE;
+        self.cellGiveOral.hidden = FALSE;
+        
+    } else if ([_stats.hivNegPartner isFemale] && [_stats.hivPosPartner isFemale]) {
+        self.cellInsertiveVag.hidden = FALSE;
+        self.cellReceptiveVag.hidden = FALSE;
+        self.cellInsertiveAnal.hidden = FALSE;
+        self.cellReceptiveAnal.hidden = FALSE;
+        self.cellReceiveOral.hidden = FALSE;
+        self.cellGiveOral.hidden = FALSE;
+        
+    }
+
+    
+    
     self.showActsSection = TRUE;
     [self.tableView reloadData];
 
 }
+
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {

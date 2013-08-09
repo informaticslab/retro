@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A630865517B401E200AE15B8 /* Retro_Female_down.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865117B401E200AE15B8 /* Retro_Female_down.png */; };
+		A630865617B401E200AE15B8 /* Retro_Female_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865217B401E200AE15B8 /* Retro_Female_down@2x.png */; };
+		A630865717B401E200AE15B8 /* Retro_Female_up.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865317B401E200AE15B8 /* Retro_Female_up.png */; };
+		A630865817B401E200AE15B8 /* Retro_Female_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865417B401E200AE15B8 /* Retro_Female_up@2x.png */; };
 		A63CB43A17A02554007438C7 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A63CB43817A02554007438C7 /* AppManager.m */; };
 		A6408F3B17A9D7D500EB8D02 /* RiskChartsContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6408F3A17A9D7D500EB8D02 /* RiskChartsContainerVC.m */; };
 		A640FC84179D7F390040540B /* HivPosPartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A640FC83179D7F390040540B /* HivPosPartnerVC.m */; };
@@ -52,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A630865117B401E200AE15B8 /* Retro_Female_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Retro_Female_down.png; sourceTree = "<group>"; };
+		A630865217B401E200AE15B8 /* Retro_Female_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Retro_Female_down@2x.png"; sourceTree = "<group>"; };
+		A630865317B401E200AE15B8 /* Retro_Female_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Retro_Female_up.png; sourceTree = "<group>"; };
+		A630865417B401E200AE15B8 /* Retro_Female_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Retro_Female_up@2x.png"; sourceTree = "<group>"; };
 		A63CB43817A02554007438C7 /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		A63CB43917A02554007438C7 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		A63CB43B17A025EC007438C7 /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
@@ -141,6 +149,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A630865017B401E200AE15B8 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A630865117B401E200AE15B8 /* Retro_Female_down.png */,
+				A630865217B401E200AE15B8 /* Retro_Female_down@2x.png */,
+				A630865317B401E200AE15B8 /* Retro_Female_up.png */,
+				A630865417B401E200AE15B8 /* Retro_Female_up@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		A6D2FD3F178358DA00C246D8 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +192,7 @@
 		A6D2FD51178358DA00C246D8 /* retro */ = {
 			isa = PBXGroup;
 			children = (
+				A630865017B401E200AE15B8 /* icons */,
 				A63CB43B17A025EC007438C7 /* Debug.h */,
 				A63CB43817A02554007438C7 /* AppManager.m */,
 				A63CB43917A02554007438C7 /* AppManager.h */,
@@ -314,6 +334,10 @@
 				A6D2FD73178358DA00C246D8 /* second@2x.png in Resources */,
 				A6A37456178B8A3100622BE8 /* PaperFetch2_x72.png in Resources */,
 				A6A37458178B8A3900622BE8 /* PaperFetch2_x144.png in Resources */,
+				A630865517B401E200AE15B8 /* Retro_Female_down.png in Resources */,
+				A630865617B401E200AE15B8 /* Retro_Female_down@2x.png in Resources */,
+				A630865717B401E200AE15B8 /* Retro_Female_up.png in Resources */,
+				A630865817B401E200AE15B8 /* Retro_Female_up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,10 +479,14 @@
 		A6D2FD78178358DA00C246D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Centers for Disease Control";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "retro/retro-Prefix.pch";
 				INFOPLIST_FILE = "retro/retro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B3875699-E28E-4869-A5E5-E7B09C9267FD";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

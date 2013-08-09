@@ -17,6 +17,7 @@
 
 @property SexualActStat *stat;
 @property SexualActStats *stats;
+
 @property (weak, nonatomic) IBOutlet UISlider *sliderActsPerMonth;
 @property (weak, nonatomic) IBOutlet UISlider *sliderCondomUsage;
 @property (weak, nonatomic) IBOutlet UILabel *actsPerMonthLabel;
