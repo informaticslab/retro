@@ -82,9 +82,9 @@
     NSUInteger actsPerMonth = self.receptiveVaginal.timesPerMonth;
     double percentCondomUsage = self.receptiveVaginal.percentWithCondomUsage/100.0;
 
-    double riskFactor = powf(1-(pRV/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pRV/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
     
-    DebugLog(@"Receptive vaginal protected risk factor = %f", riskFactor);
+    NSLog(@"Receptive vaginal protected risk factor = %f", riskFactor);
 
     return riskFactor;
     
@@ -94,9 +94,9 @@
     NSUInteger actsPerMonth = self.receptiveVaginal.timesPerMonth;
     double percentCondomUsage = self.receptiveVaginal.percentWithCondomUsage/100.0;
     
-    double riskFactor = powf(1-(pRV/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pRV/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
-    DebugLog(@"Receptive vaginal unprotected risk factor = %f", riskFactor);
+    NSLog(@"Receptive vaginal unprotected risk factor = %f", riskFactor);
 
     return riskFactor;
 
@@ -105,7 +105,7 @@
 - (double)calcReceiveOralProtectedRiskFactor
 {
     NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pIO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
 
@@ -119,7 +119,7 @@
 - (double)calcReceiveOralUnprotectedRiskFactor
 {
     NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
-    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100;
+    double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pIO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
@@ -133,7 +133,7 @@
 - (double)calcGiveOralProtectedRiskFactor
 {
     NSUInteger actsPerMonth = self.giveOral.timesPerMonth;
-    double percentCondomUsage = self.giveOral.percentWithCondomUsage/100;
+    double percentCondomUsage = self.giveOral.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pRO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
     
@@ -146,7 +146,7 @@
 - (double)calcGiveOralUnprotectedRiskFactor
 {
     NSUInteger actsPerMonth = self.giveOral.timesPerMonth;
-    double percentCondomUsage = self.giveOral.percentWithCondomUsage/100;
+    double percentCondomUsage = self.giveOral.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pRO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
     
@@ -159,7 +159,7 @@
 - (double)calcInsertAnalProtectedRiskFactor
 {
     NSUInteger actsPerMonth = self.insertiveAnal.timesPerMonth;
-    double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100;
+    double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pIA/(RR_CONDOM*RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*percentCondomUsage);
     
@@ -173,7 +173,7 @@
 - (double)calcInsertAnalUnprotectedRiskFactor
 {
     NSUInteger actsPerMonth = self.insertiveAnal.timesPerMonth;
-    double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100;
+    double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pIA/(RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*(1-percentCondomUsage));
     
@@ -187,7 +187,7 @@
 - (double)calcReceptiveAnalProtectedRiskFactor
 {
     NSUInteger actsPerMonth = self.receptiveAnal.timesPerMonth;
-    double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100;
+    double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pRA/(RR_CONDOM*RR_ART*RR_PREP_MSM)), actsPerMonth*percentCondomUsage);
     
@@ -201,7 +201,7 @@
 - (double)calcReceptiveAnalUnprotectedRiskFactor
 {
     NSUInteger actsPerMonth = self.receptiveAnal.timesPerMonth;
-    double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100;
+    double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100.0;
     
     double riskFactor = pow(1-(pRA/(RR_ART*RR_PREP_MSM)), actsPerMonth*(1-percentCondomUsage));
     
