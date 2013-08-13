@@ -302,8 +302,31 @@
      postNotificationName:@"StatsUpdated"
      object:self];
 
+}
+
+
+-(void)resetActivities
+{
+    [_insertiveVaginal resetStat];
+    [_receptiveVaginal resetStat];
+    [_receiveOral resetStat];
+    [_giveOral resetStat];
+    [_insertiveAnal resetStat];
+    [_receptiveAnal resetStat];
+    
+    [self updateStats];
     
 }
+
+-(void)resetAll
+{
+    [self resetActivities];
+    [_hivNegPartner resetPartner];
+    [_hivPosPartner resetPartner];
+    [self updateStats];
+    
+}
+
 
 
 

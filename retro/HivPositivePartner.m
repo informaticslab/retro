@@ -26,6 +26,9 @@
     } else if ([self isFemale]) {
         [summary appendString:@"Female"];
         
+    } else {
+        [summary appendString:@"Undefined"];
+        
     }
     
     if (self.isOnArt)
@@ -43,7 +46,11 @@
     
 }
 
-
+-(void)resetPartner
+{
+    [self resetGender];
+    _isOnArt = FALSE;
+}
 
 
 @end

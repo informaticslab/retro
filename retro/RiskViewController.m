@@ -10,6 +10,7 @@
 #import "SexualActStats.h"
 #import "RiskInputVC.h"
 #import "RiskChartsContainerVC.h"
+#import "AboutVC.h"
 
 @implementation RiskViewController
 
@@ -35,15 +36,28 @@
     {
         RiskInputVC *destVC = segue.destinationViewController;
         destVC.stats = self.stats;
+        self.riskInputVC = destVC;
         
     }
-    if([segue.identifier isEqualToString:@"embedRiskChartsContainer"])
+    else if([segue.identifier isEqualToString:@"embedRiskChartsContainer"])
     {
         RiskChartsContainerVC *destVC = segue.destinationViewController;
         destVC.stats = self.stats;
         
     }
+    else if([segue.identifier isEqualToString:@"aboutSegue"])
+    {
+        // AboutVC *destVC = segue.destinationViewController;
+
+    }
 }
+
+- (IBAction)doneAbout:(UIStoryboardSegue *)segue
+{
+    
+    NSLog(@"doneAbout in RiskInputVC");
+}
+
 
 
 
@@ -61,4 +75,19 @@
 
 
 
+- (IBAction)btnResetActivitiesTouchUp:(id)sender {
+    
+    [_stats resetActivities];
+    
+}
+
+- (IBAction)btnResetAllTouchUp:(id)sender {
+    
+    [_stats resetAll];
+    [self.riskInputVC hideSexActsSection];
+    
+}
+
+- (IBAction)btnInfoTouchUp:(id)sender {
+}
 @end

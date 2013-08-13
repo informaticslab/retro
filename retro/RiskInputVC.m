@@ -29,23 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.lblHivNegPartner.text = @"Unspecified";
-    self.lblHivPosPartner.text = @"Unspecified";
-    self.lblReceptiveAnal.text = @"Unspecified";
-    self.lblInsertiveAnal.text = @"Unspecified";
-    self.lblOralSexFrom.text = @"Unspecified";
-    self.lblOralSexTo.text = @"Unspecified";
-    self.lblInsertiveVagSex.text = @"Unspecified";
-    self.lblReceptiveVagSex.text = @"Unspecified";
-    
-    self.cellInsertiveVag.hidden = TRUE;
-    self.cellReceptiveVag.hidden = TRUE;
-    self.cellInsertiveAnal.hidden = TRUE;
-    self.cellReceptiveAnal.hidden = TRUE;
-    self.cellReceiveOral.hidden = TRUE;
-    self.cellGiveOral.hidden = TRUE;
-    
-    self.showActsSection = FALSE;
+    [self updateSummaryLabels];
+    [self hideSexActsSection];
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -182,18 +167,23 @@
     NSLog(@"doneOralToPos in RiskInputVC");
 }
 
+-(void)updateSummaryLabels
+{
+    self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
+    self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
+    self.lblInsertiveVagSex.text = [self.stats.insertiveVaginal getSummaryString];
+    self.lblReceptiveVagSex.text = [self.stats.receptiveVaginal getSummaryString];
+    self.lblInsertiveAnal.text = [self.stats.insertiveAnal getSummaryString];
+    self.lblReceptiveAnal.text = [self.stats.receptiveAnal getSummaryString];
+    self.lblOralSexFrom.text = [self.stats.receiveOral getSummaryString];
+    self.lblOralSexTo.text = [self.stats.giveOral getSummaryString];
+    
+}
+
 -(void)handleNotification:(NSNotification *)pNotification
 {
         // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
-        self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
-        self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
-        self.lblInsertiveVagSex.text = [self.stats.insertiveVaginal getSummaryString];
-        self.lblReceptiveVagSex.text = [self.stats.receptiveVaginal getSummaryString];
-        self.lblInsertiveAnal.text = [self.stats.insertiveAnal getSummaryString];
-        self.lblReceptiveAnal.text = [self.stats.receptiveAnal getSummaryString];
-        self.lblOralSexFrom.text = [self.stats.receiveOral getSummaryString];
-        self.lblOralSexTo.text = [self.stats.giveOral getSummaryString];
-    
+    [self updateSummaryLabels];
 }
 
 -(void)showSexActsSection
@@ -251,6 +241,27 @@
 
 }
 
+
+-(void)hideSexActsSection
+{
+    
+    self.cellInsertiveVag.hidden = TRUE;
+    self.cellReceptiveVag.hidden = TRUE;
+    self.cellInsertiveAnal.hidden = TRUE;
+    self.cellReceptiveAnal.hidden = TRUE;
+    self.cellReceiveOral.hidden = TRUE;
+    self.cellGiveOral.hidden = TRUE;
+    
+    self.showActsSection = FALSE;
+    [self.tableView reloadData];
+
+}
+
+-(void)resetAll
+{
+    
+    
+}
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {

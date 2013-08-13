@@ -46,5 +46,11 @@
         return FALSE;
 }
 
+-(void)resetGender
+{
+    
+    _gender = GENDER_UNDEFINED;
+}
+
 
 @end

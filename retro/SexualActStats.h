@@ -86,6 +86,8 @@
 
 
 -(void)updateStats;
+-(void)resetActivities;
+-(void)resetAll;
 
 
 @end

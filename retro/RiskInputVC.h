@@ -35,6 +35,7 @@
 
 - (IBAction)doneHivNegPartner:(UIStoryboardSegue *)segue;
 - (IBAction)doneHivPosPartner:(UIStoryboardSegue *)segue;
+-(void)hideSexActsSection;
 
 
 @end

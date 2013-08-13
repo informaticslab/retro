@@ -14,6 +14,7 @@
 @property NSUInteger percentWithCondomUsage;
 
 -(NSString *)getSummaryString;
+-(void)resetStat;
 
 
 @end

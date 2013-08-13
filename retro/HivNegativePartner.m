@@ -55,6 +55,9 @@
     } else if ([self isFemale]) {
         [summary appendString:@"Female"];
         
+    } else {
+        [summary appendString:@"Undefined"];
+        
     }
 
     if (self.isCircumcised)
@@ -67,6 +70,14 @@
     return [NSString stringWithString:summary];
 
 
+}
+
+-(void)resetPartner
+{
+    [super resetGender];
+    [self notCircumcised];
+    [self offPrep];
+    
 }
 
 

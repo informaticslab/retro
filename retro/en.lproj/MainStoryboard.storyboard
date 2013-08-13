@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="O5K-AB-cDI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,23 +9,48 @@
             <objects>
                 <viewController title="Risk Assessment" id="2" customClass="RiskViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" id="eGZ-Qm-WXD" userLabel="Table View Container">
-                                <rect key="frame" x="20" y="20" width="422" height="659"/>
+                                <rect key="frame" x="20" y="24" width="422" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="2F0-pd-L4U" kind="embed" identifier="embedRiskInputSegue" id="2Rw-2l-qcJ"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="P6U-O3-jbk">
-                                <rect key="frame" x="450" y="20" width="554" height="659"/>
+                                <rect key="frame" x="450" y="24" width="554" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="a18-Ye-6Tf" kind="embed" identifier="embedRiskChartsContainer" id="Auj-rK-c6z"/>
                                 </connections>
                             </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="dxD-5q-VrC">
+                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Reset All" id="XM8-a2-FKu">
+                                        <connections>
+                                            <action selector="btnResetAllTouchUp:" destination="2" id="Wrr-Qj-3A5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Reset Activities" id="h65-DE-VWy">
+                                        <connections>
+                                            <action selector="btnResetActivitiesTouchUp:" destination="2" id="YTM-wR-Dsi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ltf-P9-yJQ"/>
+                                    <barButtonItem title="About" id="EG1-qQ-eIJ">
+                                        <connections>
+                                            <segue destination="z5R-Ta-zq1" kind="popover" identifier="aboutSegue" popoverAnchorBarButtonItem="EG1-qQ-eIJ" id="xQS-xh-3e4">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Help" id="Yq8-tT-lJA"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.43529411764705883" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -35,47 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="723" y="-187"/>
-        </scene>
-        <!--View Controller - Help-->
-        <scene sceneID="qdK-CL-twC">
-            <objects>
-                <viewController id="GQS-oq-ya5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2uK-4Y-Nvg">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Help View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JcV-jz-1Qf">
-                                <rect key="frame" x="474" y="191" width="77" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Help" image="second.png" id="Fjf-mc-Cur"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hLw-uq-amT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="723" y="749"/>
-        </scene>
-        <!--View Controller - About-->
-        <scene sceneID="50W-O1-clo">
-            <objects>
-                <viewController id="h3k-dC-NoS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qjb-xd-isz">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="About" id="eg1-Ng-jfG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zui-dp-PO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="723" y="1669"/>
+            <point key="canvasLocation" x="-789" y="-355"/>
         </scene>
         <!--Risk Charts ContainerVC-->
         <scene sceneID="gDD-Fm-gos">
@@ -113,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPS-Pz-ULW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139" y="1069"/>
+            <point key="canvasLocation" x="627" y="901"/>
         </scene>
         <!--Risk InputVC-->
         <scene sceneID="NIV-3C-M4P">
@@ -383,7 +368,62 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAf-tq-lbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="-869"/>
+            <point key="canvasLocation" x="579" y="-1037"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="R4A-Tq-EtU">
+            <objects>
+                <viewController id="z5R-Ta-zq1" customClass="AboutVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOY-7q-Xf4">
+                        <rect key="frame" x="0.0" y="20" width="300" height="140"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HIV Risk Assessment Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ARO-Jj-C5O">
+                                <rect key="frame" x="20" y="49" width="260" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sdO-ds-wep">
+                                <rect key="frame" x="20" y="78" width="260" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Build Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O5b-1Z-zjb">
+                                <rect key="frame" x="20" y="107" width="260" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="xqE-UW-gwF">
+                                <rect key="frame" x="0.0" y="-4" width="300" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TEp-mU-l6C"/>
+                                    <barButtonItem systemItem="done" id="mUx-vL-Kbr">
+                                        <connections>
+                                            <segue destination="tNR-iC-jBr" kind="unwind" unwindAction="doneAbout:" id="uOt-Y8-ccG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelBuildInfo" destination="O5b-1Z-zjb" id="zbf-pZ-MMH"/>
+                        <outlet property="labelVersionInfo" destination="sdO-ds-wep" id="PWo-Tc-IE9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lo2-gN-a6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tNR-iC-jBr" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="-260"/>
         </scene>
         <!--Hiv Neg PartnerVC - HivNegativePartner-->
         <scene sceneID="pdM-eX-W1H">
@@ -557,7 +597,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yz-MA-She" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ITn-Mq-Wgg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2958" y="-1448"/>
+            <point key="canvasLocation" x="1446" y="-1616"/>
         </scene>
         <!--Hiv Pos PartnerVC - HivPositivePartner-->
         <scene sceneID="VUa-aG-Cmr">
@@ -686,7 +726,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elv-Ng-zAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="J8a-Je-GAx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3486" y="-1436"/>
+            <point key="canvasLocation" x="1974" y="-1604"/>
         </scene>
         <!--Contracting Hiv RiskVC-->
         <scene sceneID="ZQy-h6-mQE">
@@ -702,7 +742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhk-U1-rrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930" y="1027"/>
+            <point key="canvasLocation" x="1418" y="859"/>
         </scene>
         <!--Sex Act Risk ChartVC-->
         <scene sceneID="i9h-L9-qD9">
@@ -717,7 +757,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avI-9P-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930" y="1737"/>
+            <point key="canvasLocation" x="1418" y="1569"/>
         </scene>
         <!--Oral Sex To PosVC-->
         <scene sceneID="E7l-u0-jfR">
@@ -820,7 +860,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpN-Ic-62W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2nf-bR-MKu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2979" y="-414"/>
+            <point key="canvasLocation" x="1467" y="-582"/>
         </scene>
         <!--Condom Usage Risk ChartVC-->
         <scene sceneID="wtw-UU-4Vc">
@@ -836,7 +876,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cu-TP-Fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930" y="1341"/>
+            <point key="canvasLocation" x="1418" y="1173"/>
         </scene>
         <!--Receptive AnalVC-->
         <scene sceneID="0NU-hd-8gm">
@@ -926,7 +966,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
@@ -939,7 +979,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ca-4p-19F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wgH-G7-66H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3473" y="29"/>
+            <point key="canvasLocation" x="1961" y="-139"/>
         </scene>
         <!--Insertive AnalVC-->
         <scene sceneID="eiN-Tr-9o9">
@@ -1042,7 +1082,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kb6-1m-u1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WXb-3c-5RA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2979" y="29"/>
+            <point key="canvasLocation" x="1467" y="-139"/>
         </scene>
         <!--Insertive Vag SexVC-->
         <scene sceneID="Ll1-bJ-NWE">
@@ -1081,6 +1121,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Insertive Vaginal Sex" id="QGX-Nr-gIS">
+                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="QCw-ow-fSQ"/>
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="O9N-2Z-f0C">
                                             <connections>
                                                 <segue destination="kSO-kp-g3f" kind="unwind" unwindAction="doneInsertiveVagSex:" id="Y4s-X0-QtZ"/>
@@ -1145,7 +1186,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGg-j3-Dji" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kSO-kp-g3f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="-855"/>
+            <point key="canvasLocation" x="1473" y="-1023"/>
         </scene>
         <!--Receptive Vag SexVC-->
         <scene sceneID="gfW-b4-uMS">
@@ -1248,7 +1289,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Roe-5a-40k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gxx-oL-08n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3515" y="-855"/>
+            <point key="canvasLocation" x="2003" y="-1023"/>
         </scene>
         <!--Oral Sex From PosVC-->
         <scene sceneID="g3E-FS-AU2">
@@ -1351,28 +1392,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoJ-6Z-DYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="T8o-iC-voK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3486" y="-414"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Y4D-Ep-pDr">
-            <objects>
-                <tabBarController id="O5K-AB-cDI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="tLK-VP-0Zl">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="cQ1-8R-wdj"/>
-                        <segue destination="GQS-oq-ya5" kind="relationship" relationship="viewControllers" id="hHM-fT-Epp"/>
-                        <segue destination="h3k-dC-NoS" kind="relationship" relationship="viewControllers" id="JXP-b3-jTX"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5IC-nU-d4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-627" y="-195"/>
+            <point key="canvasLocation" x="1974" y="-582"/>
         </scene>
     </scenes>
     <resources>
@@ -1383,11 +1403,17 @@
         <image name="male_up.png" width="82" height="40"/>
         <image name="no_down.png" width="163" height="80"/>
         <image name="no_up.png" width="82" height="40"/>
-        <image name="second.png" width="30" height="30"/>
         <image name="yes_down.png" width="82" height="40"/>
         <image name="yes_up.png" width="82" height="40"/>
     </resources>
     <classes>
+        <class className="AboutVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="labelBuildInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelVersionInfo" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="CondomUsageRiskChart" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CondomUsageRiskChart.h"/>
         </class>
@@ -1535,6 +1561,10 @@
         <class className="RiskViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskViewController.h"/>
             <relationships>
+                <relationship kind="action" name="btnInfoTouchUp:"/>
+                <relationship kind="action" name="btnResetActivitiesTouchUp:"/>
+                <relationship kind="action" name="btnResetAllTouchUp:"/>
+                <relationship kind="action" name="doneAbout:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="returnActionForSegue:" candidateClass="UIStoryboardSegue"/>
             </relationships>
         </class>

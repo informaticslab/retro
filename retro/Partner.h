@@ -23,6 +23,7 @@ typedef enum GenderType : NSUInteger {
 -(void) genderIsFemale;
 -(BOOL) isFemale;
 -(BOOL) isMale;
+-(void)resetGender;
 
 
 

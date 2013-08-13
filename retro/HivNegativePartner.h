@@ -15,5 +15,6 @@
 
 -(NSString *)getSummaryString;
 -(BOOL)isDefined;
+-(void)resetPartner;
 
 @end

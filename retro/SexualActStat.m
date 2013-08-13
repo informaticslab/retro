@@ -30,5 +30,11 @@ AppManager *appMgr;
     
 }
 
+-(void)resetStat
+{
+    _timesPerMonth = 0;
+    _percentWithCondomUsage = 0;
+    
+}
 
 @end
