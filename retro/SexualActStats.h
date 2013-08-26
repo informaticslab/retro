@@ -84,6 +84,13 @@
 @property double protectedPercent;
 @property double unprotectedPercent;
 
+@property double rrCondom;
+@property double rrArt;
+@property double rrPrepHetro;
+@property double rrPrepMsm;
+@property double rrCircVag;
+@property double rrCircAnal;
+
 
 -(void)updateStats;
 -(void)resetActivities;

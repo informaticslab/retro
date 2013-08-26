@@ -28,7 +28,7 @@
 #define RR_PREP_HET 3.45
 #define RR_PREP_MSM 1.79
 #define RR_CIRC_VAG 1.85
-#define RR_CICR_ANAL 3.41
+#define RR_CIRC_ANAL 3.41
 
 
 -(id)init
@@ -55,7 +55,7 @@
     NSUInteger actsPerMonth = self.insertiveVaginal.timesPerMonth;
     double percentCondomUsage = self.insertiveVaginal.percentWithCondomUsage/100.0;
         
-    double riskFactor = pow(1-(pIV/(RR_CONDOM*RR_ART*RR_PREP_HET*RR_CIRC_VAG)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pIV/(_rrCondom*_rrArt*_rrPrepHetro*_rrCircVag)), actsPerMonth*percentCondomUsage);
     
     DebugLog(@"Insertive vaginal protected risk factor = %f", riskFactor);
 
@@ -69,7 +69,7 @@
     double percentCondomUsage = self.insertiveVaginal.percentWithCondomUsage/100.0;
     
 
-    double riskFactor = pow(1-(pIV/(RR_ART*RR_PREP_HET*RR_CIRC_VAG)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pIV/(_rrArt*_rrPrepHetro*_rrCircVag)), actsPerMonth*(1-percentCondomUsage));
     
     DebugLog(@"Insertive vaginal unprotected risk factor = %f", riskFactor);
     
@@ -82,7 +82,7 @@
     NSUInteger actsPerMonth = self.receptiveVaginal.timesPerMonth;
     double percentCondomUsage = self.receptiveVaginal.percentWithCondomUsage/100.0;
 
-    double riskFactor = pow(1-(pRV/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pRV/(_rrCondom*_rrArt*_rrPrepHetro)), actsPerMonth*percentCondomUsage);
     
     NSLog(@"Receptive vaginal protected risk factor = %f", riskFactor);
 
@@ -94,7 +94,7 @@
     NSUInteger actsPerMonth = self.receptiveVaginal.timesPerMonth;
     double percentCondomUsage = self.receptiveVaginal.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pRV/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pRV/(_rrArt*_rrPrepHetro)), actsPerMonth*(1-percentCondomUsage));
     
     NSLog(@"Receptive vaginal unprotected risk factor = %f", riskFactor);
 
@@ -107,7 +107,7 @@
     NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
     double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pIO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pIO/(_rrCondom*_rrArt*_rrPrepHetro)), actsPerMonth*percentCondomUsage);
 
     DebugLog(@"Receive oral protected risk factor = %f", riskFactor);
 
@@ -121,7 +121,7 @@
     NSUInteger actsPerMonth = self.receiveOral.timesPerMonth;
     double percentCondomUsage = self.receiveOral.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pIO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pIO/(_rrArt*_rrPrepHetro)), actsPerMonth*(1-percentCondomUsage));
     
     DebugLog(@"Receive oral unprotected risk factor = %f", riskFactor);
 
@@ -135,7 +135,7 @@
     NSUInteger actsPerMonth = self.giveOral.timesPerMonth;
     double percentCondomUsage = self.giveOral.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pRO/(RR_CONDOM*RR_ART*RR_PREP_HET)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pRO/(_rrCondom*_rrArt*_rrPrepHetro)), actsPerMonth*percentCondomUsage);
     
     DebugLog(@"Give oral protected risk factor = %f", riskFactor);
 
@@ -148,7 +148,7 @@
     NSUInteger actsPerMonth = self.giveOral.timesPerMonth;
     double percentCondomUsage = self.giveOral.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pRO/(RR_ART*RR_PREP_HET)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pRO/(_rrArt*_rrPrepHetro)), actsPerMonth*(1-percentCondomUsage));
     
     DebugLog(@"Give oral unprotected risk factor = %f", riskFactor);
 
@@ -161,7 +161,7 @@
     NSUInteger actsPerMonth = self.insertiveAnal.timesPerMonth;
     double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pIA/(RR_CONDOM*RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pIA/(_rrCondom*_rrArt*_rrPrepMsm*_rrCircAnal)), actsPerMonth*percentCondomUsage);
     
     DebugLog(@"Insertive anal protected risk factor = %f", riskFactor);
 
@@ -175,7 +175,7 @@
     NSUInteger actsPerMonth = self.insertiveAnal.timesPerMonth;
     double percentCondomUsage = self.insertiveAnal.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pIA/(RR_ART*RR_PREP_MSM*RR_CICR_ANAL)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pIA/(_rrArt*_rrPrepMsm*_rrCircAnal)), actsPerMonth*(1-percentCondomUsage));
     
     DebugLog(@"Insertive anal unprotected risk factor = %f", riskFactor);
 
@@ -189,7 +189,7 @@
     NSUInteger actsPerMonth = self.receptiveAnal.timesPerMonth;
     double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pRA/(RR_CONDOM*RR_ART*RR_PREP_MSM)), actsPerMonth*percentCondomUsage);
+    double riskFactor = pow(1-(pRA/(_rrCondom*_rrArt*_rrPrepMsm)), actsPerMonth*percentCondomUsage);
     
     DebugLog(@"Receptive anal protected risk factor = %f", riskFactor);
 
@@ -203,7 +203,7 @@
     NSUInteger actsPerMonth = self.receptiveAnal.timesPerMonth;
     double percentCondomUsage = self.receptiveAnal.percentWithCondomUsage/100.0;
     
-    double riskFactor = pow(1-(pRA/(RR_ART*RR_PREP_MSM)), actsPerMonth*(1-percentCondomUsage));
+    double riskFactor = pow(1-(pRA/(_rrArt*_rrPrepMsm)), actsPerMonth*(1-percentCondomUsage));
     
     DebugLog(@"Receptive anal unprotected risk factor = %f", riskFactor);
 
@@ -212,10 +212,40 @@
     
 }
 
+-(void)updateRiskRatios
+{
+    
+    _rrCondom = RR_CONDOM;
+    if (_hivPosPartner.isOnArt)
+        _rrArt = RR_ART;
+    else
+        _rrArt = 1;
+    if (_hivNegPartner.isOnPrep)
+        _rrPrepHetro = RR_PREP_HET;
+    else
+        _rrPrepHetro = 1;
+    
+    if (_hivNegPartner.isOnPrep)
+        _rrPrepMsm = RR_PREP_MSM;
+    else
+        _rrPrepMsm = 1;
+    
+    if (_hivNegPartner.isCircumcised && _hivNegPartner.isMale)
+        _rrCircVag = RR_CIRC_VAG;
+    else
+        _rrCircVag = 1;
+    
+    if (_hivNegPartner.isCircumcised && _hivNegPartner.isMale)
+        _rrCircAnal = RR_CIRC_ANAL;
+    else
+        _rrCircAnal = 1;
 
+}
 
 -(void)updateStats
 {
+    
+    [self updateRiskRatios];
     _chancesPerMonthPercent = 1 - ([self calcInsertVagUnprotectedRiskFactor] *[self  calcInsertVagProtectedRiskFactor] *
                           [self calcReceptiveVagProtectedRiskFactor] * [self calcReceptiveVagUnprotectedRiskFactor] *
                           [self calcReceiveOralProtectedRiskFactor] * [self calcReceiveOralUnprotectedRiskFactor] *
