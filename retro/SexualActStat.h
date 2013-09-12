@@ -12,6 +12,7 @@
 
 @property NSUInteger timesPerMonth;
 @property NSUInteger percentWithCondomUsage;
+@property BOOL isApplicable;
 
 -(NSString *)getSummaryString;
 -(void)resetStat;

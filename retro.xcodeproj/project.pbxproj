@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61507F017DFB54E005E17AA /* EulaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A61507EF17DFB54E005E17AA /* EulaVC.m */; };
 		A630866717B562DE00AE15B8 /* yes_down.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865917B562DD00AE15B8 /* yes_down.png */; };
 		A630866817B562DE00AE15B8 /* yes_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865A17B562DD00AE15B8 /* yes_down@2x.png */; };
 		A630866917B562DE00AE15B8 /* yes_up.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865B17B562DD00AE15B8 /* yes_up.png */; };
@@ -37,6 +38,7 @@
 		A6A37456178B8A3100622BE8 /* PaperFetch2_x72.png in Resources */ = {isa = PBXBuildFile; fileRef = A6A37455178B8A3100622BE8 /* PaperFetch2_x72.png */; };
 		A6A37458178B8A3900622BE8 /* PaperFetch2_x144.png in Resources */ = {isa = PBXBuildFile; fileRef = A6A37457178B8A3900622BE8 /* PaperFetch2_x144.png */; };
 		A6B0DEF117A1B3C300569946 /* SexActRiskChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B0DEF017A1B3C300569946 /* SexActRiskChartVC.m */; };
+		A6B1B20D17E0C9E10011F125 /* neweula.html in Resources */ = {isa = PBXBuildFile; fileRef = A6B1B20C17E0C9E10011F125 /* neweula.html */; };
 		A6B6084F17B97B7900A20821 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B6084E17B97B7900A20821 /* AboutVC.m */; };
 		A6C88E7D179F1BA3005C7DDA /* HivNegCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C88E7C179F1BA3005C7DDA /* HivNegCell.m */; };
 		A6D2FD4C178358DA00C246D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D2FD4B178358DA00C246D8 /* UIKit.framework */; };
@@ -71,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A61507EE17DFB54E005E17AA /* EulaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EulaVC.h; sourceTree = "<group>"; };
+		A61507EF17DFB54E005E17AA /* EulaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EulaVC.m; sourceTree = "<group>"; };
 		A630865917B562DD00AE15B8 /* yes_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes_down.png; sourceTree = "<group>"; };
 		A630865A17B562DD00AE15B8 /* yes_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yes_down@2x.png"; sourceTree = "<group>"; };
 		A630865B17B562DD00AE15B8 /* yes_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes_up.png; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		A6A37457178B8A3900622BE8 /* PaperFetch2_x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperFetch2_x144.png; sourceTree = "<group>"; };
 		A6B0DEEF17A1B3C300569946 /* SexActRiskChartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexActRiskChartVC.h; sourceTree = "<group>"; };
 		A6B0DEF017A1B3C300569946 /* SexActRiskChartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexActRiskChartVC.m; sourceTree = "<group>"; };
+		A6B1B20C17E0C9E10011F125 /* neweula.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = neweula.html; sourceTree = "<group>"; };
 		A6B6084D17B97B7900A20821 /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
 		A6B6084E17B97B7900A20821 /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		A6C88E7B179F1BA3005C7DDA /* HivNegCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HivNegCell.h; sourceTree = "<group>"; };
@@ -237,6 +242,7 @@
 		A6D2FD51178358DA00C246D8 /* retro */ = {
 			isa = PBXGroup;
 			children = (
+				A6B1B20C17E0C9E10011F125 /* neweula.html */,
 				A6B6084D17B97B7900A20821 /* AboutVC.h */,
 				A6B6084E17B97B7900A20821 /* AboutVC.m */,
 				A6D2FD5A178358DA00C246D8 /* AppDelegate.h */,
@@ -301,6 +307,8 @@
 				A6D86BC1178482E800A13E8F /* SexualActStats.h */,
 				A6D86BC2178482E800A13E8F /* SexualActStats.m */,
 				A6D2FD52178358DA00C246D8 /* Supporting Files */,
+				A61507EE17DFB54E005E17AA /* EulaVC.h */,
+				A61507EF17DFB54E005E17AA /* EulaVC.m */,
 			);
 			path = retro;
 			sourceTree = "<group>";
@@ -399,6 +407,7 @@
 				A630867817B563AF00AE15B8 /* Default-Landscape@2x.png in Resources */,
 				A630867B17B564C100AE15B8 /* female_up.png in Resources */,
 				A630867C17B564C100AE15B8 /* female_up@2x.png in Resources */,
+				A6B1B20D17E0C9E10011F125 /* neweula.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +447,7 @@
 				A65B933117B089F100743CA8 /* ContractingHivRisk.m in Sources */,
 				A65B933417B08A1000743CA8 /* ContractingHivRiskVC.m in Sources */,
 				A6B6084F17B97B7900A20821 /* AboutVC.m in Sources */,
+				A61507F017DFB54E005E17AA /* EulaVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

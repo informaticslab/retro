@@ -18,6 +18,7 @@
 
 @implementation RiskInputVC
 
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -37,7 +38,13 @@
      selector:@selector(handleNotification:)
      name:@"StatsUpdated"
      object:nil];
+    
+}
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -188,49 +195,11 @@
 
 -(void)showSexActsSection
 {
-    if ([_stats.hivNegPartner isFemale] && [_stats.hivPosPartner isMale]) {
-        self.cellInsertiveVag.hidden = TRUE;
-        self.cellReceptiveVag.hidden = FALSE;
-        self.cellInsertiveAnal.hidden = TRUE;
-        self.cellReceptiveAnal.hidden = FALSE;
-        self.cellReceiveOral.hidden = FALSE;
-        self.cellGiveOral.hidden = FALSE;
-        self.showActsSection = TRUE;
-        [self.tableView reloadData];
-        
-        
-    } else if ([_stats.hivNegPartner isMale] && [_stats.hivPosPartner isFemale]) {
-        self.cellInsertiveVag.hidden = FALSE;
-        self.cellReceptiveVag.hidden = TRUE;
-        self.cellInsertiveAnal.hidden = FALSE;
-        self.cellReceptiveAnal.hidden = TRUE;
-        self.cellReceiveOral.hidden = FALSE;
-        self.cellGiveOral.hidden = FALSE;
-        self.showActsSection = TRUE;
-        [self.tableView reloadData];
-        
-        
-    } else if ([_stats.hivNegPartner isMale] && [_stats.hivPosPartner isMale]) {
-        self.cellInsertiveVag.hidden = TRUE;
-        self.cellReceptiveVag.hidden = TRUE;
-        self.cellInsertiveAnal.hidden = FALSE;
-        self.cellReceptiveAnal.hidden = FALSE;
-        self.cellReceiveOral.hidden = FALSE;
-        self.cellGiveOral.hidden = FALSE;
-        self.showActsSection = TRUE;
-        [self.tableView reloadData];
-        
-        
-    } else if ([_stats.hivNegPartner isFemale] && [_stats.hivPosPartner isFemale]) {
-        self.cellInsertiveVag.hidden = TRUE;
-        self.cellReceptiveVag.hidden = TRUE;
-        self.cellInsertiveAnal.hidden = TRUE;
-        self.cellReceptiveAnal.hidden = TRUE;
-        self.cellReceiveOral.hidden = TRUE;
-        self.cellGiveOral.hidden = TRUE;
-        self.showActsSection = FALSE;
-        [self.tableView reloadData];
-        
+    // only show stats that apply for gender makeup of couple
+    [_stats setApplicableStats];
+    
+    if ([_stats.hivNegPartner isFemale] && [_stats.hivPosPartner isFemale]) {
+
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"No data available."
                                                           message:@"Data is not available for female-female discordant couples."
                                                          delegate:nil
@@ -238,21 +207,36 @@
                                                 otherButtonTitles:nil];
         [message show];
     }
+    
+    [self.tableView reloadData];
 
 }
 
+-(void)hideCell:(UITableViewCell *)cellToHide
+{
+    cellToHide.userInteractionEnabled = NO;
+    cellToHide.textLabel.enabled = NO;
+    cellToHide.detailTextLabel.enabled = NO;
+    cellToHide.textLabel.alpha = 0.35;
+    cellToHide.detailTextLabel.alpha = 0.35;
+
+}
+
+-(void)showCell:(UITableViewCell *)cellToShow
+{
+    cellToShow.userInteractionEnabled = YES;
+    cellToShow.textLabel.enabled = YES;
+    cellToShow.detailTextLabel.enabled = YES;
+    cellToShow.selectionStyle = UITableViewCellSelectionStyleNone;
+    cellToShow.textLabel.alpha = 1;
+    cellToShow.detailTextLabel.alpha = 1;
+    
+}
 
 -(void)hideSexActsSection
 {
     
-    self.cellInsertiveVag.hidden = TRUE;
-    self.cellReceptiveVag.hidden = TRUE;
-    self.cellInsertiveAnal.hidden = TRUE;
-    self.cellReceptiveAnal.hidden = TRUE;
-    self.cellReceiveOral.hidden = TRUE;
-    self.cellGiveOral.hidden = TRUE;
-    
-    self.showActsSection = FALSE;
+    [_stats noApplicableStats];
     [self.tableView reloadData];
 
 }
@@ -263,11 +247,54 @@
     
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell.reuseIdentifier isEqualToString:@"insVagCell"]) {
+        if (_stats.insertiveVaginal.isApplicable)
+            [self showCell:cell];
+        else
+            [self hideCell:cell];
+    }
+    else if ([cell.reuseIdentifier isEqualToString:@"recVagCell"]) {
+        if (_stats.receptiveVaginal.isApplicable)
+            [self showCell:cell];
+        else
+            [self hideCell:cell];
+    }
+    else if ([cell.reuseIdentifier isEqualToString:@"insAnalCell"]) {
+        if (_stats.insertiveAnal.isApplicable)
+            [self showCell:cell];
+        else
+            [self hideCell:cell];
+    }
+    else if ([cell.reuseIdentifier isEqualToString:@"recAnalCell"]) {
+        if (_stats.receptiveAnal.isApplicable)
+            [self showCell:cell];
+        else
+            [self hideCell:cell];
+    }
+    else if ([cell.reuseIdentifier isEqualToString:@"recOralCell"]) {
+        if (_stats.receiveOral.isApplicable)
+            [self showCell:cell];
+        else
+            [self hideCell:cell];
+    }
+    else if ([cell.reuseIdentifier isEqualToString:@"giveOralCell"]) {
+        if (_stats.giveOral.isApplicable)
+            [self showCell:cell];
+        else
+            [self hideCell:cell];
+    }
+    
+    return cell;
+    
+}
+
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0)
         return @"Part 1: HIV Status information about you and your partner";
-    if (section == 1 && self.showActsSection) 
+    if (section == 1) 
         return @"Part 2: Questions for the HIV Negative partner - your sexual activity and condom use";
     return @"";
     

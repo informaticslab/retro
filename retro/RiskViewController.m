@@ -11,15 +11,33 @@
 #import "RiskInputVC.h"
 #import "RiskChartsContainerVC.h"
 #import "AboutVC.h"
+#import "AppManager.h"
+#import "EulaVC.h"
+
 
 @implementation RiskViewController
+
+AppManager *appMgr;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    appMgr = [AppManager singletonAppManager];
+   
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    if (appMgr.agreedWithEula == FALSE) {
+        [self presentEulaModalView];
+    }
     
 }
+
+
 
 -(void)awakeFromNib
 {
@@ -28,6 +46,39 @@
     
     
 }
+
+
+- (void)presentEulaModalView
+{
+    
+    if (appMgr.agreedWithEula == TRUE)
+        return;
+    
+    // store the data
+    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
+                             [appInfo objectForKey:@"CFBundleShortVersionString"],
+                             [appInfo objectForKey:@"CFBundleVersion"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastVersionEulaAgreed = (NSString *)[defaults objectForKey:@"agreedToEulaForVersion"];
+    
+    
+    // was the version number the last time EULA was seen and agreed to the
+    // same as the current version, if not show EULA and store the version number
+    if (![currVersion isEqualToString:lastVersionEulaAgreed]) {
+        [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
+        [defaults synchronize];
+        NSLog(@"Data saved");
+        NSLog(@"%@", currVersion);
+        
+        //
+        [self performSegueWithIdentifier:@"displayEulaSegue" sender:self];
+    }
+    
+    
+}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
 
@@ -49,6 +100,11 @@
     {
         // AboutVC *destVC = segue.destinationViewController;
 
+    }
+    else if([segue.identifier isEqualToString:@"displayEulaSegue"])
+    {
+        EulaVC *destVC = segue.destinationViewController;
+        
     }
 }
 

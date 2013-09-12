@@ -95,6 +95,8 @@
 -(void)updateStats;
 -(void)resetActivities;
 -(void)resetAll;
+-(void)setApplicableStats;
+-(void)noApplicableStats;
 
 
 @end

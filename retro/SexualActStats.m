@@ -334,6 +334,61 @@
 
 }
 
+// Set applicable flag for stats that apply for gender makeup of couple
+-(void)setApplicableStats
+{
+    
+        if ([_hivNegPartner isFemale] && [_hivPosPartner isMale]) {
+            _insertiveVaginal.isApplicable = FALSE;
+            _receptiveVaginal.isApplicable = TRUE;
+            _insertiveAnal.isApplicable = FALSE;
+            _receptiveAnal.isApplicable = TRUE;
+            _receiveOral.isApplicable = TRUE;
+            _giveOral.isApplicable = TRUE;
+            
+            
+        } else if ([_hivNegPartner isMale] && [_hivPosPartner isFemale]) {
+            _insertiveVaginal.isApplicable = TRUE;
+            _receptiveVaginal.isApplicable = FALSE;
+            _insertiveAnal.isApplicable = TRUE;
+            _receptiveAnal.isApplicable = FALSE;
+            _receiveOral.isApplicable = TRUE;
+            _giveOral.isApplicable = TRUE;
+            
+            
+        } else if ([_hivNegPartner isMale] && [_hivPosPartner isMale]) {
+            _insertiveVaginal.isApplicable = FALSE;
+            _receptiveVaginal.isApplicable = FALSE;
+            _insertiveAnal.isApplicable = TRUE;
+            _receptiveAnal.isApplicable = TRUE;
+            _receiveOral.isApplicable = TRUE;
+            _giveOral.isApplicable = TRUE;
+            
+            
+        } else if ([_hivNegPartner isFemale] && [_hivPosPartner isFemale]) {
+            _insertiveVaginal.isApplicable = FALSE;
+            _receptiveVaginal.isApplicable = FALSE;
+            _insertiveAnal.isApplicable = FALSE;
+            _receptiveAnal.isApplicable = FALSE;
+            _receiveOral.isApplicable = FALSE;
+            _giveOral.isApplicable = FALSE;
+            
+        }
+
+}
+
+-(void)noApplicableStats
+{
+
+    _insertiveVaginal.isApplicable = FALSE;
+    _receptiveVaginal.isApplicable = FALSE;
+    _insertiveAnal.isApplicable = FALSE;
+    _receptiveAnal.isApplicable = FALSE;
+    _receiveOral.isApplicable = FALSE;
+    _giveOral.isApplicable = FALSE;
+
+}
+
 
 -(void)resetActivities
 {
