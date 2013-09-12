@@ -116,7 +116,7 @@
 {
     self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
     if ([_stats.hivNegPartner isDefined] &&  [_stats.hivPosPartner isDefined]) {
-        [self showSexActsSection];
+        [self updateSexActsSection];
     }
     
     NSLog(@"doneHivNegPartner in RiskInputVC");
@@ -126,7 +126,7 @@
 {
     self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
     if ([_stats.hivNegPartner isDefined] &&  [_stats.hivPosPartner isDefined]) {
-        [self showSexActsSection];
+        [self updateSexActsSection];
     }
     
     NSLog(@"doneHivPosPartner in RiskInputVC");
@@ -176,6 +176,7 @@
 
 -(void)updateSummaryLabels
 {
+    
     self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
     self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
     self.lblInsertiveVagSex.text = [self.stats.insertiveVaginal getSummaryString];
@@ -193,7 +194,7 @@
     [self updateSummaryLabels];
 }
 
--(void)showSexActsSection
+-(void)updateSexActsSection
 {
     // only show stats that apply for gender makeup of couple
     [_stats setApplicableStats];

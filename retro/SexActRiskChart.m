@@ -72,7 +72,7 @@
     [text drawAtPoint:CGPointMake(10, 5) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
     text = @"of contracting HIV?";
     [text drawAtPoint:CGPointMake(10, 25) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
-//    [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18 ]];
+    //    [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18 ]];
     
     
     
@@ -89,22 +89,22 @@
     _endDeg = _startDeg + _stats.rvPieSlice;
     CGContextSetRGBFillColor(_ctx, RV_COLOR);
     [self drawArc];
-
+    
     _startDeg= _endDeg;
     _endDeg = _startDeg + _stats.roPieSlice;
     CGContextSetRGBFillColor(_ctx, RO_COLOR);
     [self drawArc];
-
+    
     _startDeg= _endDeg;
     _endDeg = _startDeg + _stats.goPieSlice;
     CGContextSetRGBFillColor(_ctx, GO_COLOR);
     [self drawArc];
-
+    
     _startDeg= _endDeg;
     _endDeg = _startDeg + _stats.iaPieSlice;
     CGContextSetRGBFillColor(_ctx, IA_COLOR);
     [self drawArc];
-
+    
     _startDeg= _endDeg;
     _endDeg = _startDeg + _stats.raPieSlice;
     CGContextSetRGBFillColor(_ctx, RA_COLOR);
@@ -112,42 +112,61 @@
     
     
     // draw legend
-    [self drawActPercentage:_stats.ivContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y)];
-   _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y, LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
-    CGContextSetRGBFillColor(_ctx, IV_COLOR);
-    [self drawLegendRectangle];
-    [self drawLegendText:@"Insertive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
-
-    [self drawActPercentage:_stats.rvContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+20)];
-    _rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+20,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
-    CGContextSetRGBFillColor(_ctx, RV_COLOR);
-    [self drawLegendRectangle];
-    [self drawLegendText:@"Receptive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+20)];
-
+    int y_offset = 0;
     
-    [self drawActPercentage:_stats.roContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+40)];
-    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+40,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
-    CGContextSetRGBFillColor(_ctx, RO_COLOR);
-    [self drawLegendRectangle];
-    [self drawLegendText:@"Receiving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+40)];
+    if (_stats.insertiveVaginal.isApplicable) {
+        [self drawActPercentage:_stats.ivContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y)];
+        _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y, LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+        CGContextSetRGBFillColor(_ctx, IV_COLOR);
+        [self drawLegendRectangle];
+        [self drawLegendText:@"Insertive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
+        y_offset += 20;
+    }
     
-    [self drawActPercentage:_stats.goContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+60)];
-    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+60,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
-    CGContextSetRGBFillColor(_ctx, GO_COLOR);
-    [self drawLegendRectangle];
-    [self drawLegendText:@"Giving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+60)];
+    if (_stats.receptiveVaginal.isApplicable) {
+        [self drawActPercentage:_stats.rvContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+y_offset)];
+        _rectangle = CGRectMake(KEY_COLOR_BOX_X, KEY_COLOR_BOX_Y+y_offset,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+        CGContextSetRGBFillColor(_ctx, RV_COLOR);
+        [self drawLegendRectangle];
+        [self drawLegendText:@"Receptive Vaginal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+y_offset)];
+        y_offset += 20;
+    }
     
-    [self drawActPercentage:_stats.iaContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+80)];
-    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+80,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
-    CGContextSetRGBFillColor(_ctx, IA_COLOR);
-    [self drawLegendRectangle];
-    [self drawLegendText:@"Insertive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+80)];
     
-    [self drawActPercentage:_stats.raContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+100)];
-    _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+100,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
-    CGContextSetRGBFillColor(_ctx, RA_COLOR);
-    [self drawLegendRectangle];
-    [self drawLegendText:@"Receptive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+100)];
+    if (_stats.receiveOral.isApplicable) {
+        [self drawActPercentage:_stats.roContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+y_offset)];
+        _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+y_offset,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+        CGContextSetRGBFillColor(_ctx, RO_COLOR);
+        [self drawLegendRectangle];
+        [self drawLegendText:@"Receiving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+y_offset)];
+        y_offset += 20;
+    }
+    
+    if (_stats.giveOral.isApplicable) {
+        [self drawActPercentage:_stats.goContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+y_offset)];
+        _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+y_offset,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+        CGContextSetRGBFillColor(_ctx, GO_COLOR);
+        [self drawLegendRectangle];
+        [self drawLegendText:@"Giving Oral Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+y_offset)];
+        y_offset += 20;
+    }
+    
+    if (_stats.insertiveAnal.isApplicable) {
+        [self drawActPercentage:_stats.iaContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+y_offset)];
+        _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+y_offset,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+        CGContextSetRGBFillColor(_ctx, IA_COLOR);
+        [self drawLegendRectangle];
+        [self drawLegendText:@"Insertive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+y_offset)];
+        y_offset += 20;
+    }
+    
+    if (_stats.receptiveAnal.isApplicable) {
+        [self drawActPercentage:_stats.raContribPercent atPoint:CGPointMake(ACT_PERCENT_TEXT_X, ACT_PERCENT_TEXT_Y+y_offset)];
+        _rectangle = CGRectMake(KEY_COLOR_BOX_X,KEY_COLOR_BOX_Y+y_offset,LEGEND_RECTANGLE_X, LEGEND_RECTANGLE_Y);
+        CGContextSetRGBFillColor(_ctx, RA_COLOR);
+        [self drawLegendRectangle];
+        [self drawLegendText:@"Receptive Anal Sex" atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+y_offset)];
+    }
     
     
 }
@@ -159,12 +178,12 @@
     CGContextAddArc(_ctx, _x, _y, _r, (_startDeg-90)*M_PI/180.0, (_endDeg-90)*M_PI/180.0, 0);
     CGContextClosePath(_ctx);
     CGContextFillPath(_ctx);
-
+    
 }
 
 -(void)drawLegendText:(NSString *)text atPoint:(CGPoint)newPoint
 {
-
+    
     CGContextSetRGBFillColor(_ctx, BLACK_COLOR);
     [text drawAtPoint:newPoint withFont:LEGEND_FONT];
     
@@ -187,7 +206,7 @@
     CGContextAddRect(_ctx, _rectangle);
     CGContextStrokePath(_ctx);
     CGContextFillRect(_ctx, _rectangle);
-
+    
     
 }
 
