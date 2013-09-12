@@ -11,10 +11,12 @@
 
 @interface HivPositivePartner : Partner
 
-@property(nonatomic) BOOL isOnArt;
+@property BOOL isOnArt;
+@property BOOL hasArtStateChanged;
 
 -(NSString *)getSummaryString;
 -(BOOL)isDefined;
+
 -(void)resetPartner;
 
 @end

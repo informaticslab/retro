@@ -374,6 +374,7 @@
             _giveOral.isApplicable = FALSE;
             
         }
+    [self updateStats];
 
 }
 

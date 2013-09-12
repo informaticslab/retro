@@ -13,7 +13,7 @@
 @implementation HivPosPartnerVC
 
 AppManager *appMgr;
-
+HivPositivePartner *posPartner;
 
 - (void)viewDidLoad
 {
@@ -21,10 +21,19 @@ AppManager *appMgr;
 	// Do any additional setup after loading the view.
     NSLog(@"HivPosPartnerVC viewDidLoad().");
     appMgr = [AppManager singletonAppManager];
-
-    self.lblGender.text = appMgr.unspecifiedText;
-    self.lblOnArt.text = appMgr.unspecifiedText;
-
+    posPartner = _stats.hivPosPartner;
+    
+    posPartner.hasGenderChanged = FALSE;
+    if (posPartner.isDefined) {
+        self.lblGender.text = [posPartner getGenderText];
+        if (posPartner.isOnArt)
+            self.lblOnArt.text = @"Yes";
+        else
+            self.lblOnArt.text = @"No";
+    } else {
+        self.lblGender.text = appMgr.unspecifiedText;
+        self.lblOnArt.text = appMgr.unspecifiedText;
+    }
 }
 
 
@@ -35,37 +44,54 @@ AppManager *appMgr;
 }
 
 - (IBAction)btnMaleTouchUp:(id)sender {
-    
+    // if already male do nothing
+    if (posPartner.isMale)
+        return;
+
     NSLog(@"HivPosPartnerVC- positive partner is a male.");
     self.lblGender.text = @"Male";
     
-    [self.posPartner genderIsMale];
-    
+    [posPartner genderIsMale];
+    posPartner.hasGenderChanged = TRUE;
+    //[_stats resetActivities];
+    [_stats setApplicableStats];
+
 }
 
 - (IBAction)btnFemaleTouchUp:(id)sender {
     
+    if (posPartner.isFemale)
+        return;
     NSLog(@"HivPosPartnerVC- positive partner is a female.");
     self.lblGender.text = @"Female";
     
-    [self.posPartner genderIsFemale];
-    
+    [posPartner genderIsFemale];
+    posPartner.hasGenderChanged = TRUE;
+    //[_stats resetActivities];
+    [_stats setApplicableStats];
+   
 }
 
 
 - (IBAction)btnYesOnArtTouchUp:(id)sender {
     
+    if (posPartner.isOnArt)
+        return;
     NSLog(@"HivPosPartnerVC- positive partner is on ART.");
     self.lblOnArt.text = @"Yes";
-    self.posPartner.isOnArt = YES;
+    posPartner.isOnArt = YES;
+    [_stats updateStats];
     
 }
 
 - (IBAction)btnNoOnArtTouchUp:(id)sender {
     
+    if (posPartner.isOnArt == FALSE)
+        return;
     NSLog(@"HivPosPartnerVC- positive partner is not on ART.");
     self.lblOnArt.text = @"No";
-    self.posPartner.isOnArt = NO;
+    posPartner.isOnArt = NO;
+    [_stats updateStats];
     
 }
 

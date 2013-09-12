@@ -18,12 +18,13 @@ typedef enum GenderType : NSUInteger {
 @interface Partner : NSObject
 
 @property GenderType gender;
-
+@property BOOL hasGenderChanged;
 -(void) genderIsMale;
 -(void) genderIsFemale;
 -(BOOL) isFemale;
 -(BOOL) isMale;
 -(void)resetGender;
+-(NSString *)getGenderText;
 
 
 

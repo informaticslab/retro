@@ -52,5 +52,16 @@
     _gender = GENDER_UNDEFINED;
 }
 
+-(NSString *)getGenderText
+{
+    if (self.gender == GENDER_FEMALE) {
+        return @"Female";
+    } else if (self.gender == GENDER_MALE) {
+        return @"Male";
+        
+    } else
+        return @"Undefined";
+    
+}
 
 @end

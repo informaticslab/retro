@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HivNegativePartner.h"
+#import "SexualActStats.h"
 
 @interface HivNegPartnerVC : UIViewController
 - (IBAction)btnMaleTouchUp:(id)sender;
@@ -16,6 +16,7 @@
 - (IBAction)btnNoCircumcisedTouchUp:(id)sender;
 - (IBAction)btnYesOnPrepTouchUp:(id)sender;
 - (IBAction)btnNoOnPrepTouchUp:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *btnMale;
 @property (weak, nonatomic) IBOutlet UIButton *btnFemale;
@@ -30,5 +31,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblOnPrep;
 @property (weak, nonatomic) IBOutlet UILabel *lblCircumcisedQuestion;
 
-@property (weak, nonatomic) HivNegativePartner *negPartner;
+@property(weak, nonatomic) SexualActStats *stats;
 @end

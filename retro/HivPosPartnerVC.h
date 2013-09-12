@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HivPositivePartner.h"
+#import "SexualActStats.h"
 
 @interface HivPosPartnerVC : UIViewController
 
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblGender;
 @property (weak, nonatomic) IBOutlet UILabel *lblOnArt;
 
-@property (weak, nonatomic) HivPositivePartner *posPartner;
+@property(weak, nonatomic) SexualActStats *stats;
 
 
 - (IBAction)btnMaleTouchUp:(id)sender;

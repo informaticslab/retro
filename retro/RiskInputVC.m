@@ -59,13 +59,13 @@
     if([segue.identifier isEqualToString:@"hivNegPartnerSegue"])
     {
         HivNegPartnerVC *negPartnerVC = segue.destinationViewController;
-        negPartnerVC.negPartner = self.stats.hivNegPartner;
+        negPartnerVC.stats = self.stats;
         
         
     } else if([segue.identifier isEqualToString:@"hivPosPartnerSegue"]){
         
         HivPosPartnerVC *posPartnerVC = segue.destinationViewController;
-        posPartnerVC.posPartner = self.stats.hivPosPartner;
+        posPartnerVC.stats = self.stats;
         
     } else if([segue.identifier isEqualToString:@"insertiveVaginalSexSegue"]){
     
@@ -116,7 +116,11 @@
 {
     self.lblHivNegPartner.text = [self.stats.hivNegPartner getSummaryString];
     if ([_stats.hivNegPartner isDefined] &&  [_stats.hivPosPartner isDefined]) {
-        [self updateSexActsSection];
+        if (_stats.hivNegPartner.hasGenderChanged) {
+            [self updateSexActsSection];
+            //[_stats resetActivities];
+        }
+        [_stats updateStats];
     }
     
     NSLog(@"doneHivNegPartner in RiskInputVC");
@@ -126,7 +130,11 @@
 {
     self.lblHivPosPartner.text = [self.stats.hivPosPartner getSummaryString];
     if ([_stats.hivNegPartner isDefined] &&  [_stats.hivPosPartner isDefined]) {
-        [self updateSexActsSection];
+        if (_stats.hivPosPartner.hasGenderChanged) {
+            [self updateSexActsSection];
+            //[_stats resetActivities];
+
+        }
     }
     
     NSLog(@"doneHivPosPartner in RiskInputVC");
@@ -293,6 +301,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    
     if (section == 0)
         return @"Part 1: HIV Status information about you and your partner";
     if (section == 1) 
@@ -300,7 +309,5 @@
     return @"";
     
 }
-
-
 
 @end
