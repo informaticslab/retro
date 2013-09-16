@@ -50,8 +50,9 @@ AppManager *appMgr;
 
 - (void)presentEulaModalView
 {
+    static BOOL alwaysShowEula = TRUE;
     
-    if (appMgr.agreedWithEula == TRUE)
+    if (appMgr.agreedWithEula == TRUE && alwaysShowEula == FALSE)
         return;
     
     // store the data
@@ -65,7 +66,7 @@ AppManager *appMgr;
     
     // was the version number the last time EULA was seen and agreed to the
     // same as the current version, if not show EULA and store the version number
-    if (![currVersion isEqualToString:lastVersionEulaAgreed]) {
+    if (![currVersion isEqualToString:lastVersionEulaAgreed] || alwaysShowEula) {
         [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
         [defaults synchronize];
         NSLog(@"Data saved");
