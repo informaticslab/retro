@@ -21,4 +21,5 @@
 :(id)sender;
 - (IBAction)btnResetAllTouchUp:(id)sender;
 - (IBAction)btnInfoTouchUp:(id)sender;
+- (IBAction)btnShareTouchUp:(id)sender;
 @end

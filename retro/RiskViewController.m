@@ -23,9 +23,9 @@ AppManager *appMgr;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
     appMgr = [AppManager singletonAppManager];
-   
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -82,7 +82,7 @@ AppManager *appMgr;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-
+    
     NSLog(@"prepareForSegue: %@", segue.identifier);
     if([segue.identifier isEqualToString:@"embedRiskInputSegue"])
     {
@@ -100,7 +100,7 @@ AppManager *appMgr;
     else if([segue.identifier isEqualToString:@"aboutSegue"])
     {
         // AboutVC *destVC = segue.destinationViewController;
-
+        
     }
     else if([segue.identifier isEqualToString:@"displayEulaSegue"])
     {
@@ -146,5 +146,16 @@ AppManager *appMgr;
 }
 
 - (IBAction)btnInfoTouchUp:(id)sender {
+}
+
+- (IBAction)btnShareTouchUp:(id)sender {
+    
+    NSArray *activityItems = nil;
+    
+//        activityItems = @[_postText.text, _postImage];
+        activityItems = @[@"HIV Assessment Share Text"];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 @end
