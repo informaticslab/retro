@@ -15,6 +15,8 @@
 #import "EulaVC.h"
 
 
+#define kPDFPageBounds CGRectMake(0, 0, 8.5 * 72, 11 * 72)
+
 @implementation RiskViewController
 
 AppManager *appMgr;
@@ -150,12 +152,43 @@ AppManager *appMgr;
 
 - (IBAction)btnShareTouchUp:(id)sender {
     
-    NSArray *activityItems = nil;
+    NSData *pdfData = [self generatePDFDataForPrinting];
+
+    NSArray *activityItems = @[@"HIV Assessment Share Text", pdfData];
     
-//        activityItems = @[_postText.text, _postImage];
-        activityItems = @[@"HIV Assessment Share Text"];
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil] ;
     
-    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-    [self presentViewController:activityController animated:YES completion:nil];
+    activityController.excludedActivityTypes = [[NSArray alloc] initWithObjects:
+                                        UIActivityTypePostToWeibo,
+                                        UIActivityTypePostToFacebook,
+                                        UIActivityTypePostToTwitter,
+                                        UIActivityTypeSaveToCameraRoll,
+                                        UIActivityTypeCopyToPasteboard,
+                                        UIActivityTypeMessage,
+                                        UIActivityTypeAssignToContact,
+                                        nil];
+    activityController.title = @"Share HIV Assessment Results";
+    
+   //[self presentViewController:activityController animated:YES completion:nil];
+    self.activityPopover = [[UIPopoverController alloc] initWithContentViewController:activityController];
+    [self.activityPopover presentPopoverFromBarButtonItem:self.btnShareAction permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
 }
+
+- (NSData *)generatePDFDataForPrinting {
+    NSMutableData *pdfData = [NSMutableData data];
+    UIGraphicsBeginPDFContextToData(pdfData, kPDFPageBounds, nil);
+    UIGraphicsBeginPDFPage();
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [self drawStuffInContext:ctx];  // Method also usable from drawRect:.
+    UIGraphicsEndPDFContext();
+    return pdfData;
+}
+
+- (void)drawStuffInContext:(CGContextRef)ctx {
+    UIFont *font = [UIFont fontWithName:@"Zapfino" size:48];
+    CGRect textRect = CGRectInset(kPDFPageBounds, 36, 36);
+    [@"HIV Assessment Results" drawInRect:textRect withFont:font];
+}
+
 @end

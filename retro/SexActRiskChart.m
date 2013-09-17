@@ -191,7 +191,7 @@
 
 -(void)drawActPercentage:(double)percentage atPoint:(CGPoint)newPoint
 {
-    NSString *percentageText = [NSString stringWithFormat:@"%.1f%%",percentage];
+    NSString *percentageText = [NSString stringWithFormat:@"%.f%%",percentage];
     CGContextSetRGBFillColor(_ctx, BLACK_COLOR);
     [percentageText drawAtPoint:newPoint withFont:LEGEND_FONT];
     

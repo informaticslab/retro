@@ -14,8 +14,11 @@
 @interface RiskViewController : UIViewController
 
 @property(nonatomic, weak) UIPopoverController *popover;
+@property(nonatomic, strong) UIPopoverController *activityPopover;
 @property(nonatomic, strong) SexualActStats *stats;
 @property(nonatomic, weak) RiskInputVC *riskInputVC;
+@property (weak, nonatomic) IBOutlet UIToolbar *shareActionButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnShareAction;
 
 - (IBAction)btnResetActivitiesTouchUp
 :(id)sender;

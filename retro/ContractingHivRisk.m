@@ -43,23 +43,23 @@
     CGContextSetRGBStrokeColor(_ctx, 1.0, 1.0, 1.0, 1.0);
     CGContextSetLineWidth(_ctx, 2.0);
     CGContextSetRGBFillColor(_ctx, BLACK_COLOR);
-
     
-//    NSString *text = @"What are the chances I could contract HIV from my partner?";
+    
+    //    NSString *text = @"What are the chances I could contract HIV from my partner?";
     NSString *text = @"What are my chances of contracting HIV from my partner?";
     [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"Verdana-Bold" size:16 ]];
     //    [text drawAtPoint:CGPointMake(10, 10) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18 ]];
     
-    text = [NSString stringWithFormat:@"%.2f%% per month", _stats.chancesPerMonthPercent*100];
+    text = [NSString stringWithFormat:@"%.1f%% per month", _stats.chancesPerMonthPercent*100];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y)];
-
-    text = [NSString stringWithFormat:@"%.2f%% per year", _stats.chancesPerYearPercent*100];
+    
+    text = [NSString stringWithFormat:@"%.1f%% per year", _stats.chancesPerYearPercent*100];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+20)];
-
-    text = [NSString stringWithFormat:@"%.2f%% in 10 years", _stats.chancesPerTenYearPercent*100];
+    
+    text = [NSString stringWithFormat:@"%.1f%% in 10 years", _stats.chancesPerTenYearPercent*100];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+40)];
     
-    text = [NSString stringWithFormat:@"%.2f%% in 25 years", _stats.chancesPerTwentyFiveYearPercent*100];
+    text = [NSString stringWithFormat:@"%.1f%% in 25 years", _stats.chancesPerTwentyFiveYearPercent*100];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X, KEY_TEXT_Y+60)];
     
     
@@ -68,25 +68,36 @@
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+160, KEY_TEXT_Y+20)];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+160, KEY_TEXT_Y+40)];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+160, KEY_TEXT_Y+60)];
-
     
     
     
     
-    text = [NSString stringWithFormat:@"1 in %.2f", _stats.chancesPerMonthRatio];
+    if (_stats.chancesPerMonthRatio > 2.0)
+        text = [NSString stringWithFormat:@"1 in %.f", _stats.chancesPerMonthRatio];
+    else
+        text = [NSString stringWithFormat:@"1 in %.1f", _stats.chancesPerMonthRatio];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+220, KEY_TEXT_Y)];
     
-    text = [NSString stringWithFormat:@"1 in %.2f", _stats.chancesPerYearRatio];
+    if (_stats.chancesPerYearRatio > 2.0)
+        text = [NSString stringWithFormat:@"1 in %.f", _stats.chancesPerYearRatio];
+    else
+        text = [NSString stringWithFormat:@"1 in %.1f", _stats.chancesPerYearRatio];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+220, KEY_TEXT_Y+20)];
     
-    text = [NSString stringWithFormat:@"1 in %.2f", _stats.chancesPerTenYearRatio];
+    if (_stats.chancesPerTenYearRatio > 2.0)
+        text = [NSString stringWithFormat:@"1 in %.f", _stats.chancesPerTenYearRatio];
+    else
+        text = [NSString stringWithFormat:@"1 in %.1f", _stats.chancesPerTenYearRatio];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+220, KEY_TEXT_Y+40)];
     
-    text = [NSString stringWithFormat:@"1 in %.2f", _stats.chancesPerTwentyFiveYearRatio];
+    if (_stats.chancesPerTwentyFiveYearRatio > 2.0)
+        text = [NSString stringWithFormat:@"1 in %.f", _stats.chancesPerTwentyFiveYearRatio];
+    else
+        text = [NSString stringWithFormat:@"1 in %.1f", _stats.chancesPerTwentyFiveYearRatio];
     [self drawText:text atPoint:CGPointMake(KEY_TEXT_X+220, KEY_TEXT_Y+60)];
     
     
-
+    
 }
 
 -(void)drawText:(NSString *)text atPoint:(CGPoint)newPoint
