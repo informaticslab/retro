@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReferencesVC : UIViewController
+@interface RecommendationsVC : UIViewController
 
 @end

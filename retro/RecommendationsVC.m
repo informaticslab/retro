@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 jtq6. All rights reserved.
 //
 
-#import "ReferencesVC.h"
+#import "RecommendationsVC.h"
 
-@interface ReferencesVC ()
+@interface RecommendationsVC ()
 
 @end
 
-@implementation ReferencesVC
+@implementation RecommendationsVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

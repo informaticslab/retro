@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A60D71B117E89C760077C7A7 /* ReferencesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A60D71B017E89C760077C7A7 /* ReferencesVC.m */; };
+		A60D71B117E89C760077C7A7 /* RecommendationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A60D71B017E89C760077C7A7 /* RecommendationsVC.m */; };
 		A61507F017DFB54E005E17AA /* EulaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A61507EF17DFB54E005E17AA /* EulaVC.m */; };
 		A630866717B562DE00AE15B8 /* yes_down.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865917B562DD00AE15B8 /* yes_down.png */; };
 		A630866817B562DE00AE15B8 /* yes_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A630865A17B562DD00AE15B8 /* yes_down@2x.png */; };
@@ -74,8 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A60D71AF17E89C760077C7A7 /* ReferencesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferencesVC.h; sourceTree = "<group>"; };
-		A60D71B017E89C760077C7A7 /* ReferencesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferencesVC.m; sourceTree = "<group>"; };
+		A60D71AF17E89C760077C7A7 /* RecommendationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationsVC.h; sourceTree = "<group>"; };
+		A60D71B017E89C760077C7A7 /* RecommendationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationsVC.m; sourceTree = "<group>"; };
 		A61507EE17DFB54E005E17AA /* EulaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EulaVC.h; sourceTree = "<group>"; };
 		A61507EF17DFB54E005E17AA /* EulaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EulaVC.m; sourceTree = "<group>"; };
 		A630865917B562DD00AE15B8 /* yes_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes_down.png; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 				A6D2FD52178358DA00C246D8 /* Supporting Files */,
 				A61507EE17DFB54E005E17AA /* EulaVC.h */,
 				A61507EF17DFB54E005E17AA /* EulaVC.m */,
-				A60D71AF17E89C760077C7A7 /* ReferencesVC.h */,
-				A60D71B017E89C760077C7A7 /* ReferencesVC.m */,
+				A60D71AF17E89C760077C7A7 /* RecommendationsVC.h */,
+				A60D71B017E89C760077C7A7 /* RecommendationsVC.m */,
 			);
 			path = retro;
 			sourceTree = "<group>";
@@ -453,7 +453,7 @@
 				A65B933417B08A1000743CA8 /* ContractingHivRiskVC.m in Sources */,
 				A6B6084F17B97B7900A20821 /* AboutVC.m in Sources */,
 				A61507F017DFB54E005E17AA /* EulaVC.m in Sources */,
-				A60D71B117E89C760077C7A7 /* ReferencesVC.m in Sources */,
+				A60D71B117E89C760077C7A7 /* RecommendationsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
