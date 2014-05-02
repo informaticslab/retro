@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Risk View Controller - Risk Assessment-->
@@ -9,26 +10,27 @@
             <objects>
                 <viewController title="Risk Assessment" id="2" customClass="RiskViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" id="eGZ-Qm-WXD" userLabel="Table View Container">
-                                <rect key="frame" x="20" y="24" width="422" height="659"/>
+                                <rect key="frame" x="20" y="29" width="422" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="2F0-pd-L4U" kind="embed" identifier="embedRiskInputSegue" id="2Rw-2l-qcJ"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="P6U-O3-jbk">
-                                <rect key="frame" x="450" y="24" width="554" height="659"/>
+                                <rect key="frame" x="450" y="29" width="554" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="a18-Ye-6Tf" kind="embed" identifier="embedRiskChartsContainer" id="Auj-rK-c6z"/>
                                 </connections>
                             </containerView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="dxD-5q-VrC">
-                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="dxD-5q-VrC">
+                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem title="Reset All" id="XM8-a2-FKu">
                                         <connections>
@@ -62,38 +64,41 @@
                                     </barButtonItem>
                                     <barButtonItem title="Help" id="Yq8-tT-lJA"/>
                                 </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.094117647058823528" green="0.43529411764705883" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Risk Assessment" image="first.png" id="Wu3-HL-Kdp"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="btnShareAction" destination="58f-3A-GrP" id="VQM-2o-NPH"/>
-                        <segue destination="UvP-Br-jsz" kind="modal" identifier="displayEulaSegue" id="Kpp-UF-dBd"/>
+                        <segue destination="UvP-Br-jsz" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" id="Kpp-UF-dBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-781" y="-363"/>
+            <point key="canvasLocation" x="-734" y="-355"/>
         </scene>
         <!--EulaVC-->
         <scene sceneID="C9o-eH-G7d">
             <objects>
                 <viewController modalPresentationStyle="pageSheet" id="UvP-Br-jsz" customClass="EulaVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pRa-hT-tka">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="Wc7-8v-91r">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="576"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="2eb-NL-AIy">
-                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="2eb-NL-AIy">
+                                <rect key="frame" x="0.0" y="576" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pP6-ej-zDL"/>
                                     <barButtonItem title="I Agree" id="ijV-gG-mRw">
@@ -102,6 +107,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -146,7 +152,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.094117647058823528" green="0.43529411764705883" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
@@ -158,7 +164,7 @@
         <scene sceneID="NIV-3C-M4P">
             <objects>
                 <tableViewController id="2F0-pd-L4U" customClass="RiskInputVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rvI-u9-OTV">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rvI-u9-OTV">
                         <rect key="frame" x="0.0" y="0.0" width="422" height="659"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81960784310000001" green="0.82352941180000006" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,27 +174,26 @@
                             <tableViewSection headerTitle="Part 1: HIV Status information about you and your partner" id="rHb-lJ-BL3">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tlM-ta-neQ" detailTextLabel="aGF-AW-3Ih" style="IBUITableViewCellStyleSubtitle" id="Nju-pR-0VS">
-                                        <rect key="frame" x="0.0" y="75" width="422" height="45"/>
+                                        <rect key="frame" x="0.0" y="55" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="1" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nju-pR-0VS" id="m2a-ol-znK">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HIV Negative Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlM-ta-neQ">
-                                                    <rect key="frame" x="10" y="2" width="179" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="174" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aGF-AW-3Ih">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="nGY-wt-M3D" kind="popover" identifier="hivNegPartnerSegue" popoverAnchorView="Nju-pR-0VS" id="YF3-6r-Nas">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -196,27 +201,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="G8s-mP-TWB" detailTextLabel="pxv-fh-jvp" style="IBUITableViewCellStyleSubtitle" id="Nkc-3b-oZQ">
-                                        <rect key="frame" x="0.0" y="120" width="422" height="45"/>
+                                        <rect key="frame" x="0.0" y="99" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="0.0" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nkc-3b-oZQ" id="B6N-NM-muX">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HIV Positive Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G8s-mP-TWB">
-                                                    <rect key="frame" x="10" y="2" width="173" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="167" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pxv-fh-jvp">
-                                                    <rect key="frame" x="10" y="24" width="36" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="37" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="Ep8-ha-4om" kind="popover" identifier="hivPosPartnerSegue" popoverAnchorView="Nkc-3b-oZQ" id="Dxu-Z7-fFk">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -228,27 +232,26 @@
                             <tableViewSection headerTitle="Part 2: Questions for the HIV Negative partner - your sexual activity and condom use" id="gwK-D3-IxY">
                                 <cells>
                                     <tableViewCell alpha="0.44" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="insVagCell" textLabel="mbx-Vq-95R" detailTextLabel="xPQ-tb-gpY" style="IBUITableViewCellStyleSubtitle" id="wnm-hS-wRH">
-                                        <rect key="frame" x="0.0" y="251" width="422" height="45"/>
+                                        <rect key="frame" x="0.0" y="208" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="1" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wnm-hS-wRH" id="csE-QQ-xGK">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Insertive Vaginal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mbx-Vq-95R">
-                                                    <rect key="frame" x="10" y="2" width="181" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="172" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xPQ-tb-gpY">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="rk6-ZR-85j" kind="popover" identifier="insertiveVaginalSexSegue" popoverAnchorView="wnm-hS-wRH" id="3yU-72-uqL">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -256,27 +259,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recVagCell" textLabel="Yc2-XA-OCC" detailTextLabel="cTF-qs-n1T" style="IBUITableViewCellStyleSubtitle" id="Zp4-8A-kGj">
-                                        <rect key="frame" x="0.0" y="296" width="422" height="44"/>
+                                        <rect key="frame" x="0.0" y="252" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="0.0" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zp4-8A-kGj" id="314-Ef-Z6X">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receptive Vaginal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yc2-XA-OCC">
-                                                    <rect key="frame" x="10" y="2" width="192" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="185" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cTF-qs-n1T">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="8Ba-yl-7kb" kind="popover" identifier="receptiveVaginalSexSegue" popoverAnchorView="Zp4-8A-kGj" id="clj-te-pha">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
@@ -284,27 +286,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recOralCell" textLabel="CA8-O5-Na9" detailTextLabel="AfA-bO-qvL" style="IBUITableViewCellStyleSubtitle" id="dcH-mk-4y6">
-                                        <rect key="frame" x="0.0" y="340" width="422" height="44"/>
+                                        <rect key="frame" x="0.0" y="296" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="0.0" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcH-mk-4y6" id="MaN-fL-7gv">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receiving Oral Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CA8-O5-Na9">
-                                                    <rect key="frame" x="10" y="2" width="164" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="158" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AfA-bO-qvL">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="coM-NT-GhM" kind="popover" identifier="oralFromPosSegue" popoverAnchorView="dcH-mk-4y6" id="FIf-jQ-cpM">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -312,27 +313,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="giveOralCell" textLabel="yXp-9s-ySg" detailTextLabel="NAN-UK-Wlv" style="IBUITableViewCellStyleSubtitle" id="8zz-KS-t4C">
-                                        <rect key="frame" x="0.0" y="384" width="422" height="44"/>
+                                        <rect key="frame" x="0.0" y="340" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="0.0" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8zz-KS-t4C" id="1T2-oK-5Jd">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Giving Oral Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yXp-9s-ySg">
-                                                    <rect key="frame" x="10" y="2" width="135" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="129" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NAN-UK-Wlv">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="YK5-Rz-9HX" kind="popover" identifier="oralToPosSegue" popoverAnchorView="8zz-KS-t4C" id="XRP-06-enG">
                                                 <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
@@ -340,27 +340,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="insAnalCell" textLabel="v3u-O4-qB9" detailTextLabel="gaQ-yh-kWd" style="IBUITableViewCellStyleSubtitle" id="ocl-d5-HgD">
-                                        <rect key="frame" x="0.0" y="428" width="422" height="44"/>
+                                        <rect key="frame" x="0.0" y="384" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="0.0" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ocl-d5-HgD" id="Ppo-A0-Lwy">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Insertive Anal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v3u-O4-qB9">
-                                                    <rect key="frame" x="10" y="2" width="156" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="149" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gaQ-yh-kWd">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="EdE-dw-0Tw" kind="popover" identifier="insertiveAnalSegue" popoverAnchorView="ocl-d5-HgD" id="F0F-ZL-vdf">
                                                 <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
@@ -368,27 +367,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recAnalCell" textLabel="61f-mB-INr" detailTextLabel="ypk-DL-Smi" style="IBUITableViewCellStyleSubtitle" id="sot-pv-aJn">
-                                        <rect key="frame" x="0.0" y="472" width="422" height="45"/>
+                                        <rect key="frame" x="0.0" y="428" width="422" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="31" y="0.0" width="340" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sot-pv-aJn" id="Umx-mt-T1c">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Receptive Anal Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="61f-mB-INr">
-                                                    <rect key="frame" x="10" y="2" width="167" height="22"/>
+                                                    <rect key="frame" x="15" y="2" width="162" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ypk-DL-Smi">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="15" y="24" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <segue destination="XBg-nF-gKj" kind="popover" identifier="receptiveAnalSegue" popoverAnchorView="sot-pv-aJn" id="I0b-Xd-n5A">
                                                 <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
@@ -429,32 +427,32 @@
             <objects>
                 <viewController id="z5R-Ta-zq1" customClass="AboutVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bOY-7q-Xf4">
-                        <rect key="frame" x="0.0" y="20" width="300" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HIV Risk Assessment Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ARO-Jj-C5O">
-                                <rect key="frame" x="20" y="49" width="260" height="21"/>
+                                <rect key="frame" x="20" y="59" width="260" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sdO-ds-wep">
-                                <rect key="frame" x="20" y="78" width="260" height="21"/>
+                                <rect key="frame" x="20" y="88" width="260" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Build Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O5b-1Z-zjb">
-                                <rect key="frame" x="20" y="107" width="260" height="21"/>
+                                <rect key="frame" x="20" y="117" width="260" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="xqE-UW-gwF">
-                                <rect key="frame" x="0.0" y="-4" width="300" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xqE-UW-gwF">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TEp-mU-l6C"/>
@@ -469,6 +467,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="labelBuildInfo" destination="O5b-1Z-zjb" id="zbf-pZ-MMH"/>
                         <outlet property="labelVersionInfo" destination="sdO-ds-wep" id="PWo-Tc-IE9"/>
@@ -484,11 +483,12 @@
             <objects>
                 <viewController id="9tn-QM-Wlw" customClass="RecommendationsVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zc7-9E-2ed">
-                        <rect key="frame" x="0.0" y="20" width="300" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5P-Yb-I67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,35 +499,35 @@
             <objects>
                 <viewController title="HivNegativePartner" modalPresentationStyle="currentContext" id="nGY-wt-M3D" customClass="HivNegPartnerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpy-JP-Wfp">
-                        <rect key="frame" x="0.0" y="20" width="400" height="430"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What is the gender of the HIV negative partner?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HjH-V4-thM">
-                                <rect key="frame" x="20" y="103" width="370" height="45"/>
+                                <rect key="frame" x="20" y="108" width="370" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="If male, is the HIV negative partner circumcised?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GJ1-z7-BDG">
-                                <rect key="frame" x="20" y="303" width="370" height="44"/>
+                                <rect key="frame" x="20" y="318" width="370" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Is the HIV negative  partner currently on PrEP?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j1w-zc-yHA">
-                                <rect key="frame" x="20" y="204" width="370" height="45"/>
+                                <rect key="frame" x="20" y="214" width="370" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Describe the HIV Negative Partner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AXi-Nl-HPr">
-                                <rect key="frame" x="20" y="65" width="302" height="21"/>
+                                <rect key="frame" x="20" y="68" width="302" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TQo-aD-pcE">
-                                <rect key="frame" x="20" y="145" width="82" height="45"/>
+                                <rect key="frame" x="20" y="152" width="82" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="male_up.png">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
@@ -541,7 +541,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G8h-rl-1dZ">
-                                <rect key="frame" x="149" y="145" width="82" height="45"/>
+                                <rect key="frame" x="149" y="152" width="82" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="female_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -554,7 +554,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tbE-AU-1uC">
-                                <rect key="frame" x="20" y="343" width="82" height="45"/>
+                                <rect key="frame" x="20" y="360" width="82" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="yes_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -568,7 +568,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wbk-mx-MSa">
-                                <rect key="frame" x="149" y="343" width="82" height="45"/>
+                                <rect key="frame" x="149" y="360" width="82" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="no_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -582,7 +582,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gaf-Ia-oYm">
-                                <rect key="frame" x="20" y="246" width="82" height="45"/>
+                                <rect key="frame" x="20" y="258" width="82" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="yes_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -596,7 +596,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eQ1-3K-0tx">
-                                <rect key="frame" x="149" y="246" width="82" height="45"/>
+                                <rect key="frame" x="149" y="258" width="82" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="no_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -609,7 +609,7 @@
                                     <action selector="btnNoOnPrepTouchUp:" destination="nGY-wt-M3D" eventType="touchUpInside" id="htd-Z9-VA0"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="1N4-3b-32u">
+                            <navigationBar contentMode="scaleToFill" id="1N4-3b-32u">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -650,6 +650,7 @@
                     <navigationItem key="navigationItem" title="HIV Negative Partner" id="GIn-T0-nsP">
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="ywb-Ri-Y0B"/>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="btnFemale" destination="G8h-rl-1dZ" id="E6c-AZ-A5g"/>
                         <outlet property="btnMale" destination="TQo-aD-pcE" id="5Bm-I8-kgE"/>
@@ -750,7 +751,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="nPI-yF-XKw">
+                            <navigationBar contentMode="scaleToFill" id="nPI-yF-XKw">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -783,6 +784,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="360"/>
                     <connections>
                         <outlet property="btnFemale" destination="zUA-yb-9kf" id="Pk6-6s-XRM"/>
                         <outlet property="btnMale" destination="dF7-71-KYL" id="GmJ-Yr-kWf"/>
@@ -806,7 +808,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="iU5-s1-eyx">
-                                <rect key="frame" x="516" y="100" width="18" height="19"/>
+                                <rect key="frame" x="516" y="100" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -836,7 +838,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Nga-57-PfM">
-                                <rect key="frame" x="516" y="213" width="18" height="19"/>
+                                <rect key="frame" x="516" y="213" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -861,10 +863,10 @@
             <objects>
                 <viewController id="YK5-Rz-9HX" customClass="OralSexToPosVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hMD-bP-6Hs">
-                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="AvM-Jz-Tnx">
+                            <navigationBar contentMode="scaleToFill" id="AvM-Jz-Tnx">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -878,66 +880,66 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="op7-X2-Uiq">
-                                <rect key="frame" x="18" y="224" width="364" height="23"/>
+                                <rect key="frame" x="18" y="237" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderCondomUsageValueChange:" destination="YK5-Rz-9HX" eventType="valueChanged" id="nej-gF-LzQ"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="tC9-eR-Ux2">
-                                <rect key="frame" x="18" y="111" width="364" height="23"/>
+                                <rect key="frame" x="18" y="116" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderActsPerMonthValueChange:" destination="YK5-Rz-9HX" eventType="valueChanged" id="gfZ-4d-1vp"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qii-zT-Puc">
-                                <rect key="frame" x="20" y="138" width="42" height="21"/>
+                                <rect key="frame" x="20" y="150" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2iG-g6-EFY">
-                                <rect key="frame" x="338" y="138" width="42" height="21"/>
+                                <rect key="frame" x="338" y="150" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iiV-QM-fee">
-                                <rect key="frame" x="20" y="251" width="42" height="21"/>
+                                <rect key="frame" x="20" y="270" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T1J-DG-jor">
-                                <rect key="frame" x="329" y="251" width="51" height="21"/>
+                                <rect key="frame" x="329" y="270" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XRN-2f-1Cc">
-                                <rect key="frame" x="20" y="83" width="304" height="21"/>
+                                <rect key="frame" x="20" y="89" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9c5-0T-dEh">
-                                <rect key="frame" x="20" y="197" width="304" height="20"/>
+                                <rect key="frame" x="20" y="211" width="304" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ivX-sR-zKT">
-                                <rect key="frame" x="331" y="83" width="49" height="21"/>
+                                <rect key="frame" x="331" y="89" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rta-0g-gaa">
-                                <rect key="frame" x="332" y="196" width="48" height="21"/>
+                                <rect key="frame" x="332" y="210" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -947,6 +949,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="actsPerMonthLabel" destination="ivX-sR-zKT" id="N8m-09-i6d"/>
                         <outlet property="condomUsageLabel" destination="rta-0g-gaa" id="uWL-iL-EAS"/>
@@ -968,7 +971,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ZJW-PK-QXn">
-                                <rect key="frame" x="516" y="213" width="18" height="19"/>
+                                <rect key="frame" x="516" y="213" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -994,10 +997,10 @@
             <objects>
                 <viewController id="XBg-nF-gKj" customClass="ReceptiveAnalVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rlE-NG-qlg">
-                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="q0W-C2-66j">
+                            <navigationBar contentMode="scaleToFill" id="q0W-C2-66j">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -1011,66 +1014,66 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="Svv-Ix-3ZU">
-                                <rect key="frame" x="18" y="221" width="364" height="23"/>
+                                <rect key="frame" x="18" y="234" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderCondomUsageValueChange:" destination="XBg-nF-gKj" eventType="valueChanged" id="Mdb-LC-Epv"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="QlP-NL-e9d">
-                                <rect key="frame" x="18" y="108" width="364" height="23"/>
+                                <rect key="frame" x="18" y="112" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderActsPerMonthValueChange:" destination="XBg-nF-gKj" eventType="valueChanged" id="XnM-bj-cdR"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Gh-2b-bna">
-                                <rect key="frame" x="20" y="136" width="42" height="21"/>
+                                <rect key="frame" x="20" y="144" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tU2-hX-Gaa">
-                                <rect key="frame" x="338" y="136" width="42" height="21"/>
+                                <rect key="frame" x="338" y="144" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2wT-m6-VNl">
-                                <rect key="frame" x="20" y="249" width="42" height="21"/>
+                                <rect key="frame" x="20" y="265" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cB0-gG-NsH">
-                                <rect key="frame" x="329" y="249" width="51" height="21"/>
+                                <rect key="frame" x="329" y="265" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eAX-fb-YHI">
-                                <rect key="frame" x="20" y="79" width="304" height="21"/>
+                                <rect key="frame" x="20" y="84" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mjd-Xt-bdn">
-                                <rect key="frame" x="20" y="193" width="304" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="20" y="206" width="304" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I0T-1T-J7V">
-                                <rect key="frame" x="331" y="79" width="49" height="21"/>
+                                <rect key="frame" x="331" y="84" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5gj-a9-zzy">
-                                <rect key="frame" x="332" y="192" width="48" height="21"/>
+                                <rect key="frame" x="332" y="205" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1080,6 +1083,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="actsPerMonthLabel" destination="I0T-1T-J7V" id="Sgc-NV-fxU"/>
                         <outlet property="condomUsageLabel" destination="5gj-a9-zzy" id="zCU-aG-yVv"/>
@@ -1097,50 +1101,50 @@
             <objects>
                 <viewController id="EdE-dw-0Tw" customClass="InsertiveAnalVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NDS-xI-Sup">
-                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="AHm-Gn-hE9">
-                                <rect key="frame" x="18" y="232" width="364" height="23"/>
+                                <rect key="frame" x="18" y="245" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderCondomUsageValueChange:" destination="EdE-dw-0Tw" eventType="valueChanged" id="quq-y0-T8n"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="6qg-ml-BW9">
-                                <rect key="frame" x="18" y="119" width="364" height="23"/>
+                                <rect key="frame" x="18" y="124" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderActsPerMonthValueChange:" destination="EdE-dw-0Tw" eventType="valueChanged" id="gkk-bg-8cD"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dVg-2v-3sm">
-                                <rect key="frame" x="20" y="146" width="42" height="21"/>
+                                <rect key="frame" x="20" y="155" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ip5-HK-oai">
-                                <rect key="frame" x="338" y="146" width="42" height="21"/>
+                                <rect key="frame" x="338" y="155" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SoL-5u-Zar">
-                                <rect key="frame" x="20" y="259" width="42" height="21"/>
+                                <rect key="frame" x="20" y="277" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hj-AE-I0y">
-                                <rect key="frame" x="329" y="259" width="51" height="21"/>
+                                <rect key="frame" x="329" y="277" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="h9V-Us-d6o">
+                            <navigationBar contentMode="scaleToFill" id="h9V-Us-d6o">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -1154,26 +1158,26 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t4j-Om-bI7">
-                                <rect key="frame" x="20" y="90" width="304" height="21"/>
+                                <rect key="frame" x="20" y="96" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xuD-Nz-BBj">
-                                <rect key="frame" x="20" y="204" width="304" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="20" y="218" width="304" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ajp-Cf-zdX">
-                                <rect key="frame" x="331" y="90" width="49" height="21"/>
+                                <rect key="frame" x="331" y="96" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xsX-iB-bop">
-                                <rect key="frame" x="332" y="203" width="48" height="21"/>
+                                <rect key="frame" x="332" y="217" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1183,6 +1187,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="actsPerMonthLabel" destination="Ajp-Cf-zdX" id="9CV-0b-TgS"/>
                         <outlet property="condomUsageLabel" destination="xsX-iB-bop" id="1S5-vp-SRO"/>
@@ -1200,39 +1205,38 @@
             <objects>
                 <viewController id="rk6-ZR-85j" customClass="InsertiveVagSexVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aWS-Z7-jHg">
-                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="ZFJ-cR-nXA">
-                                <rect key="frame" x="18" y="231" width="364" height="23"/>
+                                <rect key="frame" x="18" y="244" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderCondomUsageValueChange:" destination="rk6-ZR-85j" eventType="valueChanged" id="UHs-xM-2XV"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="a4c-ag-Orb">
-                                <rect key="frame" x="18" y="118" width="364" height="23"/>
+                                <rect key="frame" x="18" y="123" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderActsPerMonthValueChange:" destination="rk6-ZR-85j" eventType="valueChanged" id="86A-h5-nAS"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eqC-ha-VDq">
-                                <rect key="frame" x="20" y="89" width="304" height="21"/>
+                                <rect key="frame" x="20" y="95" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fg6-Df-Opb">
-                                <rect key="frame" x="20" y="203" width="304" height="20"/>
+                                <rect key="frame" x="20" y="217" width="304" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="SGo-5P-d1q">
+                            <navigationBar contentMode="scaleToFill" id="SGo-5P-d1q">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Insertive Vaginal Sex" id="QGX-Nr-gIS">
-                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="QCw-ow-fSQ"/>
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="O9N-2Z-f0C">
                                             <connections>
                                                 <segue destination="kSO-kp-g3f" kind="unwind" unwindAction="doneInsertiveVagSex:" id="Y4s-X0-QtZ"/>
@@ -1242,42 +1246,42 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sKf-zf-Vud">
-                                <rect key="frame" x="20" y="148" width="42" height="21"/>
+                                <rect key="frame" x="20" y="159" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5aw-on-swT">
-                                <rect key="frame" x="338" y="148" width="42" height="21"/>
+                                <rect key="frame" x="338" y="159" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kSq-fc-OYM">
-                                <rect key="frame" x="20" y="261" width="42" height="21"/>
+                                <rect key="frame" x="20" y="279" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Qj-9x-CgO">
-                                <rect key="frame" x="329" y="261" width="51" height="21"/>
+                                <rect key="frame" x="329" y="279" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vcA-wi-6Ui">
-                                <rect key="frame" x="331" y="89" width="49" height="21"/>
+                                <rect key="frame" x="332" y="95" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pAQ-4d-F5G">
-                                <rect key="frame" x="332" y="202" width="48" height="21"/>
+                                <rect key="frame" x="333" y="216" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1287,6 +1291,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="actsPerMonthLabel" destination="vcA-wi-6Ui" id="mTw-g4-tAl"/>
                         <outlet property="condomUsageLabel" destination="pAQ-4d-F5G" id="JV2-Hw-1jR"/>
@@ -1304,10 +1309,10 @@
             <objects>
                 <viewController id="8Ba-yl-7kb" customClass="ReceptiveVagSexVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qIm-1d-YmG">
-                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="8P5-v4-UG7">
+                            <navigationBar contentMode="scaleToFill" id="8P5-v4-UG7">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -1321,66 +1326,66 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="kJg-q9-hZl">
-                                <rect key="frame" x="18" y="230" width="364" height="23"/>
+                                <rect key="frame" x="18" y="243" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderCondomUsageValueChange:" destination="8Ba-yl-7kb" eventType="valueChanged" id="D5V-hQ-u41"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="J23-pr-Iz3">
-                                <rect key="frame" x="18" y="117" width="364" height="23"/>
+                                <rect key="frame" x="18" y="122" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderActsPerMonthValueChange:" destination="8Ba-yl-7kb" eventType="valueChanged" id="wXX-nb-Ypz"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ipq-2D-wb0">
-                                <rect key="frame" x="20" y="146" width="42" height="21"/>
+                                <rect key="frame" x="20" y="156" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GfO-Le-EZx">
-                                <rect key="frame" x="338" y="146" width="42" height="21"/>
+                                <rect key="frame" x="338" y="156" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n0b-a6-0Q6">
-                                <rect key="frame" x="20" y="259" width="42" height="21"/>
+                                <rect key="frame" x="20" y="275" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tjv-YJ-hdQ">
-                                <rect key="frame" x="329" y="259" width="51" height="21"/>
+                                <rect key="frame" x="329" y="275" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="le8-BA-TZM">
-                                <rect key="frame" x="20" y="88" width="304" height="21"/>
+                                <rect key="frame" x="20" y="94" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fex-SO-2zm">
-                                <rect key="frame" x="20" y="202" width="304" height="20"/>
+                                <rect key="frame" x="20" y="216" width="304" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kyn-Hn-0OV">
-                                <rect key="frame" x="331" y="88" width="49" height="21"/>
+                                <rect key="frame" x="331" y="94" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yoe-Eo-7P3">
-                                <rect key="frame" x="332" y="201" width="48" height="21"/>
+                                <rect key="frame" x="332" y="215" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1390,6 +1395,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="actsPerMonthLabel" destination="Kyn-Hn-0OV" id="ahU-v2-j3U"/>
                         <outlet property="condomUsageLabel" destination="yoe-Eo-7P3" id="KFw-0M-3uG"/>
@@ -1407,10 +1413,10 @@
             <objects>
                 <viewController id="coM-NT-GhM" customClass="OralSexFromPosVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kNo-Ds-qsT">
-                        <rect key="frame" x="0.0" y="20" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="ILK-ft-oK6">
+                            <navigationBar contentMode="scaleToFill" id="ILK-ft-oK6">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -1424,66 +1430,66 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="V6t-YM-WSH">
-                                <rect key="frame" x="18" y="218" width="364" height="23"/>
+                                <rect key="frame" x="18" y="230" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderCondomUsageValueChange:" destination="coM-NT-GhM" eventType="valueChanged" id="p6X-4Q-DXY"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" id="zPI-bk-dhv">
-                                <rect key="frame" x="18" y="105" width="364" height="23"/>
+                                <rect key="frame" x="18" y="109" width="364" height="29"/>
                                 <connections>
                                     <action selector="sliderActsPerMonthValueChange:" destination="coM-NT-GhM" eventType="valueChanged" id="fsR-ts-HXs"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bdw-RI-vUu">
-                                <rect key="frame" x="20" y="133" width="42" height="21"/>
+                                <rect key="frame" x="20" y="141" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oVC-lA-VRw">
-                                <rect key="frame" x="338" y="133" width="42" height="21"/>
+                                <rect key="frame" x="338" y="141" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a1J-b0-II4">
-                                <rect key="frame" x="20" y="246" width="42" height="21"/>
+                                <rect key="frame" x="20" y="263" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nYG-gM-iN8">
-                                <rect key="frame" x="329" y="246" width="51" height="21"/>
+                                <rect key="frame" x="329" y="263" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Sexual Acts Per Month =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8V1-r4-rqx">
-                                <rect key="frame" x="20" y="77" width="304" height="21"/>
+                                <rect key="frame" x="20" y="82" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Condom Usage as Percentage =" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YLy-Qb-0iS">
-                                <rect key="frame" x="20" y="191" width="304" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="20" y="204" width="304" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8JN-7P-TVQ">
-                                <rect key="frame" x="331" y="77" width="49" height="21"/>
+                                <rect key="frame" x="331" y="82" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QdR-IJ-dUb">
-                                <rect key="frame" x="332" y="190" width="48" height="21"/>
+                                <rect key="frame" x="332" y="203" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1493,6 +1499,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="actsPerMonthLabel" destination="8JN-7P-TVQ" id="fJJ-Ia-zkh"/>
                         <outlet property="condomUsageLabel" destination="QdR-IJ-dUb" id="Pfm-fl-lee"/>
@@ -1517,194 +1524,8 @@
         <image name="yes_down.png" width="82" height="40"/>
         <image name="yes_up.png" width="82" height="40"/>
     </resources>
-    <classes>
-        <class className="AboutVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="labelBuildInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelVersionInfo" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CondomUsageRiskChart" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CondomUsageRiskChart.h"/>
-        </class>
-        <class className="CondomUsageRiskChartVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CondomUsageRiskChartVC.h"/>
-        </class>
-        <class className="ContractingHivRisk" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContractingHivRisk.h"/>
-        </class>
-        <class className="ContractingHivRiskVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContractingHivRiskVC.h"/>
-        </class>
-        <class className="EulaVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EulaVC.h"/>
-            <relationships>
-                <relationship kind="action" name="btnAcceptTouchUp:"/>
-                <relationship kind="outlet" name="btnAgree" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HivNegPartnerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HivNegPartnerVC.h"/>
-            <relationships>
-                <relationship kind="action" name="btnFemaleTouchUp:"/>
-                <relationship kind="action" name="btnMaleTouchUp:"/>
-                <relationship kind="action" name="btnNoCircumcisedTouchUp:"/>
-                <relationship kind="action" name="btnNoOnPrepTouchUp:"/>
-                <relationship kind="action" name="btnYesCircumcisedTouchUp:"/>
-                <relationship kind="action" name="btnYesOnPrepTouchUp:"/>
-                <relationship kind="outlet" name="btnFemale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnNoCircumcised" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnNoOnPrep" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnYesCircumcised" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnYesOnPrep" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lblCircumcised" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblCircumcisedQuestion" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblGender" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOnPrep" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HivPosPartnerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HivPosPartnerVC.h"/>
-            <relationships>
-                <relationship kind="action" name="btnFemaleTouchUp:"/>
-                <relationship kind="action" name="btnMaleTouchUp:"/>
-                <relationship kind="action" name="btnNoOnArtTouchUp:"/>
-                <relationship kind="action" name="btnYesOnArtTouchUp:"/>
-                <relationship kind="outlet" name="btnFemale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMale" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnNoOnArt" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnYesOnArt" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lblGender" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOnArt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InsertiveAnalVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveAnalVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="actsPerMonthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="condomUsageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="InsertiveVagSexVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsertiveVagSexVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="actsPerMonthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="condomUsageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="OralSexFromPosVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexFromPosVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="actsPerMonthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="condomUsageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="OralSexToPosVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OralSexToPosVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="actsPerMonthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="condomUsageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="ReceptiveAnalVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveAnalVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="actsPerMonthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="condomUsageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="ReceptiveVagSexVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReceptiveVagSexVC.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderActsPerMonthValueChange:"/>
-                <relationship kind="action" name="sliderCondomUsageValueChange:"/>
-                <relationship kind="outlet" name="actsPerMonthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="condomUsageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sliderActsPerMonth" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderCondomUsage" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="RecommendationsVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecommendationsVC.h"/>
-        </class>
-        <class className="RiskChartsContainerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskChartsContainerVC.h"/>
-        </class>
-        <class className="RiskInputVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskInputVC.h"/>
-            <relationships>
-                <relationship kind="action" name="doneHivNegPartner:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneHivPosPartner:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneInsertiveAnal:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneInsertiveVagSex:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneOralFromPos:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneOralToPos:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneReceptiveAnal:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="doneReceptiveVagSex:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="cellGiveOral" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellInsertiveAnal" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellInsertiveVag" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellReceiveOral" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellReceptiveAnal" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellReceptiveVag" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="lblHivNegPartner" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblHivPosPartner" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblInsertiveAnal" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblInsertiveVagSex" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOralSexFrom" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblOralSexTo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblReceptiveAnal" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblReceptiveVagSex" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RiskViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RiskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnInfoTouchUp:"/>
-                <relationship kind="action" name="btnResetActivitiesTouchUp:"/>
-                <relationship kind="action" name="btnResetAllTouchUp:"/>
-                <relationship kind="action" name="btnShareTouchUp:"/>
-                <relationship kind="action" name="doneAbout:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="returnActionForSegue:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="btnShareAction" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="shareActionButton" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="SexActRiskChart" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SexActRiskChart.h"/>
-        </class>
-        <class className="SexActRiskChartVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SexActRiskChartVC.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
